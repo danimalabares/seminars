@@ -1,0 +1,390 @@
+\input{/Users/daniel/github/config/preamble.sty}
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Geometric structures on manifolds \hfill IMPA
+		
+		%{\small\hfill\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge Blown-up toric surfaces with non-polyhedral effective cone}
+
+\hfill{\Large Jenia Tevelev (University of Massachussets, Amherst)}
+\hfill{\Large (Joint with with Castravet, Laface, Ugagluia, Crelle 23)}
+
+\hfill{\large September 19, 2024}
+
+\tableofcontents
+
+\paragraph{Motivation} Understand birational geometry of $\overline{\mathcal{M}}_{0,n}$, the moduli space of stable rational curves with $n$ markings.
+
+\[M_{0,n}=\{\text{*some diagram involving $\mathbb{P}^1$*} \} /\operatorname{PGL}(2)\]
+is a smooth affine variety of dimension $n=3$.
+
+ $\overline{M}_{0,n}\supset M_{0,n}$ smooth projective variety.
+
+\paragraph{Universal families} 
+\[\begin{tikzcd}
+U_{n}\arrow[d]\\
+\overline{M}_{0,n}
+\end{tikzcd}\qquad \begin{tikzcd}
+\text{something in } \mathbb{P}^1\arrow[d]\\
+M_{0,n}
+\end{tikzcd}\qquad \begin{tikzcd}
+\text{drawing} \arrow[d]\\
+\partial\overline{M}_{0,n}
+\end{tikzcd}\]
+ \begin{itemize}
+ \item simple normal crossings divisor.
+ \item Stable rational curve = tree of $\mathbb{P}^1$ with $n$ different \& smooth points.
+\item Nodal singularities $(xy=0)\subset \mathbb{C}^2$.
+\item Every compact component should have at least 3 "special" points.
+ \end{itemize}
+
+ \begin{lemma}
+ 	$U_n\cong \overline{M}_{0,n+1}$,
+	\[\overline{M}_{0,n+1}\longrightarrow \overline{M}_{0,n}\]
+	is a forgetful map + stabilizer.
+ \end{lemma}
+Let's talk a bit about $M_{0,4}$.
+ \[M_{0,4}=\{0,1,\infty,x\} =\mathbb{P}^1-\{0,1,\infty\}\]
+ There's only one compactification of this: $\overline{M}_{0,4}=\mathbb{P}^1$. What are the fibers? Drawings of fibers at 0, 1, $\infty$.
+
+ $\mathbb{P}^ 1=$ pencil of conics through $p_1,p_2,p_3,p_4\in\mathbb{P}^2$. So in this case
+ \[\begin{tikzcd}
+ U_q=\operatorname{Bl}_{4}\mathbb{P}^2\text{del Pezzo surface of degree ?} \arrow[d]\\
+ \overline{M}_{0,5}
+ \end{tikzcd}\]
+
+\section{A normal $\mathbb{Q}$-factorial projective variety}
+
+Let $X$ be a normal $\mathbb{Q}$-factorial projective variety.
+
+\begin{align*}
+\operatorname{Pic}(X)	&\subset \operatorname{Cl}(X)\\
+\text{Cartier divisors} &\text{Weil divisors} 
+\end{align*}
+
+\begin{defn}
+	$\mathbb{Q}$-factorial: every $D\in\operatorname{Cl}(X)$ is $\mathbb{Q}$-Cartier (in $D\in\operatorname{Pic}(X)$ for some $m>0$.
+
+	 \[D\in\operatorname{Cl}(X)\qquad \qquad C\subset X\text{ integral curve}, \qquad D\cdot C\in\mathbb{Q} \]
+
+\end{defn}
+\section{Neron-Severi spaces}
+
+\begin{align*}
+	N'(X)&=\{\sum_{a_i\in\mathbb{R}}a_iD_i\} /\equiv\qquad D\equiv 0 \text{ if } D\cdot C=0\forall C\subset X\\
+	N_1(X)&=\left\{ \sum_{a_i\in\mathbb{R}}a_iC_i \right\}/\equiv\qquad C\equiv 0\text{if }D\cdot C=0\forall D\subset X 
+\end{align*}
+
+\begin{itemize}
+\item $N'(X)$ and  $N_1(X)$ are dual (intersection pairing) finite-dimensional vector spaces.
+\item \textit{\textbf{Pseudo-effective cone}}  $\operatorname{Eff}\subset N^1(X)$ closure of the cone spanned by numerical classes of effective divisors.
+\item \textit{\textbf{Cone of curves (Mori cone)}}:  $\operatorname{NE}(X)\subset N_1(X)$ closure of the cone spanned by numerical classes of effective curves.
+\end{itemize}
+
+\section{Nef cone}
+
+\begin{align*}
+	\operatorname{Nef}(X)&=\operatorname{NE}(X)^\vee\\
+	&=\{D:D\cdot C\geq 0\forall C\in \operatorname{NE}(X)\}
+\end{align*}
+
+\section{Linear system}
+
+\begin{align*}
+	D\in\operatorname{Cl}(X)\qquad |D| =\mathbb{P}H^{0}(X,\mathcal{O}_X(D))=\{D\geq 0:D\sim D\}
+\end{align*}
+where $\mathcal{O}_X(D)$ is the divisorial sheaf. Notice thar this is nonempty iff $D$ is effective.
+
+Now consider a rational map
+\begin{align*}
+	\varphi _D:X\overset{\operatorname{rat}}{\longrightarrow}|D|^\vee\\
+	x &\longmapsto \{D^1\in |D| :X\in D^1\}
+\end{align*}
+Base locus: $\operatorname{BS}|D| =\bigcap_{D^1\in |D|}D^1$ 
+\[D=\operatorname{Fix}(D)+M\]
+on the left, divisorial part of the base locus, on the right mobile part.
+
+\[\varphi_D=\varphi_M\]
+$\operatorname{BS}(D)=$ empty then $D$ is called \textit{\textbf{free}} for globally generated.
+
+ $D$ is a pullback by a hyperplane:
+ \begin{align*}
+ 	\varphi_D: X &\longrightarrow \mathbb{P}^r=|D| \\
+ 	\mathcal{O}(D)&=\varphi^*_D\mathcal{O}(1)\implies D \text{ is Cartier} 
+ \end{align*}
+
+ \section{Stable base locus}
+ \[\mathbb{B}(D)=\bigcap_{m>0}\operatorname{Bs}|mD|\]
+ $D$ is called \textit{\textbf{semiample}} if  $\mathbb{B}(D)=$empty iff $mD$ is free for some $m>0$.
+
+  $D$ semiample implies $D$ is nef.
+
+ \section{Semi-ample Fibration Theorem}
+
+ \begin{thm}
+ 	$D$ semiample $\implies $ $\varphi_{|mD|}:X\to Y$ does not depend on $m\gg 0$ and divisible. Connected fibers,  $Y$ normal (not necessarily $\mathbb{Q}$-factorial).
+ \end{thm}
+
+ \begin{thm}[Zariski]\leavevmode
+ 	$D\in\operatorname{Pic}(X), \operatorname{Bs}|D|$ is finite $\implies $$D$ is semiample.
+ \end{thm}
+
+\begin{coro}
+	$\dim X=2$, $D\in\operatorname{Pic}(X)$ effective, $\operatorname{Fix}(D)=0\implies D$ is semiample.
+\end{coro}
+
+\begin{itemize}
+\item If $\varphi_{|D|}$ is a closed embedding, them $D$ is called \textit{\textbf{very ample}}.
+\item $D\in\operatorname{Cl}(X)$ is called ample if $mD$ is very ample for some $m>0$.
+\item $D\in\operatorname{Cl}(X)$ is \textit{\textbf{big}} if  $\dim \varphi_{|mD|}(X)=\dim X$ for some $m>0$  $\iff h^0(X,mD)\sim_m\dim X$ if $m\gg 0$ and divisible, $ \overset{\text{Itaka} }{\iff}\varphi_{|mD|}$ is birational. 
+\end{itemize} 
+
+\section{Kleimen Criterion}
+Even though amppleness and bigness are defined using linear system, they are numerical properies.
+
+\begin{thm}[Kleimen Criterion]\leavevmode
+	$D \in\operatorname{Cl}(X)$ is ample iff $D\in \text{Interior }\operatorname{Nef}(X)$. This implies that $\operatorname{Nef}(X)\subset \operatorname{Eff}(X)$
+	\begin{align*}
+		D\in\operatorname{Cl}(X)&=D\in\text{Interior} \operatorname{E f f}(X)\\
+		&\iff mD=\text{Effective and ample for some } m>0
+	\end{align*}
+\end{thm}
+
+And what you need for that is
+
+\begin{lemma}[Kodaira's lemma]
+	$D$ big, $A$ effective, then $mD-A$ is also effective for some  $m>0$
+
+	\[\begin{tikzcd}[column sep=small]
+		0\arrow[r]&\mathcal{O}(mD-A)\arrow[r]&\mathcal{O}(mD)\arrow[r]&\mathcal{O}(mD)|_{A}\arrow[r]&0	\end{tikzcd}\]
+		this implies $mD-A$ is effective.
+\end{lemma}
+
+This is the end of the review.
+
+\section{Some questions asked by Fulton}
+
+$\partial\overline{M}_{0,n}$ components. There's some stratification of this space by their divisors. There are some things called \textit{\textbf{F-curves}}.
+
+ \begin{example}
+	 In the surface case, $\overline{M}_{0,5}=\operatorname{Bl}_{4}\mathbb{P}^2$ there are five $\binom{5}{10}=10$ of them. They are called \textit{\textbf{(-1)-curves}}. If you look at the effective cone of this blow up, it is generated by these 10 curves.
+\end{example}
+
+\begin{conjecture}[Fulton-Fuber]
+	$\operatorname{NE}(\overline{M}_{0,n}$ is generated by F-curves. Still poen
+\end{conjecture}
+
+\begin{conjecture}[Fulton, it is wrong]
+$\operatorname{E f f}(\overline{M}_{0,n}$	is generated by boundary divisors.
+\end{conjecture}
+There are many other extremal rays (Gutrvet-Jenia 2013), also because it is not a rational polyhedral cone (not finitely generated) (2023 paper).
+
+\section{Some strategies for proving these sort of things}
+
+LEt's go back to the setting where $X$ is a normal $\mathbb{Q}$-factorial projective variety. Look a birational (and $\mathbb{Q}$-factorial) maps $f:X\overset{\operatorname{bir}}{\longrightarrow}Y$ and $f$ is regular in codimension 1. Then $D\subset X$ is called \textit{\textbf{$f$-exceptional}}  if $\dim f(D)<\dim D$, equivalently, $f$ is not an isomorphism at a generic point $\eta\in D$. $f$ (or $Y$ )is called a \textit{\textbf{birational contraction}} if there are no  $f^{-1}$-exceptional divisors.
+
+\begin{question}[Misha]
+	Is contraction always regular? No.
+\end{question}
+
+$f$ (or $Y$ )is called \textit{\textbf{small $\mathbb{Q}$-factorial modification}} if there are no $f$ or $f^{-1}$ exceptional divisors. So basically this means that $f$ is an isomorphism in codimension 1.
+
+And finally, a rational map $f:X\overset{\operatorname{rat}}{\longrightarrow} Y$ of $\mathbb{Q}$-factorial varieties is called \textit{\textbf{rational contraction}} if $f$ is a composition of birational contractions and morphisms with connected fibers (between $\mathbb{Q}$-factorial varieties).
+
+\paragraph{Principle} The birational geometry of $X$ is the study of brational contractions of $X$.
+
+\section{Application of this to the study of effective cones}
+
+If $f:X\overset{\operatorname{bir}}{\longrightarrow}Y$ is a birational contraction, then its exceptional divisors are extremal rays of $\operatorname{E f f}(X)$.
+
+\section{Some examples}
+\subsection{Hassett spaces}
+These are the simplest examples of birational contractions.
+
+(I talk about genus zero but most of this can be extended).
+
+Choose some positive numers $a_1,\ldots a_n>0$ with  $\sum_{i}a_i>2$. They are called \textit{\textbf{rational weights}}. The birational contraction is
+\begin{align*}
+	\overline{M}_{0,n}  &\longrightarrow \overline{M}_{0,n;\bar{a}}=\text{ moduli space of $\bar{a}$-stable rational curves} 
+\end{align*}
+where the bar over $a$ should be an arrow like a vector.
+\[\begin{tikzcd}
+\overline{M}_{0,n}\arrow[rr]&&\overline{M}_{0,n;\bar{a}}\\
+&M_{0,n}\arrow[ul,hook]\arrow[ur,hook,swap]
+\end{tikzcd}\]
+\begin{itemize}
+	\item Semi -log canonical.
+ \item  $\omega_c\left( \sum_{i}a_i p_i \right) $ ample $ \iff$ $p_i$ are not at the nodes.
+\item $\#$ of nodes on  $R$ + $\sum_{p_i\in R}a_i>2$.
+\item $I\subset \{1,\ldots,n\}$, $p_i=p_j,$ $i,j\in I\implies \sum_{i \in I}a_i\leq 1$
+\end{itemize}
+
+\begin{example}\leavevmode 
+	\begin{itemize}
+	\item Choose
+		\[(1,\ldots,1)\longrightarrow \overline{M}_{0,n}\]
+		where $(1, \underbrace{x,\ldots,x}_{n-1})$ so that $1+(n-1)x=2+\varepsilon$ with $\varepsilon\ll1$. So there is a heavy point, the first one.
+
+		So for example stable curve $\mathbb{P}^1$, $p_1,\ldots, p_n \in\mathbb{P}^1$ with $a=1$,  $p_i\neq p_1$. So not all $p_i$ with $i>1$ are equal. Now do
+		\begin{align*}
+			p_1&\to \infty\\
+			p_2&\to 0
+		\end{align*}
+		and the rest of the points $p_3,\ldots, p_n \in\mathbb{C}$. What happens is that not all of them are zero. So what is the moduli. It's very simple: $\overline{M}_{0,n;\bar{a}}=\mathbb{P}^{n-3}$. The map $\overline{M}_{0,n}\to \mathbb{P}^{n-3}$ is called the \textit{\textbf{Kapranov map}}.
+
+		Then there's a drawing of to curves that intersect in a curve, and we map them to  $\overline{M}_{0,n;\bar{a}}$, which is only one of the original lines (the one where $p_1$ lives) and the second one has been contracted to a point. So there is a contraction:
+		\begin{align*}
+			|I^c| \geq 3&\implies \Delta_I\text{ is contracted} \\
+			&\implies \text{Every }  \Delta_I \text{is contracted} 
+		\end{align*}
+	\end{itemize}
+\end{example}
+
+\begin{exercise}
+	\begin{itemize}
+	\item Take a bunch of triangles and see how many vertices they cover. Show that $\left|\bigcup_{i\in I}\Gamma_i\right|\geq |I| +2 $. If $|I| =1$ or $|I| =n-2$ we have stric equality. Here $|I|$ is the number of triangles that you chose and $\Gamma_i$ is a triangle which is just three vertices. In fact, there are $n-2$ black triangles when you have a black-and-white triangulation of  $n$ vertices. This is the \textit{\textbf{hypertree condition}}
+
+		\item Strict inequality for $1<|I| <n-2$ unless the triangulation is a \textit{connected sum} . This is the \textit{\textbf{irreducible hypertree condition}}.
+	\end{itemize}
+\end{exercise}
+
+So what does that have to do. So an \textit{\textbf{irreducible hypertree}} is given by those inequalitites. We have: $\Gamma_1,\ldots,\Gamma_n$ irreducible hypersurve. and then: hypertree curve
+\begin{align*}
+	\Gamma_i&=\{a,b,c\}\\
+	 \Gamma_j&=\{a,x,y\}
+\end{align*}
+
+If it is not an octahedron there will surely be vertices with more than two black triangles.
+
+\begin{question}
+	Is this curve the union of the two lines that pass through $\{a,b,c\}$ and $\{a,x,y\}$
+\end{question}
+
+So the curve is locally the union of coordinate axes.
+
+\[M_{0,n}\subset \operatorname{Morphisims}(\mathcal{C}_{\Gamma},\mathbb{P}^1)\]
+which is linear on every component of $\mathcal{C}_{\Gamma}$.
+
+\[\begin{tikzcd}
+	\substack{\text{drawing of 4 lines}  \\\text{the components of the curve}\\\text{with intersections numbered}   }\arrow[r]&\mathbb{P}^1
+\end{tikzcd}\]
+So the intersection points go to some 6 points in $\mathbb{P}^1$. The choice of these 6 points is (the moduli space?).
+
+And then we do
+\[M_{0,n}\subset \operatorname{Morph}(\mathcal{C}_{\Gamma},\mathbb{P}^1)\to \operatorname{Pic}(\mathcal{C}_{\Gamma})\]
+We have done
+\[\begin{tikzcd}
+	\mathcal{C}_{\Gamma}\arrow[r,"\varphi"]&\mathbb{P}^1\arrow[r]&\varphi^*\mathcal{O}(1)
+\end{tikzcd}\]
+So we have
+\[M_{0,n}\longrightarrow(\mathbb{C}^* )^{n-3}\]
+which is birational by Riemann-Roch.
+
+So what is the exceptional locus $D_\Gamma$? A general point of $D_\Gamma$.
+
+We do a map $\mathcal{C}_{\Gamma}\to  \mathbb{P}^2$. Choose a point $x\in\mathbb{P}^2$ and project from $X$ and get $n$ points on $\mathbb{P}^1$.
+
+\begin{thm}[Castoret-Jenia]\leavevmode
+	$\Gamma$ is irreducible hypertree $\implies D_{\Gamma}\subset M_{0,n}$ is an irreducible divisor. $\overline{D}_{\Gamma}\subset \overline{M}_{0,n}$ is an exceptional divisor
+	\[\begin{tikzcd}
+		D_{\Gamma}\arrow[r]\arrow[d,hook]&\text{contracted} \arrow[d,hook]\\
+		M_{0,n}\arrow[r]\arrow[d,hook]& (\mathbb{C}^*)^{n-3}\arrow[d,hook]\\
+		\overline{M}_{0,n}\arrow[r, "\text{bir. contraction!}" ]&\text{compactified Jacobian} \\
+		\overline{D}_{\Gamma}\arrow[u,hook,"\text{contained}" ]&\leavevmode 
+	\end{tikzcd}\]
+	So $D_\Gamma$ is an exceptional ray of $\operatorname{E f f}(\overline{M}_{0,n}$.
+\end{thm}
+
+\begin{thm}[Castravet, Laface, Jenia, Ugaglic]\leavevmode
+	$\operatorname{E f f}(\overline{M}_{0,n}$ is infinitely generated for $n\geq 10$.
+\end{thm}
+
+\begin{lemma}
+	Let $f:X\overset{\operatorname{rat}}{\longrightarrow}$ be a rational contraction. Then
+	\[\operatorname{E f f}(X) \text{ f. g.} \implies \operatorname{E f f}(Y) \text{ f.g.}  \]
+	Other properties preserved by rational contractions are: being a MDS, having a S$\mathbb{Q}$S with nef but not semiample divisor, etc.
+\end{lemma}
+
+\begin{proof}
+	\textbf{Case 1} When $f$ is a birational contraction. In this case you just notice that the effective cone of $Y$ is going to be a pushforward of the effective cone of $X$ :
+	\[\operatorname{E f f}(Y)=f_* \operatorname{E f f}(X)\]
+	for
+\[f_* :N^1(X)\to N^1(Y)\]
+
+\textbf{Case 2}  $f$ is a morphism. There is no pushforward of divisors! But we still have a pushforward, but for cycles:
+\[f_* :N_1(X)\to N_1(Y)\]
+And then there is the $\operatorname{Mov}_1(X)=$ cone spanned by \textit{\textbf{movable}} curves on $X$, where movable means that the curve moves in a family that covers $X$.
+\end{proof}
+
+\begin{thm}[Bookson Demaria PP]\leavevmode
+	\[\operatorname{E f f}(X)=\operatorname{Mov}_{1}(X)\]
+\end{thm}
+\begin{proof}
+	If the effective cone is polyhedral (finitely generated) then $\operatorname{Mov}_{1}(X)$ is polyhedral. Then if you look at
+	\[f_* :\operatorname{Mov}_1(X)\to \operatorname{Mov}_1(Y)\]
+	is surjective, which implies that $\operatorname{Mov}_1(Y)$ is also polyhedral. And then using duality we conclude that $\operatorname{E f f}(Y)$ is polyhedral.
+\end{proof}
+
+\paragraph{Goal} To find a rational contraction of $\overline{M}_{0,1}$ with a non-polyhedral effective cone.
+
+\begin{enumerate}[label=\textbf{Step \arabic*}]
+	\item This requires going back to Hassett spaces. So take the weights $(1=0,1=\infty,\varepsilon,\ldots,\varepsilon$ with  $\varepsilon\ll1$. This means that the stable curves are chains of $\mathbb{P}^1$.
+		\[\text{Drawing of many curves (little arcs) one after the other with 0 in the left most} \]
+		\[\text{ and $\infty$ in the rightmost. } \]
+
+		So Permutahedron=$\mathbb{P}=\overline{M}_{0,n;\bar{a}}=LM$= Losev-Manin Space.
+
+		And the permutahedron is the convex hull $\{\sigma(1),\sigma(2),\ldots,\sigma(k)\}_{\sigma\in S_k} \subset \mathbb{R}^{k}$. So for $k=3$ it is a hexagon.
+
+		 \paragraph{Universality property} (This is their lemma with Anna Maria) Every projective toric variety $\mathbb{P}(\Delta)$ is a rational contraction of the toric variety associated to the permutahedron, and therefore, $\overline{M}_{0,n}$ for $n\gg 0$.
+
+		 Unfortunately, this is not what you want because $\operatorname{E f f}(\mathbb{P}(\Delta))$ is polyhedral (generated by toric boundary divisors).
+
+		 \item Now choose another Hassett space (the last one of this talk). Now choose $(1,1, \underbrace{x,\ldots,x}_{k})$ with $kx=1+\varepsilon$ $\varepsilon \ll 1$. So it looks like this
+			 \[\overline{M}_{0,n;a}=\operatorname{Bl}_eLM\]
+			 and there is a drawing of how the exepctional divisor $E$ looks likein this blow-up.
+
+			 \begin{thm}[Universality theorem 2]\leavevmode
+			 	(and therefore the blow up of a toric variety at only one point is…) Every $\operatorname{Bl}_e\mathbb{P}(\Delta)$ is a rational contraction of $\operatorname{Bl}_{e}\mathbb{P}$ (permutahedron) 		(and also $\overline{M}_{0,n}$.)	 
+			\end{thm}
+
+			\begin{remark}
+				$\Delta \subset \mathbb{R}^{2}$ lattice polygon. Then $\operatorname{Bl}_e\mathbb{P}(\Delta)$ can be wild!
+
+				There is a drawing of a polygon made up from joining some specific points on a $6\times 6$ square lattice. In this example $\operatorname{Bl}_e \mathbb{P}_\Delta$ has a non-polyhedral effective cone. (Misha: it is singular because it contains integer points inside.) There is an elliptic curve inside this surface $C\subset \operatorname{Bl}_e\mathbb{P}_\Delta$ given by $C:y^2+y=x^3-x^2-24x+54$. And then
+				\[\operatorname{Nef}(X)\subset \operatorname{LC}X= \{D:S^2\geq 0\text{ is very ample} \}\subset \operatorname{Ef f}X\]
+and $C$ is away from singularities and has intersection 0, that is, $C^2=0$. Also $\mathcal{O}(C)|_{C}=\operatorname{Pic}^0(C)$ and in fact $\mathcal{O}(C)|_{C}=(1,5)$ has infinite order, so $h^0(mC)=1\forall m>0$. And what this means is that $C$ is not the fiber of an elliptic curve. But any multiple of $C$ is just $C$. So $C$ is not on a facet of $\operatorname{E f f}(X)$.
+\begin{thm}[Nikulin]\leavevmode
+	$\operatorname{Ef f}(\text{Surface} )$ is polyhedral $\implies $ $\operatorname{Ef f}$ is generated by hesf? curves. So $\operatorname{E f f}$ is polyhedral $\implies $ $C$ is on the facet.
+	\[mC\sim xA+yB\text{ for some $x$ and $y$} \]
+	\[\implies h^0(mC)>1\]
+	contradiction.
+\end{thm}
+			\end{remark}
+\end{enumerate}
+
+\subsection{Two more anomalies}
+
+\begin{thm}[Goto-Nishida-Watamabe]\leavevmode
+	There exists $\mathbb{P}(a,b,c)$ such that $X=\operatorname{Bl}_e\mathbb{P}(a,b,c)$ (in characteristic 0) has a nef, big, not semi-ample divisor.
+\end{thm}
+
+\begin{conjecture}[Conjectural anomaly]
+	If you take $\operatorname{Bl}_e\mathbb{P}(9,10,13)$ then the effective cone looks like this: drawing of to lines intersecting at a point. One of th elines is $E$ and the other is $D^2=0$. All you have to prove is that nothing oustide of the shaded area (acute angle region) is effective. This is equivalent to $\mathbb{P}(9,10,13)$ has an irrational seshodri constant.
+
+	The conjecture is that almost every surface has a point with an irradional Seshadri constant, but no example is known.
+\end{conjecture}
+
+This would imply Nagata conjecture for $ 9\cdot 10\cdot 13$ points on $\mathbb{P}^2$.
+
+There is this world of blown up toric surfaces whose geometry is very 
+
+\end{document}

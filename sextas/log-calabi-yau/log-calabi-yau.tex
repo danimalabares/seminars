@@ -1,0 +1,231 @@
+\input{/Users/daniel/github/config/preamble.sty}
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Semin\'ario das Sextas \hfill PUC-Rio
+		
+		{\small\hfill\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge Classification of log Calabi-Yau pairs}
+
+\hfill{\Large Eduardo Alvez da Silva}
+
+\hfill{\large Institut de Mathématiques d'Orsay}
+
+\tableofcontents
+
+\section{Introduction}
+
+
+\begin{defn}
+	A \textit{\textbf{log Calabi-Yau}} pair is a lc pair  $(X,D)$ consisting of a normal projective variety $X$ and a reduced Weil divisor $D$ such that $K_X+D\sim_{\mathbb{Z}}0$.
+\end{defn}
+
+\begin{remark}
+	Let $n=\dim X$. $(X,D)$ CY pair $\implies $ $\exists \omega:=\omega_{X,D}\in\Omega^n_x$, unique up to nonzero scaling such that $\operatorname{div}(\omega)+D=0$. We call $\omega$ the \textit{\textbf{volume form}}.
+\end{remark}
+
+\[\begin{tikzcd}
+	(X,D)\text{minimal model}& \arrow[l,"\text{log MMP}" ](X,D)\text{ CY pair} \arrow[r,"\substack{\text{Classical}\\\text{MMP/X}}"  ]&\text{Mori fibered space} 
+\end{tikzcd}\]
+
+\begin{itemize}
+	\item $(X,D)$ CY pair,
+\begin{align*}
+	K_{X}+D\sim 0 &\implies -K_X=D\geq 0\\
+	&\implies K_X\text{ is not pseudo effective}\\
+	&\overset{*}{\implies } X \text{is uniruled}\\
+	&\implies K(X)=-\infty\\
+	&\implies \text{The output of the  MMP over $X$ is Mori fibered space} 
+\end{align*}
+where $*$ means BDPP theorem.
+
+	\item $(X,D)$ is a minimal model for the log MMP since $K_X+D$ is nef.
+\end{itemize}
+
+\begin{example}
+	[content…]
+\end{example}
+
+\begin{defn}
+	Let $f:(X,D_X)\overset{\operatorname{bir}}{\longrightarrow}(Y,D_Y)$ be a birational map of CY pairs. $f$ is \textit{\textbf{volume preserving}} if $f^* \omega_{Y,D_Y}$, for some $\lambda\in\mathbb{C}^*$.
+\end{defn}
+
+\begin{remark}
+	$\operatorname{Bir}^{\operatorname{up}}(X,D_X) \subset \operatorname{Bir}(X)=$group of all volume-preserving maps.
+\end{remark}
+
+\begin{defn}[Other equivalent definitions]\leavevmode 
+	\begin{enumerate}[label=(\roman*)]
+		\item $f$ \textit{\textbf{preserves discrepancies}}, i.e. for a divisor  $E$ over $X$ and $Y$ we have $a(E,X,D_X)=a(E,Y,D_Y)$.
+
+		\item $f$ admits a log resolution
+			\[\begin{tikzcd}
+				& (Z,D_Z)\arrow[dr,"vq"]\arrow[dl,"up"]\\
+				(X,D_X)\arrow[rr,dashed]&&(Y,D_Y)
+			\end{tikzcd}\]
+			\[up^*(K_X+D_X)=q^*(K_Y+D_Y)\]
+
+			\paragraph{Warning} $D_Z$ does not need to be effective. Ex. look at my PhD thesis in section 5.4.
+
+			\paragraph{Notation.} Volume preserving equivalence, or crepant birrational,
+			\[(X,D_X)\cong_{\operatorname{vp}}(Y,D_Y)\]
+			\[(X,D_X)\cong_{\operatorname{cbir}}(Y,D_Y)\]
+			Because volume-preserving maps are also called crepant maps.
+
+	\end{enumerate}
+\end{defn}
+
+\paragraph{Problem} (Very hard!) Classification of log CY pairs up to volume-preserving equivalence.
+
+The most important invariant to attack this problem is the following:
+
+\begin{defn}
+	The \textit{\textbf{corregularity}} of a log CY pair $(X,D_X)$, $\operatorname{coreg}(X,D_X)$, is defined to be the dimension of a minimal lc center in a dlt modification
+	\[f:(X^{\operatorname{dlt}},D_{X^{\operatorname{dlt}}})\to (X,D_X)\]
+\end{defn}
+
+\begin{remark}
+	$c:=\operatorname{coreg}(X,D_X)$, $0\leq c\leq \dim X$, $c=\dim X\iff X$ is CY and $D_X=0$.
+\end{remark}
+
+\section{Classification of log CY pairs in dimension 2}
+
+After a minimal resolution of singularities, it follows that a surface log CY pair $(X,D_X)$ is agiven by one of the following:
+
+\begin{itemize}
+	\item $c=2$: X is an abelian surface or a K3 surface, and $D_X=0$.
+
+	\item $c=1$:
+		 \begin{enumerate}[label=(\roman*)]
+			\item $X$ is rational and $D_X\in |-K_X|$ is a nonsingular elliptic curve.
+			\item $\pi:X\to E$ (not necessarily minimal) ruled surface over a nonsingular elliptic curve $E$, and $D_X=D_1+D_\alpha\in |-K_{X}|$ is the sum of two disjoint sections of $ \pi$.
+		\end{enumerate}
+	
+	\item $c=0$:  $X$ is rational and $D_X$ is a (possible reducible) nodal curve of arithmetic genus 1.
+\end{itemize}
+
+\begin{example}
+	$X=\mathbb{P}^2$. Three lines, conic + line, nodal cubic, nonsingular cubic. Their corregularities are zero except for the last one, which is 1.
+\end{example}
+
+\begin{defn}
+A log CY pair $(X,D_X)$ has a \textit{\textbf{toric model}} if $(X,D_X)\cong_{\operatorname{vp}}(T,D_T)$ (where $D_T$ is the reduced sum of all torus invariant divisors).
+\end{defn}
+
+\begin{thm}[Gross-Hacking-Keel]\leavevmode
+	Every surface log CY pair $(X,D_X)$ of log coregularity 0 has a toric model.
+\end{thm}
+
+\begin{remark}
+	Its false in dimension $\geq 3$.
+\end{remark}
+
+\section{(Partial) Classification in dimension 3}
+
+\begin{thm}[Ducat, 2023]\leavevmode
+	Let $(\mathbb{P}^3,D)$ be a log CY pair with corregularity $c\leq 1$. Then there exists a volume-preserving map
+	\[\varphi:(\mathbb{P}^3,D)\overset{bir}{\longrightarrow}(\mathbb{P}^1\times \mathbb{P}^1,D') \]
+	where
+	\[D'=(\{0\} \times \mathbb{P}^1)+(\mathbb{P}^1+E)+(\{\infty\} \times \mathbb{P}^2)\in |-K_{\mathbb{P}^4\times \mathbb{P}^2}|\]
+	for a plane cubic $E\subset \mathbb{P}^2_{(x:y:z)}$ such that
+	\begin{enumerate}
+		\item  $c=1\iff$ $E$ is non singular.
+
+		\item If $c=0$, then $E=\{xyz=0\}$. In particular $D'$ is the toric boundary of $(\mathbb{P}^1\times \mathbb{P}^2$ and thus $(\mathbb{P}^3,D)$ has a toric model.
+
+		\item $c=2$ (The missing case) Fact:  $c=2\iff D$ is an irreducible normal quantic surface having canonical singularities, i.e., $D$ is either nonsingular or has ADE singularities $ \iff$ the pair is canonical
+	\end{enumerate}
+\end{thm}
+
+\begin{example}[Oguiso's example]
+	He constructed two nonsingular isomorphic quartic surfaces $D,D'\subset \mathbb{P}^3$ (as abstract varieties) such that there exists $\varphi \in\operatorname{Bir}(\mathbb{P}^3)$ mapping $D$ birrationally onto $D'$ $\implies $ $(\mathbb{P}^3,D)\not\cong_{\operatorname{vp}} (\mathbb{P}^3,D')$.
+\end{example}
+
+	Thinking in terms of coarse moduli spaces, we have a natural map
+	\begin{align*}
+		\mathcal{M}_{(\mathbb{P}^3,D)}^{c=2}  &\longrightarrow  \mathcal{M}_{K3}^{\operatorname{can}}\\
+		[(\mathbb{P}^3,D)] &\longmapsto [D]
+	\end{align*}
+	and Oguiso's example implies that this is not injective.
+
+\begin{conjecture}[Trichotomy]
+\leavevmode 
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c|ccc}
+		$\operatorname{coreg}(\mathbb{P}^3,D)$&0&0&?\\
+		$\dim \mathcal{M}_{(\mathbb{P}^3,D)}^c$ &0&1&?\\
+		$\operatorname{Bir}^{\operatorname{vp}}$ &monstruous&?&$\operatorname{Dec}(D)$ \\
+		\hline
+		$g$&0&1&$\geq 2$\\
+		$\dim \mathcal{M}_{g}$ &0&1&$3g-3$\\
+	$\operatorname{Bir}=\operatorname{Aut}$ &$\operatorname{PGL}(2,\mathbb{C})$ infinite&$C\rtimes\mathbb{Z}_d$&\#$\operatorname{Aut}(C)\leq 84(g-1)$ finite
+	\end{tabular}
+\end{table}
+\end{conjecture}
+
+$D$ very gen. $D$ is nonsingular,
+\[\varphi:(\mathbb{P}^3,D)\overset{\operatorname{v.p}, \operatorname{bir}}{\longrightarrow}(\mathbb{P}^3,D)\] 
+\[\implies \varphi |_D D\overset{\cong }{\longrightarrow}D\]
+$X$ projective variety, $Y\subset X$ irreducible subvarieties,
+\[\operatorname{Bir}(Y,X)=\{f\in\operatorname{Bir}(X)|f|_Y:Y\overset{\operatorname{bir}}{\longrightarrow}Y\}\]
+
+\begin{conjecture}[Shokuroo]
+	Every 3-fold rational log CY pair $(X,D_X)$ of coregularity 0 has a toric model.
+\end{conjecture}
+
+Ducat's Theorem implies it is tru for $X=\mathbb{P}^3$.
+
+\begin{defn}
+	$(X,D_X)$ CY pair, $D_X=D_1+\ldots+D_r$. The \textit{\textbf{complexity}} of this CY pair is the non-negative number
+	\[c(X,D_X):=\dim X+\operatorname{rk}(\operatorname{Cl}(X)_{\mathbb{Q}})-r\]
+\end{defn}
+
+\paragraph{Fact} $c(X,D_X)=0\implies (X,D _X)$ has a toric model (Brown, Mckenan, Lvald, Long, 2018).
+
+\begin{defn}
+	$(X,D_X)$ CY pair. The \textit{\textbf{birrational complexity}} is 
+	\[c_{\operatorname{bir}}(X,D_X):=\min\{c(Y,D_Y)|(Y,D_Y)\cong_{\operatorname{vp}}(X,D_X)\}\]
+\end{defn}
+
+\begin{thm}[Mauri, Moraga, 2023]\leavevmode
+	$c_{\operatorname{bir}}(X,D_X)=0\iff(X,D_X)$ has a toric model.
+\end{thm}
+
+\begin{defn}
+	A log CY pair $(X,D_X)$ is \textit{\textbf{cluster type}} if there exists a volume-preserving map
+	\begin{align*}
+		\varphi: (\mathbb{P}^n,H_0+\ldots+H_{n+1} &\overset{\operatorname{bir}}{\longrightarrow}(X,D_X) 
+	\end{align*}
+such that $\operatorname{codim}_{\mathbb{C}^n_M}(\operatorname{Ex}(\varphi )\cap \mathbb{C}^n_m)\geq 2\iff \mathbb{C}^n_m\hookrightarrow X\setminus D_X$.
+	
+\end{defn}
+
+\begin{thm}[---,Figueroa, Moraga, 2024]\leavevmode
+	$(\mathbb{P}^3,D)$ log CY pair of coregularity 0.  Assume $D$ general in its deformation class. Then $(\mathbb{P}^3,D)$ is cluster type unless one of the following happens:
+	\begin{enumerate}[label=(\roman*)]
+		\item $D$ reducible, $D=H+C$ (plane cubic, resp.) such that $H\cap C$ is a nodal plane cubic.
+
+		\item $D$ irreducible and has double points along a line.
+	\end{enumerate}
+\end{thm}
+
+\section{Sketch}
+
+\begin{align*}
+	(\mathbb{P}^3,D)\text{is cluster type}  &\iff(\mathbb{P}^3,D) \text{ is cluster type over}\mathbb{P}^1\\
+	&\iff\exists \text{ some dlt modification } (X,D_X)\\
+	&\text{of $\mathbb{P}^3$ such that $\exists $ a crepant contraction}\\
+	&\text{onto $(\mathbb{P}^4,\{C\} +\{\infty\} )$} .
+\end{align*}
+
+
+\end{document}

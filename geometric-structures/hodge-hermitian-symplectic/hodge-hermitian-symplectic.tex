@@ -1,0 +1,223 @@
+\input{/Users/daniel/github/config/preamble.sty}
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Geometric structures on manifolds \hfill IMPA
+		
+		%{\small\hfill\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge Hodge theory on Hermitian symplectic manifolds}
+
+\hfill{\Large Misha Verbitsky}
+
+\hfill{\large September 12, 2024}
+
+\tableofcontents
+
+\section{Introduction}
+
+Definition of complex structure, de Rham differential…
+
+\begin{remark}
+The two differentials $d$ and $d^c$ anticommute.
+\end{remark}
+
+\begin{remark}
+	A holomorphic form is such that $ \bar{\partial} =0$, which is equivalent to having holomorphic functions as coefficients in local coordinates, and also equivalent to having its differential on the first piece of the Hodge decomposition, namely $\Omega^{k+1,0}(M)$ for a $k$-form.
+\end{remark}
+
+\begin{conjecture}[Question, really] 
+	Almost complex manifold $(M,I_0)$ of dimension $n>2$ then there exists complex $I$ homotopic to $I_0$
+\end{conjecture}
+
+\begin{defn}
+	Compact complex manifold admitting complex structure.
+
+	\textit{\textbf{Locally conformally K\"ahler manifold.}} A quotient of a K\"ahler manifold by a discrete group acting by (non-isometric) homotheties. Never admits a K\"ahler metric (Vaisman).
+\end{defn}
+
+\begin{example}
+	Hopf manifold $(\mathbb{C}^n\setminus 0)/\mathbb{Z}$.
+\end{example}
+
+\section{Hermitian structures on cm}
+Let $(M,I,g)$ be a complex Hermitian $n$-manifold, $\omega\in\Lambda^{1,1}(M)$ its Hermitian form.
+
+\begin{remark}
+	Notice that $0=d(\omega^k)=kd\omega\wedge \omega^{k-1}$ where $\omega^{k-1}:\Lambda^3\to \Lambda^{3+k}$ is not injective when $k=1,n-2$. So the only interesting case is when $d(\omega^{n-1})=0$, in which case we say $\omega$ is \textit{\textbf{balanced}}.
+
+	All twistor spaces are balanced (Hitchin). All Moishezon manifolds are balanced (Alessandrini-Bassaneli).
+\end{remark}
+
+
+\begin{thm}[Gauduchon]\leavevmode
+	For each $(M,I,g)$, there exits a unique up to a constant multiplier, \textit{\textbf{Gauduchon metric}} in the same conformal class. Explanataion: all metrics are conformal to each other.
+\end{thm}
+
+This is good for defining the degree of a holomorphic bundle, stability, which are concepts well-defined for the K\"ahler case:
+
+\begin{defn}
+	Degree of a form with respect to a bundle is
+	\[\operatorname{deg}_\omega(E)=\int \omega\theta_B\wedge \omega^{\wedge 1}\]
+\end{defn}
+
+\begin{defn}
+	$\mu$-stability of a bundle is
+	\[\mu(B)=\frac{\operatorname{deg}B}{\operatorname{rk}B}\]
+\end{defn}
+
+\section{Hermitian symplectic and SKT metrics}
+
+\begin{defn}
+	A metric $g$ is called  \textit{\textbf{SKT (strong K\"ahler torsion}} or \textit{\textbf{pluriclosed}} is $dd^c\omega=0$.
+\end{defn}
+
+\begin{defn}
+	$\omega$ Hermitian form on $(M,I)$ is \textit{\textbf{hermitian symplectic}} if 
+	\[\omega(X,IX)>0\qquad \forall x\neq 0\]
+	in this case we say  $\omega$ is \textit{\textbf{taming}} or that it \textit{\textbf{tames}} the (tames what?)
+\end{defn}
+
+\begin{remark}
+	That condition is equivalent to $\omega^{1,1}(X,IX)>0$ because it vanishes on the 1-dimensional vector space $\left<X,IX\right> $.. (?)
+\end{remark}
+
+\begin{conjecture}
+	Hermitian symplectic implies K\"ahler.
+\end{conjecture}
+
+\begin{remark}
+	This conjecture is known for almosta ll known classes of non-K\"ahler complex manifods: LCK manifolds (easy), twistor spaces, Moishezon and Fujiki class C (non-trivial), complex nilmanifolds (highly non-trivial).
+\end{remark}
+
+\section{What today is about}
+
+\begin{thm}\leavevmode
+	If $M$ hermitian symplectic dimension of $M$ is 3. Then $dd^c$ lemma is true on $\Lambda^{1,1}(M)$ :
+	\[\text{ if } x\in\Lambda^{1,1}(M)\text{ is exact, then }x=dd^cf.  \]
+\end{thm}
+
+\begin{thm}
+	The following statements are equivalent:
+	\begin{enumerate}
+		\item $I$ is integrable.
+		\item $\partial^2=0$.
+		\item $\bar\partial^2 =0$.
+		\item $dd^c=-d^c d $.
+		\item $dd^c=2\sqrt{-1}\partial \bar\partial$.
+	\end{enumerate}
+\end{thm}
+
+\begin{remark}
+	And I think also that Dolbeault cohomology is equivalent to de Rham.
+\end{remark}
+
+\section{Bott-Chern cohomology}
+
+\begin{defn}
+	Bott-Chern:
+
+	\[\text{in $dd^c,$}\quad  \ker d/\Lambda^{p,q}:=H^{p,q}_{BC}(M)\]
+\end{defn}
+
+And there is a sequence with de Rham, Dolbeault and BC cohomologies.
+
+\section{Hodge-Riemann relations on $(p,p)$-forms}
+
+(Not that they have anything to do with Riemann.)
+
+\begin{defn}
+	Let $\{L,\Lambda:=*L*, H\}\subset \operatorname{End}(\Lambda^*M)$ be the standard Lefschetz triple acting on differential forms on a Hermitian $n$-manifold. ($L(\eta)=\eta\wedge \omega$ and $H|_{\Lambda^p(M)}=p-n$A form $\eta\in\Lambda^p(M)$ is called \textit{\textbf{primitive}} if  $\Lambda(\eta)=0$.
+\end{defn}
+
+\begin{prop}[Special case of Hodge-Riemann relations]
+	$\eta\in\Lambda^{1,1}(M,\mathbb{R})$, $\eta$ primitive then
+	\[\frac{\eta\eta\omega^{n-2}}{\operatorname{Vol}}\leq 0\]
+	and $<0$ when  $\eta\neq 0$ (positive \textit{negative}? Because it's hyperbolic…)
+\end{prop}
+
+\section{Michelson's theorem}
+
+She proved that twistor spaces are balanced.
+
+$\eta\in\Lambda^{n-1,n-1}(M)$, it is a bivector (a form on the dual space, a symmetric scalar product on $\Lambda^{1}(M)$) as follows:
+\begin{align*}
+	\Lambda^{1}(M) \times \Lambda^{1}(M)  &\longrightarrow \mathcal{C}^\infty(M) \\
+	\alpha,\beta &\overset{\eta(\alpha,\beta)}{\longrightarrow}\frac{\alpha\wedge \beta\wedge \eta}{\operatorname{Vol}}
+\end{align*}
+$\eta$ positive if $\eta(\alpha,I\alpha)\geq 0$ for all $\alpha\in\Lambda^{1}(M,\mathbb{R})$.
+
+\begin{thm}[Michelson]\leavevmode
+	For any strictly positive $(n-1,n-1)$-form $\varphi$ there exists a Hermitian form $\omega$ such that $\omega^{n-1}=\varphi$.
+\end{thm}
+
+\begin{exercise}
+	Prove this theorem.
+\end{exercise}
+
+\begin{proof}
+	Take a basis of $\Lambda^{n-1,0}(M)$ :
+	\[\zeta_i^* =\zeta_1\wedge \zeta_2\wedge \ldots \hat{\zeta}_i\wedge \ldots\wedge \zeta_n\]
+	and write
+\[\left(\sum_{i}\alpha_i\zeta_i\wedge \bar{\zeta}_i\right)^{n-1}\]
+(I guess for $\omega^{n-1}$) and then solve for the coefficients.
+\end{proof}
+
+\begin{lemma}[That I missed]
+	
+\end{lemma}
+
+\begin{lemma}[3]
+	 $\alpha\in  H^{1,1}_{BC}(M)$, $\omega$ Gauduchon metric (so it's a Gauduchon Hermitian complex manifold). Assume that the degree of  $\alpha$ with respect to $\omega$ is zero, ie.
+	 \[\operatorname{deg}_\omega\alpha:=\int\alpha\wedge \omega^{n-1}=0.\]
+	 Then $[\alpha]$ can be represented by a closed, primitive $(1,1)$-form.
+\end{lemma}
+
+\begin{remark}
+	The next day after this talk Lucas defined the \textit{\textbf{degree}} of a surface to be integral of the first Chern class…
+\end{remark}
+
+The point is that Chern class are in BC cohomology.
+
+\begin{proof}
+	Define a differential operator, …(?)
+\end{proof}
+
+\section{Dependence on $\omega$}
+
+\begin{prop}
+	Let $\omega,\omega_1$ be Hermitian forms on $M$, and $\alpha$ a $(1,1)$-form which is $\omega$-primitive. Then
+	\[\frac{\alpha\wedge \alpha\wedge \omega_1^{n-1}}{\operatorname{Vol}}<0\]
+	in all points where $\omega\alpha\neq 0$.
+\end{prop}
+
+\begin{remark}
+	Primitive means: to be in the orthogonal complement to $\omega$ (or to $q_\omega$, the bivector above…?).
+\end{remark}
+
+\begin{proof}
+	…?
+\end{proof}
+
+\begin{coro}
+	Let $(M,I)$ be a Hermitian symplectic manifold. Then
+	\begin{enumerate}[label=(\roman*)]
+		\item The natural map $H^{1,1}_{BC}\to H^{2}(M)$ is injective (map from Bott-Chern to de Rham).
+		\item All holomorphic 1-forms on $M$ are closed, and represent non-zero classes in cohomology.
+		\item $H^{1}(M)$ is even-dimensional, and satisfies
+			\[H^{1}(M)=H^{0}(\Omega^{1}(M))\oplus \overline{H^{0}(\Omega^{1}(M))}\]
+	\end{enumerate}
+\end{coro}
+
+\begin{remark}
+	The last item is what we expect in a K\"ahler manifold: in other words, the first cohomology, like for K\"ahler manifolds, is isomorphic to the sum of holomorphic and anti-holomorphic forms.
+\end{remark}
+
+
+\end{document}

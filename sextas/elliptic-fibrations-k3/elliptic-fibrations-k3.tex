@@ -47,7 +47,7 @@ The generic fiber of such a fibration is a genus 1 curve over the function field
 Drawing of this fibration: base space is a curve, total space is a family of elliptic curves. Section is a curve that takes one point from every elliptic curve in total space.
 
 \begin{enumerate}
-	\item $K_S=(\chi(s)-2)F$,  $F$ is the fiber class in $\operatorname{NS}(S)$. Recall that Neron-Severi group is divisors quotient intersection, but in this case perhaps we can just take it to be Picard group.
+	\item $K_S=(\chi(s)-2)F$,  $F$ is the fiber class in $\operatorname{NS}(S)$. Recall that Neron-Severi group is divisors quotient linear equivalence, but in this case perhaps we can just take it to be Picard group.
 \item $\operatorname{NS}(S)$ is a lattice with the intersection pairing.
 	\item $\operatorname{Triv}(S)=\left<\Sigma_0,F\right> \oplus \left<\text{components of reducible fibers} \right> $.
 		\[\dfrac{\operatorname{NS}(S)}{\operatorname{Triv}(S)}\cong E(K(C))\]
@@ -78,6 +78,13 @@ Drawing of this fibration: base space is a curve, total space is a family of ell
 \paragraph{Over $k=\bar{k}$} Every RES which is rel. min. + Jacobian is constructed by blowing up the base points of a cubir pencil. $\rho(R)=10$.
 
 \section{K3 surfaces}
+
+\begin{quotation}
+	An important subclass of K3 surfaces, easier to analyze than the general case, consists of the K3 surfaces with an elliptic fibration $X\to \mathbb{P}^1$. "Elliptic" means that all but finitely many fibers of this morphism are smooth curves of genus 1. The singular fibers are unions of rational curves, with the possible types of singular fibers classified by Kodaira.
+	
+	\hfill \href{https://en.wikipedia.org/wiki/K3_surface#Elliptic_K3_surfaces}{wiki}
+\end{quotation}
+
 
 \begin{defn}
 	A \textit{\textbf{K3 surface}} is a smooth projective surface such that
@@ -190,7 +197,49 @@ $ \mathcal{E}:X\to \mathbb{P}^1$ induces a linear system of curves $\Lambda$ in 
 
 *Computations and discussion*
 
-$\mathcal{E}:X\to \mathbb{P}^1$ of type  II induces a Jacobian elliptic fibration. $\mathcal{E}_{\tilde{R}}:\tilde{R}\to \mathbb{P}^1$ blow down to a rel. minimal
+$\mathcal{E}:X\to \mathbb{P}^1$ of type  II induces a Jacobian elliptic fibration. $\mathcal{E}_{\tilde{R}}:\tilde{R}\to \mathbb{P}^1$ blow down to a rel. minimal $\mathcal{E}_R:R\to \mathbb{P}^1$.
 
+Let $\tau :\mathbb{P}^1\to \mathbb{P}^1$ be the quotient by the action of $\sigma$ in $\mathbb{P}^1$.
+\[\begin{tikzcd}
+	R\arrow[d,swap,"\mathcal{E}_R"]& R\times_{\mathbb{P}^1}\mathbb{P}^1\arrow[l]\arrow[d]\\
+	\mathbb{P}^1&\mathbb{P}^1\arrow[l,"\tau "]
+\end{tikzcd}\]
+I obtain $\mathcal{E}:X\to \mathbb{P}^1$ back.
 
+Let $F_a^X,F_b^X$ be the ramified fibers of $\mathcal{E}:X\to \mathbb{P}^1$ of type 2. $\operatorname{ord}(\sigma)=3$.
+\begin{itemize}
+\item $F^X_a$ is of type $\operatorname{I}^*_{3n}$ or $\operatorname{I}_{0}$.
+\item $F^X_b$ is of type $\operatorname{I}_{3n},\operatorname{I}^*_{0}$ or $\operatorname{I I I}$.
+\item Every other fibre is irreducible.
+
+	*Drawing using a base change*
+\end{itemize}
+
+\section{A concrete example of everything happening}
+
+Start by building a rational elliptic surface, base change it, look at the K3 surface that's going to appear, and this K3 look at different elliptic fibrations and see what types they will have.
+
+Start with $\mathbb{P}^2$ and
+\begin{align*}
+	f:xyz&=0\\
+	g:(x-y)(y-z)(z-x)&=0
+\end{align*}
+
+Drawings of these curves and then of the K3 surface obtained after base change. The reasons why the intersections are as drawn is more involved.
+
+$\Gamma$ pencil of curves in $\mathbb{P}^2$ induced by $\mathcal{C}_{|M'|}:X\to \mathbb{P}^1$ 
+\begin{itemize}
+\item $\mathcal{C}_{a}$ image of $\mathcal{G}_{a}$.
+
+\item $\mathcal{C}_{0}$ image of $\mathcal{G}_{a}$ 
+
+	These two imply $\Gamma:s\mathcal{C}_{a}+t\mathcal{C}_{b}$ 
+
+\item The generic fibre of $\mathcal{C}_{|M'|}$ is given by
+	\[s^3\mathcal{C}_a+t^3\mathcal{C}_b\]
+	\[y^2=x^3+A(t^3)x+B(t^3)\]
+	\[(x,y,t)\mapsto (x,y,\xi_3t\]
+\end{itemize}
+
+*I had to leave the talk*
 \end{document}

@@ -1,0 +1,253 @@
+\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Differential Geometry Seminar \hfill IMPA
+		
+		{\small\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+
+		
+		%{\small\hfill\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge Automorphisms of quartic surfaces and Cremona transformations}
+
+\hfill{\Large Carolina Araujo}
+
+{\Large \hfill IMPA}
+
+\hfill{\large September 24, 2024}
+
+\tableofcontents
+
+\section{Motivation}
+
+$X$ a smooth hypersurface of degree $d $, $X\subset \mathbb{P}^{n+1}$. We want to understand the group $\operatorname{Aut}(X)$. These are invertible polynomial maps from $X$ to itself. $X$ is defined by a single polynomial equation of degree $d$.
+
+\begin{thm}[Matsumura-Mousky, 1964]\leavevmode
+	Except in two special cases, all automorphisms of $X$ come from automorphisms of the ambient space:
+	
+	If $(n,d)\neq (1,3),(2,4)$, there is a surjective map
+	\[\operatorname{Aut}(\mathbb{P}^{n+1},X)\overset{\pi}{\longrightarrow}\operatorname{Aut}(X)\]
+	where $\operatorname{Aut}(X,Y)$ means automorphisms of $X$ that stabilize  $Y$.
+\end{thm}
+
+\section{Exceptional cases}
+
+Let's look at the exceptionals cases.
+
+\begin{enumerate}
+	\item $(n,d)=(1,3)$. In this case  $C=X_3\subset \mathbb{P}^2$ is an elliptic curve and we have
+		\[\operatorname{Aut}(C)\cong C\rtimes \mathbb{Z}_m\quad m=2,4,6\]
+and
+ \[\operatorname{Aut}(\mathbb{P}^2,C)\text{ is finite.} \]
+
+ Elements in $C$ are translations of the torus. The \textit{\textbf{translation of $x$ with respect to $p$ and $(x:y:z)$}} is done by intersecting the curve with the line that joins $p$ and $(x:y:z)$ and reflecting. So we have a map
+  \[t_p(x:y:z)=(F_1(x,y,z),F_2(x,y,z),F_3(x,y,z)\]
+  We have created a \textit{\textbf{Cremona transformation}} (=biholomorphic birational map?).
+ 
+  \begin{defn}[Cremona group]
+	\[\operatorname{Bir}(\mathbb{P}^n)=\{\varphi :\mathbb{P}^n\overset{\operatorname{bir}}{\longrightarrow}\mathbb{P}^n:\text{bimeromorphic map} \}\]
+\end{defn}
+
+And we then have the surjective map
+\[\operatorname{Bir}(\mathbb{P}^2,C)\overset{\pi}{\longrightarrow}\operatorname{Aut}(C)\]
+
+
+	\item $(n,d)=(2,4)$. Here  $S=X_4=\mathbb{P}^3$ is a smooth quartic surface.
+
+		\paragraph{Problem} (Gizatullin) Which automorphisms of $S$ are induced (not necesarily by automorphisms of $\mathbb{P}^3$) but at least by Cremona transformations of $\mathbb{P}^3$? ie. are restrictions of $\varphi\in\operatorname{Bir}(\mathbb{P}^3,S)$
+
+\begin{remark}
+	Related to K3 surface structure,
+	\[\operatorname{Bir}(\mathbb{P}^3,S)\overset{\pi}{\longrightarrow}\operatorname{Bir}(S)\cong \operatorname{Aut}(S)\]
+\end{remark}
+
+$S$ is a K3 surface. $H^{2}(S,\mathbb{Z})\cong \mathbb{Z}^{22}$ and the Picard group acts on this lattice.
+
+\begin{defn}[Picard rank of $S$]
+	\[\rho(S)=\operatorname{rk}(\operatorname{Pic}(S))\in\{1,\ldots,20\}\]
+\end{defn}
+
+\begin{itemize}
+\item If $S$ is very general, then $\rho(S)=1$ and $\operatorname{Aut}(S)=\{1\}$.
+
+\item We are interested in $\rho(S)\geq 2$.
+\end{itemize}
+\end{enumerate}
+
+\begin{example}[Oguiso, 2012]\leavevmode 
+	\begin{enumerate}
+		\item $\rho(S)=2$. Any cremona transformation that stabilizes the quadric is the identity:
+			\[\operatorname{Aut}(S)=\mathbb{Z}\qquad \operatorname{Bir}(\mathbb{P}^3,S)=\{1\}\]
+	
+			
+		\item $\rho(S)=3$,
+			\[\operatorname{Aut}(S)=\mathbb{Z}_2*\mathbb{Z}_2*\mathbb{Z}_2\]
+			All automorphisms are induced by Cremona transformations, ie. there is a surjective map
+			\[\operatorname{Bir}(\mathbb{P}^3,S)\overset{\pi}{\longrightarrow}\operatorname{Aut}(S)\]
+
+		\item (Paiva, Quedo 2023) Constructed surfaces with $\rho(S)=2$, $\operatorname{Aut}(S)=\mathbb{Z}_2$ and $\operatorname{Bir}(\mathbb{P}^3,S)=\{1\}$.
+	\end{enumerate}
+\end{example}
+
+\begin{thm}[A-Paiva-(Socrates) Zika]\leavevmode
+	Solution of Giztallin S problem for $\rho(S)=2$.
+\end{thm}
+
+\begin{remark}
+	Not exactly, but "there is a moduli space for K3 surfaces of dimension $20-\rho(S)$". The generic case is $\rho(S)=1$.
+\end{remark}
+
+\section{K3 surfaces}
+
+\begin{defn}
+	A \textit{\textbf{K3 surface}} is a smooth projective surface that is simply connected and has a nowhere vanishing symplectic form $\omega\in H^{0}(S,\Omega^2_S)$
+\end{defn}
+
+\subsection{Lattices of $S$}
+
+A \textit{\textbf{lattice}} is a finitely-generated abelian group with a nondegenerate pairin.
+
+\begin{enumerate}
+	\item $H^{2}(X,\mathbb{Z})\cong \mathbb{Z} \overset{\pi}{\hookleftarrow}\operatorname{Pic}(S) $. And if we tensor this with $\mathbb{C}$ we get $H^{2}(C,\mathbb{C})$, which admits a Hodge decomposition.
+
+		Let's study automorphisms of a K3 surface. Let $g\in\operatorname{Aut}(S)$. It yields an element $g^*$ that acts on cohomology, ie $g^*\in\mathcal{O}(H^{2}(X,\mathbb{Z}))$ preserving the Hodge decomposition. This is called \textit{\textbf{Hodge isometry}}.
+
+\begin{thm}[Global Torelli theorem]\leavevmode
+	\begin{itemize}
+	\item The correspondence $g\mapsto g^*$ is injective 
+	
+	\item If $\varphi\in\mathcal{O}(H^{2}(X,\mathbb{Z}))$ is a Hodge isometry preserving the ample classes, then $\varphi=g^*$ for some $g\in\operatorname{Aut}(S)$.
+	\end{itemize}
+\end{thm}
+\end{enumerate}
+
+\begin{example}
+	$S\subset \mathbb{P}^3$ smooth quartic surface with $\rho(S)=2$. Using the equivalence of line bundles module isomorphism and curves modulo intersection,
+	\[\operatorname{Pic}(S)= \left<H,C\right> \]
+	where $H$ is a hyperplane section of $\mathbb{P}^3$. Then
+	\[Q=\begin{pmatrix} H^2& H\cdot C\\H\cdot C& C^2 \end{pmatrix} =\begin{pmatrix} 4&b\\b&2c \end{pmatrix} \]
+	using that $2g(c)-1$, so the number in the lower-right on RHS is even.
+\end{example}
+
+\begin{remark}
+	Hodge Index Them $Q$ is rank (1,1).
+\end{remark}
+
+\begin{defn}[Discriminant]
+	\[r=\operatorname{disc}(S)=-\det Q\]
+\end{defn}
+
+\begin{prop}
+	$S$ general K3 surface (not needed that it is a quartic) with $\rho(S)=2$. Then
+	\[\operatorname{Aut}(S)=\begin{cases}
+		\{1\}\qquad &\text{(finite)}  \\
+		\mathbb{Z}_2\qquad &\text{(finite, Dani-Ana)} \\
+		\mathbb{Z}\qquad&\text{(infinite, Oguiso 1)}  \\
+		\mathbb{Z}_2*\mathbb{Z}_2\qquad &\text{(infinite, Dani-Ana)} 
+	\end{cases}\]
+	where the first two are characterized by containing a en elliptic curve or a rational? curve, ir. $\exists D\in\operatorname{Pic}(S)$ such that $D^2=0,-2$. On the other hand, the last two cases are distinguised by $\not\exists D\in\operatorname{Pic}(S)$ such that $D^2=0,-2$.
+
+	\[\exists \sigma\in\operatorname{Aut}(S)\text{ of order 2}\iff \exists  \text{ ample }A\in\operatorname{Pic}(S) \text{ such that }A^2=2.\]
+\end{prop}
+
+\begin{remark}
+	In low Picard numbers there are no symplectic involutions…?
+\end{remark}
+
+So to understand the surface we want to understand those bundles and that is all in the discriminant (not in the lattice itself!).
+
+\begin{remark}
+	$\exists D\in\operatorname{Pic}(S)$ s.t. $D^2=k \iff x^2-ry^2=4k$  has integer solutions.
+\end{remark}
+
+Given the quadratic form we can find the automorphisms.
+
+\subsection{Main theorem}
+
+\begin{thm}[A-Paiva-Zika]\leavevmode
+	$S\subset \mathbb{P}^3$ general smooth quartic surface with $\rho(S)=2$ and $\operatorname{disc}(S)=r$.
+\begin{enumerate}
+	\item (Negative answer to Gizatulla's problem) If $r>57$ or  $r=52$ then
+		 \[\operatorname{Bir}(\mathbb{P}^3,S)=\{1\}\]
+		 So we cannot realize any automorphism as a Cremona transformation.
+
+	\item If $r\leq 57$ and $r \neq 52$, then we get the full automorphism group, ie. a surjective map
+		\[\operatorname{Bir}(\mathbb{P}^3,S)\overset{\pi}{\longrightarrow}\operatorname{Aut}(S)\]
+\end{enumerate}
+\end{thm}
+
+\section{Birational geometry}
+
+Take the case of
+\[\begin{tikzcd}
+	\operatorname{Bir}(\mathbb{P}^2)=\left<\operatorname{Aut}(\mathbb{P}^2),q\right> \\
+	\operatorname{Aut}(\mathbb{P}^2)\arrow[u,hook]
+\end{tikzcd}\]
+and the map
+\begin{align*}
+	q: \mathbb{P}^2 &\overset{\operatorname{bir}}{\longrightarrow}\mathbb{P}^2  \\
+	(x:y:z) &\longmapsto \left(\frac{1}{x}:\frac{1}{y}:\frac{1}{z}\right)=(yz:xz:xy)
+\end{align*}
+which is well-known (Noether-Castelnuovo). So that is a decomposition of automorphisms and quadratics. Now in greater dimension, $n\geq 3$ we have
+
+\begin{thm}[Sakisov Program]\leavevmode
+	(The theorem is much more general) Any $\varphi \in\operatorname{Pic}(\mathbb{P}^n)$ can be factorized with  \textit{\textbf{Sarkisov links}}  $\varphi_i$:
+	\[\begin{tikzcd}
+		\mathbb{P}^n\arrow[r,dashed,"\varphi_1"]\arrow[rrrr,bend left,"\varphi"]&X_1\arrow[r,dashed,"\varphi_2"]\arrow[d]&X_2\arrow[r,dashed]\arrow[d]&\cdots \arrow[r,dashed]&X_k=\mathbb{P}^n\\
+		&T_1&T_2
+	\end{tikzcd}\]
+\end{thm}
+
+Now look at $n=3$, $\operatorname{Bir}(\mathbb{P}^3,S)\subset \operatorname{Bir}(\mathbb{P}^3)$. This is a Calabi-Yau pair:
+
+\begin{defn}[Calabi-Yau pair]\leavevmode 
+	A pair $(X,D)$
+	\begin{itemize}
+	\item Terminal projective variety.
+	\item $K_X+D\sim0$ that is, a meromorphic top form that does not vanish on hypersurface and has simple pole on $D$. Then $(X,D)$ is called \textit{\textbf{log canonical}}.
+	\end{itemize}
+
+Now take two Calabi-Yau pairs $(X,D_X)$ and  $(Y,D_Y)$.
+
+ \begin{align*}
+	\operatorname{div}(\omega_{D_X})&=-D_X\\
+	\operatorname{div}(\omega_{D_Y})&=-D_Y
+\end{align*}
+We say that a birrational map $f:X\to Y$ is \textit{\textbf{volume preserving}} is  $f_*\omega_{D_X}=\omega_{D_Y}$.
+
+\end{defn}
+
+
+\begin{thm}[Volume-Preserving]\leavevmode
+	Everything like in the Sarkisov theorem but now maps are volume-preserving.
+\end{thm}
+
+In our case, $(\mathbb{P}^3,S)$, we can classify the v.p. Sakisov links from  $(\mathbb{P}^3,S)$. It starts by blowing up a curve $C\subset S$. But this curve has genus and degree very restricted, it's something like
+\[(g(C),\operatorname{deg}(C))\in\{(0,1),(0,2),\ldots,(11,10),(14,11)\}\]
+
+So for the main theorem, it was checked that if $r>57$ there are no curves from the list. And in the second item of the main theorem, there exist these curves, for instance curve  $(14,11)$ for rank 56, then produce a link that starts by blowing it up and magically gives you the Cremona transformation that restricts with automorphism with which you started.
+
+\begin{remark}
+	So perhaps we expect the answer to G. problem to be almost never.
+\end{remark}
+
+\begin{question}
+	How does that blowing-up work?
+\end{question}
+
+\[\begin{tikzcd}
+	X\arrow[r,"\text{flops}" ]\arrow[d,"\operatorname{Bl}_C"]& X\arrow[d,"\text{contract?}" ]\\
+	C\subset S\subset \mathbb{P}^3\arrow[r,dashed]&\mathbb{P}^3\supset S'\supset C'
+\end{tikzcd}\]
+So for example in case $(2,8)$ you obtain something of the same type.
+
+
+
+\end{document}

@@ -1,0 +1,154 @@
+\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Geometric Structures on Manifolds \hfill IMPA
+		
+		{\small\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+
+		
+		%{\small\hfill\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge  Quasi-isometric embeddings in higher rank groups}
+
+\hfill{\Large Rafael Potrie}
+
+{\Large \hfill Universidad de la República, Uruguay}
+
+\hfill{\large September 26, 2024}
+
+{\color{6}\bfseries Abstract.}\hspace{.5em} Anosov subgroups are a special kind of subgroups of Lie groups that extend convex cocompact groups in rank 1. In this informal talk I will discuss a bit about these kind of groups and what are possible questions towards a characterization. Depending on interest, I could discuss some recent work with L. Carvajales and P. Lessa in this direction.
+
+\tableofcontents
+
+\section{Groups as geometric/dynamical objects}
+
+$\Gamma<G$, $G$ is a Lie group,, we can think $G=\operatorname{SL}(d,\mathbb{R}),\operatorname{SL}(d,\mathbb{C})$. Think $\Gamma$ is finitely generated.
+
+\section{Algebra questions}
+
+\begin{idea2}{Burnside Problem}\leavevmode
+	$\Gamma$ is finitely generated in $ G$ and every element is torsion, then $\Gamma$ is finite.
+\end{idea2}
+
+\begin{idea6}{Selberg Lema}\leavevmode	
+\end{idea6}
+
+\begin{idea7}{Tits alternative}\leavevmode
+\end{idea7}
+
+Now suppose $\Gamma$ is also discrete and quasi-isometric. This makes it more geometric. We want to look at deformations of $\Gamma$ within $G$.
+
+Let's explain what quasi-isometric means. $\Gamma$ is a finitely generated group. Let $F=\{f_i\}$ be finite and symmetric ($f\in F \iff f^{-1}\in F$) generators. So $\Gamma=\left<f_i|r_j\right> $ where $r_j$ are relations. Consider $\rho:\Gamma\to G$ where $ \rho(f_i)$ verify the relations $r_j$.
+
+We are interested in $\operatorname{Hom}(\Gamma,G)\subseteq G^{|F|}$ 
+
+We can define a distance in this group
+\[d_F(\gamma,\eta)=|\eta^{-1}\gamma| _F=\inf\{n:\eta^{-1}\gamma =f_{i_1}\ldots f_{ i_n}\text{ with $f_{i_k}\in F$} \}\]
+
+\begin{defn}
+	A \textit{\textbf{quasi-isometric embedding}} is  $q:(X,d_x)\to (Y,d_y)$ such that there exist two numbers $(0,1) \ni a,b>0$ such that
+	\[a d_x(\mathfrak{x},\mathfrak{x}')-b<d_y(\mathfrak{x},q(\mathfrak{x}'))<a^{-1}d_x(\mathfrak{x},\mathfrak{x}'+b\]
+\end{defn}
+
+Now we put $\rho:\Gamma\to  \operatorname{Isom}(X)$ so thinking of $ G$ as $\operatorname{Isom}(X)$
+
+\begin{defn}
+	The \textit{\textbf{orbit map}} for  $\mathfrak{x}\in X$ is $\Phi:\gamma \mapsto  \rho(\gamma )(\mathfrak{x})$. And $\rho$ is quasi-isometric if the orbit map is a  \textit{\textbf{quasi-isometric embedding}}
+\end{defn}
+
+\begin{example}
+	In $G=\operatorname{SL}(2,\mathbb{R})$ equivalent to $\exists k>0$ so that $\forall \gamma \in\Gamma$ $\| \rho(\gamma )\|>e^{k|\gamma|_F}$
+\end{example}
+
+\begin{example}[Teichmüler space]\leavevmode 
+	\[\Gamma=\pi_{1}(S_g)= \left<a_1,b_1,\ldots,a_g,b_g:\prod_{i} [a_i,b_i] =\operatorname{id}\right> \]
+These representations are very well studied:
+	\[\operatorname{Isom}(\mathbb{H})\operatorname{Hom}(\Gamma,\operatorname{PSL}(2,\mathbb{R}))/\operatorname{PSL}(2,\mathbb{R})\supseteq \operatorname{Teich}(S_g)\cong \mathbb{R}^{6g-6}\cong \operatorname{Hom}_{\operatorname{fd}}(\Gamma,\operatorname{PSL}(2,\mathbb{R}))/\operatorname{PSL}(2,\mathbb{R})\]
+where $\operatorname{Teich}S_g$ is the space of hyperbolic metrics in $S_g$ modulo isotopy. (See Svarc-Milnor).
+\end{example}
+
+\begin{example}[Hyperbolic space]
+	Recall that $\operatorname{SO}(1,2)$ are the isometries of a quadratic form of signature $(1,2)$ acting on  $\mathbb{R}^{3}$. These preserve the cone $Q=0$, and its interior. Restrict $Q$ to the hyperboloid $Q=1$ inside the cone $Q=0$ to obtain a Riemannian manifold. Also you can intersect the cone at the plane $z=0$ to obtain the Klein model. Its metric is a logarithm of another metric.
+
+	Now do
+	 \[\begin{tikzcd}
+		 \pi_{1}(S_g) \arrow[rrrr, bend left,"\rho_0"]\arrow[rrr,"\text{faithful (=injective) discrete} "]&&&\operatorname{SO}(1,2) \arrow[r,hook]&\operatorname{SL}(3,\mathbb{R})]
+	\end{tikzcd}\]
+See Hitchin. Using Higgs bundles and so on, the topology of (?) $\mathbb{R}^{12g-12}$ was understood.
+
+\begin{thm}[Labourie]\leavevmode
+	In all the connected components of the deformation space the embedding is quasi-isometric.
+\end{thm}
+
+\begin{question}[Misha]
+	Are there examples other than $\operatorname{SL}$? Consider
+	\[\begin{tikzcd}
+		\pi_{1}(S) \arrow[r]\arrow[rr,bend left]&\operatorname{PSL}(2,\mathbb{R})\arrow[r,hook]& \operatorname{PSL}(d,\mathbb{R})
+	\end{tikzcd}\]
+	And also
+	\[\begin{tikzcd}
+		\pi_{1}(S) \arrow[r,"\rho_0"]&\operatorname{PSL}(2,\mathbb{R})\arrow[r,hook]&\operatorname{SL}(3,\mathbb{R})
+	\end{tikzcd}\]
+\end{question}
+\end{example}
+
+Labourie introduced the notion of Anosov representation to show that sometimes being qi is an open property.
+
+This is related to IMPA:
+
+\begin{thm}[Mañe, Bonatti-Diaz-Pujals]\leavevmode
+	Robust "things" $\implies $ dominated splitting, which is an open condition.
+\end{thm}
+
+Looks like there is a dynamical system related to the space of "geodesics" insde  $\Gamma=\pi_{1}(S) =\{F:\prod [a_i,b_i]=\operatorname{id} \}$. This notion of geodeics, as I understand, is given by how far a word is from another word.
+
+I think these geodesics are $\{f_{i_{k}}\} \subset F^{\mathbb{Z}}$ with $F=\{a^{\pm 1}_1,b_1^{\pm 1},\ldots,a_g^{\pm 1},b_g^{\pm 1}\}$ with $|f_{i_k}\ldots f_{i_{k+\ell}}| =\ell$.
+Being QI implies 
+\[\|\rho_0(f_{i_k}\ldots f_{i_{k+ \ell}}\|>e^{k\ell}\]
+
+\begin{defn}
+	\textit{\textbf{$i$-domination}}. $F:\Lambda \to \Lambda$, $\Phi:\Lambda \to \operatorname{SL}(d,\mathbb{R})$ cocycle, $\Phi^{(n)}=\Phi(T^{n-1}(x))\ldots \Phi(x)$. $\Phi$ has \textit{\textbf{$i$-dominated splitting}} if the $i$-th singular value is bigger than the $(i+1)$-th singular value, ie.
+	\[\exists c>0,\lambda>1\text{ st }\forall x\in\Lambda \dfrac{\sigma_i(\Phi^{(n)}(x)}{\sigma_{i+1}(\Phi^{(n)}}>c\lambda^n \]
+	(Actually I think this is an equivalence by Bochi-Gourmelon).
+\end{defn}
+
+\begin{thm}[KLP,BPS]\leavevmode
+	$i$-dom $\implies $ $\Gamma$ is word-hyperbolic
+\end{thm}
+
+\begin{defn}[Rafael and collaborators=BPS]
+$\rho:\Gamma\to \operatorname{SL}(d,\mathbb{R})$ is  \textit{\textbf{$i$-Anosov}} if the cocycle \[\phi:\Lambda\to \operatorname{SL}(d,\mathbb{R}) /\Phi(\{f_i\})=\rho(f_0)\]
+where $\Lambda$ is the space of geoesics, has an $i$-dominated splitting.
+\end{defn}
+
+\begin{question}
+	Is being anosov a consequence of being faithful discrete (representation?)?
+\end{question}
+
+\begin{question}
+	Take the free group on three generators inside $\operatorname{SL}(3,\mathbb{R})$. Its robust quasi-isometric. Is it anosov?
+\end{question}
+
+\section{Morse lemma in $\mathbb{H}^2$}
+
+\begin{defn}
+	A sequence of points $\{a_n\}$ in $\mathbb{H}^2$ is an \textit{\textbf{$(a,b)$-quasi geodesic}} if
+	\[a |n-m|b<d _{\mathbb{H}^2}(a_n,a_m)<a^{-1} |n-m|b\]
+\end{defn}
+
+\begin{lemma}[Morse]
+	$\forall (a,b)\exists k:=k(a,b)$ so that $\forall (a,b)$-quasi geodesic $\{a_n\}$ there exists $\gamma :\mathbb{R}\to  \mathbb{H}^2$ geodesic such tat $d(\gamma(n),a_n)<k$.
+\end{lemma}
+
+We wish to understand what happens in higher dimension.
+
+
+
+\end{document}

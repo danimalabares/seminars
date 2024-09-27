@@ -1,0 +1,255 @@
+\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Semin\'ario das Sextas \hfill PUC-Rio
+		
+		{\small\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+		\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+Limits of canonical series for curves
+{\Huge }
+
+\hfill{\Large Eduardo Esteves}
+
+\hfill{\Large IMPA}
+
+\hfill{\large 20 Septembro 2024}
+
+\begin{idea7}{Abstract}\leavevmode
+	
+\end{idea7}
+
+\tableofcontents
+
+\section{intro}
+
+What is the canonical series? Consider $C$ a projective smooth connected curve over a closed field $k$. The cotangent bundle  $\omega_C$ is the same as the bundle of differentials, and the canonical bundle. It has complex dimension 1. The local sections are differentials.
+
+A differential $\alpha \in\Gamma(C,\omega_C)$ is holomorphic, it can be meromorphic. It is written as $\alpha=fdt$ for some $f\in k(C)$. This leads to the notion of a \textit{\textbf{divisor}} of a differential, which in this case is
+ \[\operatorname{div}(\alpha)=\sum \operatorname{ord}_p(t_p)p\]
+ and it is also the \textit{\textbf{canonical divisor}}. 
+
+ Now
+ \[\omega_C=\mathcal{O}_C(k)\]
+ The \textit{\textbf{genus}}, which is a topological invariant, is also  $\dim_k\Gamma(C,\omega_C)$.
+ \[\operatorname{deg}(\omega_C)=\operatorname{deg}(K)=2g-2\]
+ And
+ \[\mathbb{H}=\Gamma(C,\omega_C)\]
+ is the \textit{\textbf{canonical series}}.
+
+  \begin{example}
+ 	Smooth quartic plane curve
+	\[C=V(F)\subset \mathbb{P}^2\]
+	We have that $\operatorname{deg}(F)=4$, and
+	\begin{align*}
+		\omega_C&=\mathcal{O}_C(1)=\mathcal{O}_{\mathbb{P}^2}(1)|_{C}\\
+		g&=\dfrac{(d-1)(d-L)}{2}=3\\
+		\mathcal{O}_C(1)&=\mathcal{O}_C(L\cap C)\\
+		\operatorname{deg}(\mathcal{O}_C(1))&=4=2g-2\\
+		\dim_k\Gamma(G\mathcal{O}_C(1))&=3=g
+	\end{align*}
+ \end{example}
+\begin{quotation}
+	Think of the canonical series as a space of linear sections of a line bundle, but also as a collection of divisors parametrized by $\mathbb{P}^2$
+\end{quotation}
+
+\begin{example}[A singular quadric]
+\end{example}
+
+\section{What we do}
+Given a nodal curve $X$ (at a node there are two "branches" that intersect) which is general for its topology ($G=(V,E)$ dual graph) where
+ \begin{itemize}
+\item $V$ is the set of irreducible components). There is a correspondence of the vertices in this graph and curves in $X$ : $v\in V\iff X_v \subset X$.
+\item $E$ is the set of nodes. Here $e \in E\iff N_e\in X$. So an edge is a pair of points if the node belongs to the intersection of the corresponding curves:
+	\[e=\{u,v\} \iff N_e\in X_u\cap X_v\]
+\item The \textit{\textbf{genus function}} associates to every component its geometric genus:
+	 \begin{align*}
+		g: V &\longrightarrow \mathbb{Z}_{\geq 0} \\
+		g(v) &=\text{geometric genus of }X_v  
+	\end{align*}
+	(I think the geometric genus is the genus of the normalization of the variety.)	
+\end{itemize}
+This is the combinatorial data attached to the curve.
+
+We 
+We look for a general curve with respect to the geometric genus, and say it is \textit{\textbf{general for its position}} if the nodal points are in general position.
+
+Then we have a stratification of 
+\[\overline{\mathcal{M}}=\{\text{stable curves } X \text{ with finite automorphism group}  \}\]
+And here \textit{stable} means nodal. So for example you can have stability if the degree of $\omega_C|_{X}$ is positive.
+
+So the stratification is:
+\[\overline{\mathcal{M}}_{g}=\bigsqcup \mathcal{M}_{(G,g)}\]
+where
+\[\mathcal{M}_{G,g}=\{X\text{ s.t. $G$ is the dual graph of $X_\omega$ genus function $g$.} \}\]
+And we have that
+\[ \operatorname{codim}M_{G,g}=|E|,\]
+the number of edges.
+
+\begin{remark}
+	These are graph curves. All their components are $\mathbb{P}^1$ and they intersect in prescribed way.
+\end{remark}
+
+\section{Some combinatorics}
+
+We have the \textit{\textbf{genus formula}}:
+ \[P_a(X)=\sum g_v+g(G)\]
+\[g(G)=|E|-|V| +1\]
+\[g=3g-3-(2g-2)+1\]
+\[\operatorname{deg}(F)=4\]
+
+\begin{idea6}{Remark}\leavevmode
+When you have maximum number of edges, you force everything to be of a particular kind by the genus formula. (This follows from stability condition.)
+\end{idea6}
+
+\begin{remark}
+	We may check stability looking if the canonical bundle is trivial.
+\end{remark}
+
+\begin{idea1}{Remark}\leavevmode
+	Stable $\iff$ every component which is $\mathbb{P}^1$ has at least 3 special points.
+\end{idea1}
+
+\section{What we do}
+
+Now let's finish the statement we started before:
+
+Given a nodal curve $X$ which is general for its topology, we describe all limits of the canonical series in any degeneration to $X$, and construct a parameter space for them.
+
+\begin{exercise}
+	Let $X$ be a smooth projective variety such that $K_X$ is ample. Prove that its automorphism group is finite.
+\end{exercise}
+
+
+
+We would like to study the moduli of stable curves. So we have a parameter for the objects we want to classify. Diaz-Cutievman described the locus of curves with special  Weierstrass points.
+
+Weierstrass points are such that the line (what line?) intersect the curve in at least (some bound). So for a quartic,
+\[P\text{ is a W point }\iff I(P;T_pC\cap C)\geq 3 \]
+and in fact
+\[g^3-g=24\text{ W points.}\]
+
+\begin{remark}
+	A general smooth curve of genus 3 has exactly 24 Weierstrass points.
+\end{remark}
+
+\begin{exercise}\leavevmode 
+	The genus $g$ curve has $g^3-g$ Weierstrass points.
+\begin{enumerate}[label=\alph*.]
+	\item For $g=3$ and plane quartics.
+	 \item For hyper-elliptic curve of genus $3$ (also define W point in this case).
+\item For non-hyperelliptic genus 4 curve.
+\item Etc.
+\end{enumerate}
+\end{exercise}
+
+\section{The additional data (?)}
+
+Take your variety. The drawing is a bunch of blue lines. Take another line (red). How do the y intersect?
+\[\lim_{t\to 0}X_t\cap L=X\cap L.\]
+And intersection with another curve $F$?
+\[\lim_{t \to 0} X_t\cap L_0=F\cap L_0\]
+Let $L=L_0$. We have
+\begin{align*}
+	L_0L_1L_2L_3+tF&=0\\
+	L_0&=0
+\end{align*}
+Dividing by $t$,
+\begin{align*}
+	LL_1L_2L_3+F&=0\\
+	L_0&=0
+\end{align*}
+Now look at linear series generated by $LL_1L_2L_3\forall L$ and $F$ on $L_0=0$. $L_0=X$.
+\begin{align*}
+	(\alpha Y+\beta Z)L_1L_2L_3+\gamma F&=0,\qquad (\alpha,\beta,\gamma )\in\mathbb{P}^2\\
+	L_0&=0
+\end{align*}
+
+\section{After break}
+
+Now we explain how these systems of divisor appear and how we are going to handle them.
+
+The limit of the $\overset{\vee }{\mathbb{P}}^2$ is some divisors.
+
+We are considering a smoothing
+\[\begin{tikzcd}
+	\mathfrak{X}\arrow[d]\\
+B= \Delta_0= \operatorname{Spec}k[[t]]\subset \mathbb{C}
+\end{tikzcd}\]
+And we have
+\begin{align*}
+	\omega_{\mathfrak{X} /B}&\text{ is the relativa canonical bundle}\\
+	\omega_{\mathfrak{X} /B}\Big|_{\mathfrak{X}_\eta}=\cap_{\mathfrak{X}_\eta}\\
+	\omega_{\mathfrak{X} /B}\Big|_{\mathfrak{X}_\sigma}&=\omega_{X}\subseteq \Omega_X=\bigoplus_{v\in V}\Omega_v  
+\end{align*}
+where $\Omega_v$ is the space of meromorphic differentials over $C_v=\tilde{X}_v$.
+
+So it's a family of bundles that is the canonical bundle on the general fibers and on the exeptional fiber it is the canonical bundle too.
+
+\section{Regular differentials (Rosenlicht)}
+
+\[(\eta_v)_{v}\in\bigoplus_{v}\Omega_v  \]
+\[\operatorname{res}_{p_a}\eta_v+\operatorname{res}_{p_{\bar{a}}}\eta_\omega =0\]
+Now $\eta_v$ can only have poles at the branches, and they should be simple.
+
+\begin{remark}
+	Looks like we have been computing how the bundles $\mathcal{O}_L(1)$, $\mathcal{O}_{L_i}$ look like when restricted to different subvarieties. So for example
+\[\mathcal{O}_{\mathfrak{X}}(1)(-L_0)|_{L_i}=\mathcal{O}_{L_i}(1)(-1)\]
+	is just a skyscraper sheaf.
+\end{remark}
+
+In the end we concluded that $(L_h,W_h)$ has infinitely many linear series in $X$ where
+\[W_h= \Gamma(\mathfrak{X},\mathcal{L}_{h})\Big|_{\mathfrak{X}_0}\cap \Gamma(X,L_h)\]
+So, importantly,
+\[\{0\neq  s\in W_h\qquad Z(s)\subseteq X\qquad |Z(s)| <\infty\} =\qquad \text{lim divisors} \]
+$h$ vary.
+
+\begin{align*}
+	\omega_X&\subseteq \Omega =\bigoplus\Omega_v\\
+	\omega_{\mathfrak{X}}\left( -\sum h(v)X_{v} \right) \Big|_{X}&\subseteq \Omega \\
+	\Omega_{X_{ \omega}}\left( \sum p_u-\sum p_u \right) 
+\end{align*}
+
+\begin{idea6}{Canonical case}\leavevmode
+	\[W_h\subseteq \Omega =\bigoplus\Omega_v  \]
+	where $\Omega_v$ is the space of meromorphic differentials on $C_v=\tilde{X}$. $\dim W_h=g$.
+\end{idea6}
+
+\section{Kapranov}
+Take some $k$-vector spaces $U_v$ and consider
+ \[U=\bigoplus_{v\in V} U_v \]
+ and take the grassmanian of subspaces of dimension $g$, and the torus action:
+ \[\operatorname{Gr}(g,U)\curvearrowleft  \mathbb{G}^\vee_m=\{\psi:V\to k^*\} \]
+ and the projection maps:
+ \[\theta_I:\bigoplus_{v\in V} U_v\longrightarrow \bigoplus_{v\in I} U_v,\qquad I\subseteq V  \]
+$W$ general, $\theta_I\Big|_{W}$ has maximal rank.
+
+So consider the orbit, it is a Chow variety:
+\[\overline{[\mathbb{G}^\vee_m\cdot W}\in\operatorname{Chow}(\operatorname{Gauss}(g,U))\]
+And we have the Chow quotient/Hilbert quotient/Mumford quotient (studied first by Thaddeus):
+\[\overline{\{\overline{[\mathbb{G}^\vee_m\cdot W]},W\text{ general} \}} \subseteq \operatorname{Chow}(\operatorname{Gauss}(g,V))\]
+
+And then
+\[\partial\overset{\{*\}} =\sum [\mathbb{G}^\vee_m\cdot W_i],\qquad \operatorname{Gauss}(g,V)\]
+The polytopes asrouled to $W_i$ form a polyhedral decomposition of a certain polytope. Now
+\begin{align*}
+	W\subseteq U\implies  \mu_W:2^V\longrightarrow \mathbb{Z}
+\end{align*}
+which is a submodular function,
+\[\mu=\mu_W(I)=\dim _k\theta_I(W)\]
+\[\mu(I)+\mu(S)\geq \mu(I\cap J)+\mu(J\cup J)\]
+\[P_\mu=\{q\in\mathbb{R}^{\vee }:q(I)\leq \mu(I)\;\forall I,\; q(V)=\mu(V)\}\]
+
+\begin{idea5}{What Kapranov observed}\leavevmode
+	\[K:\bigcup P_{W_i}=P_{W\text{ general} } \]
+\end{idea5}
+
+
+
+\end{document}

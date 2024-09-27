@@ -1,0 +1,119 @@
+\input{/Users/daniel/github/config/preamble-por.sty}%available at github.com/danimalabares/config
+\renewcommand*{\contentsname}{}  
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Ergodic Theory Seminar \hfill IMPA
+		
+		{\small\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge Medidas estacionárias de um Sistema Dinâmico Aleatório no círculo}
+
+\vspace{1em}
+\hfill{\Large Graccyela Rosybell Salcedo Pirela}
+
+\hfill{\large ICMC}
+
+\hfill{\large 26 de Septembro de 2024}
+
+\vspace{-2em}
+\tableofcontents
+
+\section{Exemplos}
+
+Rotações  com pendente racional ou irracional. Sistema com pontos atratores e repulsores.
+
+\section{Conf}
+	$\mathcal{F}\subset \operatorname{Hom}(\mathbb{S}^1)$, $ \nu$ probabilidade, $\operatorname{Hom}(\mathbb{S}^1)$, $\operatorname{supp}(\nu)=\mathcal{F}$. Espaço de probabilidade:
+	\[(\Omega,\mathbb{P})=(\mathcal{F}^{\mathbb{N}},\nu^{\mathbb{N}})\]
+	Caminho aleatório:
+	\[\Omega \ni \omega\longmapsto(f^n_\omega)_{n\geq 0}\]
+	onde $\omega=(f_n)_{ n \in \mathbb{N}}$, $f_{\omega}^n:=f_n\circ \ldots \circ f_1$,  $f^0_\omega =\operatorname{id}_{\mathbb{S}^1}$.
+
+\section{Ponto de vista topológico}
+
+ \[S=\{f^n_{\omega}:\omega \in\Omega,n \geq 0\}\]
+ $A\subset \mathbb{S}$ é \textit{\textbf{invariante}} se  $f(A)\subset A$, $\forall f\in S$. Um conjunto fechado $A\subset \mathbb{S}^1$ é chamado \textit{\textbf{minimal}} invariante se  $\forall B\subset A$ tal que $B$ é invariante então $B=A$ ou  $B=\varnothing $.
+  \[O(x)=\{f(x):f\in S\}\]
+
+ \section{Ponto de vista probabilístico}
+
+$(f^n_\omega(x))$. $\eta\in\operatorname{Prob}(\mathbb{S}^1)$, dizemos que é  \textit{\textbf{$ \nu$-estacionária}} se
+\[\eta=\int f_*\eta d\nu(f).\]
+\[T:(\omega,x)\longmapsto(\sigma\omega,f'_\omega(x))\]
+$\eta$ é $\nu$-estacionária  $\iff$ $\mathbb{P}\otimes \eta$ e $T$-invariante. Dizemos que $\eta$ é \textit{\textbf{$\nu$-ergódica e estacionaria}} se $\mathbb{P}\otimes \eta$ é $T$-ergódica.
+
+\section{Resultados previos}
+
+\begin{idea1}{Resultado previo}[Furst, 63]\leavevmode
+	$\forall x:\mathbb{P}$ $\omega$
+	\[d\left( \frac{1}{N}\sum_{n=0}^{N-1} \delta_{p^n_\omega x} \right) \subset \nu \text{-estacionária}  \]
+\end{idea1}
+
+\begin{idea1}{Resultado previo}[Malicet '17]\leavevmode
+	Tricotomía:
+	\begin{enumerate}
+	\item $\not \exists m\in\operatorname{Prob}(\mathbb{S}^1)$, $f_*m=m\;\forall f\in\mathcal{F}\implies $ contração local $\implies $ $\exists d\in\mathbb{N}$, $\operatorname{Prob}_{\nu}^{\operatorname{erg}}(\mathbb{S}^1)=\{\eta_1,\ldots,\eta_d\}$ 
+			\[k:=\operatorname{supp}(\eta)\]
+			\[\implies U_i(x)=\mathbb{P}\left(\omega\frac{1}{N}\sum_{n=0}^{N-1}\delta_{p_\omega^\eta}\right)\overset{\omega}{\longrightarrow}\eta_1\]
+	
+		\item O semigrupo $\delta$ é topológico conjugado como um semigrupo das isometrías atuando minimalmente ($\mathbb{S}^1$ é mínima).
+
+			\[\exists ! \text{ medida $\nu$-esacionária} \]
+
+		\item $\exists x$ $O(x)=\{f(x),\ldots,f\in\mathbb{S}\}$ infinita.
+	\end{enumerate}
+\end{idea1}
+
+\begin{idea4}{Exemplos}\leavevmode
+	\begin{enumerate}
+		\item $f_1=R_{p/q}$.
+		\item Círculo con atrator no polo norte e repulsor no polo sul.
+		\item [Desenho] Parece que são círculos com dois pontos mais o fluxo sai de cada ponto a um lado dele e entra do outro lado.
+	\end{enumerate}
+\end{idea4} 
+
+\section{$|O(x)|= \infty\;\forall x$}
+
+\[m^* _x=\lim_{N\to \infty}\frac{1}{N}\sum_{n=0}^{N-1}\int \delta_{\rho^\eta_\omega x}d\mathbb{P}(\omega)=\sum_{i=1}^d U_i(x)\eta_i\]
+$x\longrightarrow m_x$ contínua.
+
+\begin{enumerate}[label=\textbf{$d=$\arabic*}]
+	\item $x\longrightarrow \eta_1$.
+	\item $x\longrightarrow m_x$ 
+	\item[$d>2$] [Desnhos de triangulo e quadrado]
+\end{enumerate}
+
+\begin{idea1}{Teorema 1}\leavevmode
+	$\forall x\; |O(x)|= \infty$ $\forall i=1,\ldots,d$ $ \exists \mathcal{A}_{i}$ família finita de intervalos fechados tal que
+	\begin{enumerate}
+		\item $K_1\subset \{U=1\} =\bigcup_{I\in A_i}I $
+	
+		\item $i\neq j$, $I\cap J=\varnothing,\;\forall J\in A_i,J\in A_j$.
+		\item $\forall a,b,$ $a\in J\in A_i,$ $b \in J\in A_j$ tal que $(a,b)\cap \bigcup_{i=1} ^d\bigcup_{J\in A_i} I\neq \varnothing$.
+			\begin{enumerate}[label=(\roman*)]
+				\item $U_k=0$ em $[a,b]$  $\forall k\neq 1,0$.
+				\item $U_i,U_j$ são monótonos sobre $(a,b)$. 
+			\end{enumerate}
+	\end{enumerate}
+\end{idea1}
+
+\begin{coro}
+	$\forall x$ $|O(x)| =\infty$, $\{\eta_x:x\in\mathbb{S}^1\} \subset \{t\eta_1+(1-t)\eta_j:N\in\{1,\ldots,d\}, t\in [0,1]\}$.
+\end{coro}
+
+\begin{idea7}{Proposição 2}\leavevmode
+	$I\subset \mathbb{S}^1$ intervalo, $i\in\{1,\ldots,d\}$. Se $U_1|_{I}\equiv C_f$
+\end{idea7}
+
+\begin{proof}[Do teorema 1]
+	
+\end{proof}
+
+\end{document}

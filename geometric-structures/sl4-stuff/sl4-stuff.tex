@@ -1,0 +1,146 @@
+\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+\input{/Users/daniel/github/config/thms-eng.sty}%available at github.com/danimalabares/config
+
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Geometric Structures on Manifolds \hfill IMPA
+		
+		{\small\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+
+		
+		%{\small\hfill\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge  Quasi-isometric embeddings in higher rank groups}
+
+\hfill{\Large Rafael Potrie}
+
+{\Large \hfill Universidad de la República, Uruguay}
+
+\hfill{\large September 26, 2024}
+
+{\color{6}\bfseries Abstract.}\hspace{.5em} Anosov subgroups are a special kind of subgroups of Lie groups that extend convex cocompact groups in rank 1. In this informal talk I will discuss a bit about these kind of groups and what are possible questions towards a characterization. Depending on interest, I could discuss some recent work with L. Carvajales and P. Lessa in this direction.
+
+\tableofcontents
+
+\section{Quasifuchsian representations}
+
+Start with older stuff: quasifuschian representations in Lie groups. Let $\pi$ be a compact surface group. Mod spaces of certain classes of $\rho:\Pi\longrightarrow \mathcal{G}$.
+
+\begin{enumerate}
+	\item $\mathcal{G}=\operatorname{PSL}(2,\mathbb{C})=\operatorname{PSO}(3,1)$, which is the isometry group of $\mathbb{H}^3$, with $dS^{2,1}$. What is a quasi-fuschian representation?
+
+		 \begin{defn}\leavevmode
+			$\rho:\Pi\longrightarrow \operatorname{PSL}(2,\mathbb{C})$ is a \textit{\textbf{quasi-fuschian}} representations if it preserves a Jordan curve (=embedded circle, a map $\varphi:\mathbb{S}^1\longrightarrow \mathbb{S}^2=\partial \mathbb{H}^{3}$ continuous injective, a closed subset homeomorphic to $\mathbb{S}^1$). {\color{2}(I think the Jordan curve is in the boundary because the boundary is a 2-sphere.} $\Pi \subseteq \operatorname{PSL}(2,\mathbb{C})$ discrete with limit set $\Gamma$.
+		\end{defn}
+
+	\item De Sitter space is identified with the exterior of the unit ball (the interior is the hyperbolic space in Klein model). \textit{\textbf{Anti-de Sitter space}} is
+		\[\operatorname{A d S}^{2,1}=\operatorname{PSL}(2,\mathbb{R})\times \operatorname{PSL}(2,\mathbb{R})=[\operatorname{PSO}(2,2)\]
+		and its boundary is
+		\[\partial \operatorname{A d S}^{2,1}\cong S^1\times S^1\]
+
+		Notice that $\operatorname{AdS}^{2,1}\subseteq \mathbb{R}P^{3}$.
+
+		Without getting two technical, the point is that $\rho:\Pi\longrightarrow \operatorname{PSO}(3,2))$ is quasi-fuschian when it preserves a (spacelike) $J$ curve $S^1\times S^1$.
+\end{enumerate}
+
+\section{Suppose we have a representation}
+
+ … a representation $\rho:\Pi\longrightarrow \operatorname{PSO}(3,1)$ that preserves a Jordan curve. Suupose $\operatorname{Lim}(\rho(\Pi))=c$
+
+ \begin{exercise}[To understand limit set]\leavevmode
+ 	Take a point $p \in\mathbb{H}^{3}$, and let $\Gamma$ be the set of divergent sequences in the group
+	\[\Gamma:=\{(\gamma_{n})_{ n \in\mathbb{N}}:\gamma_n\}\]
+	Also let
+	 \[P:=\{(\gamma_{n}\cdot p)_{n \in \mathbb{N}}\}\]
+	 Then show that for all $(\gamma_{n})_{n \in \mathbb{N}}$, $\{\gamma_n\cdot p:n \in \mathbb{N}\}$ has accumulation points in $\partial \mathbb{H}^{3}$.
+ \end{exercise}
+
+\begin{exercise}\leavevmode
+	Notice that $\Pi$ only has hyperbolic elements, ie. $\forall \gamma$, $\rho\gamma$ is hyperbolic. Now show that $\operatorname{Lim}=\{\rho(\gamma)_+:\gamma\in \Pi\}$. That is, there are several ways of defining the limit set leading to the same object.
+\end{exercise}
+
+ Because the representation preserves a Jordan curve, then it will preserve its convex hull. What is its convex hull, which is just taking all pairs of points in the boundary and joining them by geodesics.
+
+ Now also $\rho(\Pi)$ acts on properly discontinuously on $\mathbb{H}^{3}$ (and actually on the complement of the curve). So the quotient turns out to be
+ \[\mathbb{H}^{3/\rho(\Pi)\overset{\operatorname{dif}}{\cong } \Sigma\times \mathbb{R}}\]
+ where $\Pi=\pi_{1}(\Sigma)$. And there's a hyperbolic metric.
+
+ Consider $K\subseteq \mathbb{H}^{3}/\rho(\Pi)$. Then $K=\operatorname{Conv}(c)/\rho(\Pi)$.
+
+ $*$ a drawing $*$
+
+ Define a \textit{\textbf{quasi-fuchsian manifold}} to be a quotient of  $\mathbb{H}^{3}$ by a quasi-Fuschsian group.
+
+ \subsection{Some finite topology to understand hyperbolic ends}
+ 
+ Let $M$ be a hyperbolic 3-manifold of finite topology. That means its fundamental group is finitely generated and it has no cusps ends. What's a cusp end. Consider for example the quotient of $\mathbb{H}^{2}$ by the translation $z\mapsto z+1$ in the half-plane model; that quotient is a trumpet. That's a cusp. Another example is $\mathbb{H}^{3}$ with translations $x\mapsto x+(1,0,0)$ and $x\mapsto x+(0,1,0)$. And also suppose $M$ is not compact.
+
+ Then there is a minimcal convex set whose $\pi_1$ embedds into the $\pi_1$ of the ambient manifold. So, a minimal convex set that carries the topology of the manifold. Now the complement of that has \textit{\textbf{hyperbolic ends}}.
+
+\section{Fuchsian representations}
+
+ $\rho:\Pi\longrightarrow \operatorname{PSL}(2,\mathbb{C})$ is  \textit{\textbf{Fuchsian}} (not only quasi-Fuchsian) when it preserves a circle.  $\operatorname{img} \rho\subseteq \operatorname{PSL}(2,\mathbb{R})$
+ 
+ \begin{remark}\leavevmode
+ 	The class of conformal circles (circles + straight lines) is well defined, i.e. does not depend on parametrization. ($*$A proof with a big diagram$*$). Also, hyperbolic isometries map circles to circles.
+ \end{remark}
+
+ Anyway, $\rho$ is Fuschian if it preserves a circle, and this means it preserves the totally geodesic space (convex hull?) enclosed by it. In this case, the hyperbolic metric in the quotient manifold is actually
+ \[g=\cosh^2(r)g_0+dt^2\]
+ where $\Sigma=\{r=0\}$.
+
+ \paragraph{How to see that?}  Take Fermi coordinates, these parametrize the manifold from the point of view of geodesics. Actually these are just geodesic coordinates, given by the exponential map (because differential of exponential is identity so it is nonsingular so exp is a local diffeomorphism). It's when the "coordinate grid" is given by geodesics.
+
+ And then switch from spherical function to hyperbolic function:
+ \[g=\cos^2(s)dt^2+ds^2\longmapsto g=\cosh^2(s)dt^2+ds^2 \]
+ Now notice that $\mathbb{H}^{3}\cong \mathbb{H}^{2}\times \mathbb{R}$, and that since the action of $\Pi$ on $\mathbb{H}^{3}$ preserves the geodesic manifold enclosed by the circle, its action on the $\mathbb{R}$ component is invariant, 
+
+Finally we define hyperbolic ends
+
+\begin{defn}\leavevmode
+	Let $X$ be hyperbolic. Consider a function $h:X\longrightarrow ]0,\infty[$ such that
+	\begin{enumerate}
+		\item $\|\nabla h\|=1$.
+		\item $h$ is convex $C^{1,1}$.
+		\item For all $\varepsilon>0$, $h^{-1}([\varepsilon,\infty[)$ is complete.
+	\end{enumerate}
+	We say $X$ is a \textit{\textbf{hyperbolic end}} if it has a  \textit{\textbf{height function}}  $h$. Typically this $h$ is distance to the convex hull.
+\end{defn}
+
+\begin{remark}\leavevmode
+	These three conditions are just enough to apply Hopf-Rinow theorem.
+\end{remark}
+
+\begin{upshot}\leavevmode
+	The ends of fuchsian manifold is foliated by constant curvature surfaces, the determinant of the shape operator of these surfaces is constant.
+\end{upshot}
+
+\section{Back from break}
+
+So, what is the difference between quasi-fuchsian and fuchsian? If the Jordan curve is not a circle, then its convex hull is a dimension 3 manfifold, that is, its interior is not empty.
+
+\begin{idea4}{l.e.p.}\leavevmode
+	$\forall x$ in the convex hull there is an open gedoesic segment $\Gamma$ with $x\in\Gamma\subseteq$ Convex.
+\end{idea4}
+
+\begin{exercise}\leavevmode
+	$c_n$ polygons $\longrightarrow c$ Hausdorff.
+	\begin{enumerate}
+		\item Conv$(c_n)\longrightarrow $Conv$c$.
+	
+		\item (Boundary?)
+	\end{enumerate}
+\end{exercise}
+
+\begin{defn}\leavevmode
+	\textit{\textbf{Geodesic lamination}} is a closed subset which a union of disjoint complete geodesics.
+\end{defn}
+
+\end{document}

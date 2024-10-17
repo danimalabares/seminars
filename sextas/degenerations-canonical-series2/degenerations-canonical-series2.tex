@@ -1,0 +1,142 @@
+\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+\input{/Users/daniel/github/config/thms-eng.sty}%available at github.com/danimalabares/config
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Semin\'ario das Sextas \hfill PUC-Rio
+		
+		{\small\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+		\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+
+{\Huge Degenerations of the canonical series for curves (Part 2/2)}
+
+\hfill{\Large Eduardo Esteves}
+
+\hfill{\Large IMPA}
+
+\hfill{\large 20 Septembro 2024}
+
+\begin{idea7}{Abstract}\leavevmode
+	
+\end{idea7}
+
+\tableofcontents
+
+\section{Reminder on first part}
+
+We have been parametrizing canonical series.
+
+We have $X$ a projective connected nodal curve over a closed field of characterstic zero. We created its dual graph, where
+\begin{itemize}
+\item Vertices correspond to $C_{v}$, normalization of components of $X$ associated to $v$.
+\item Edges correspond to $p^e$ node of $C$.
+\item $e$ connects $u$ and $v$ iff  $p^e\in X_u\cap X_v$.
+\end{itemize}
+
+Associated to the dual graph there's also the arrow set $\mathbb{E}$. There's a 2-1 map from the set of arrows to the set of edges. To each arrow we associate a branch $p^a \in C_v$, where $a=uv\in\mathbb{E}$. We denote
+\begin{align*}
+	\mathbb{E}_v=\{a\in \mathbb{E}:t_a&=\{\text{ tail of $a$}\}\text{-}u  \}
+	\end{align*}
+	so that $\mathbb{E}=\bigsqcup_{v \in V}\mathbb{E}_v$.
+
+We also have the \textit{\textbf{genus function}} $g$ mapping $V$ to its genus, and the \textit{\textbf{genus formula}}
+ \[p_a(X)=g(V)+g(G)=\sum_{v\in V}g(v)+|E| +|V|\]
+
+
+ \section{Today}
+ We want to consider \textit{smoothings}  $\pi:\mathfrak{X} \longrightarrow B$ of $X$:
+ \[\begin{tikzcd}
+ \mathfrak{X}\arrow[d,"\pi"]\\
+ B=\begin{cases}
+ 	A_0\\
+ 	\operatorname{Spec}(k\llbracket E\rrbracket)
+ \end{cases}
+ \end{tikzcd}\]
+ So $\mathfrak{X}_\mathcal{O}\xrightarrow{\cong }X$ $\mathfrak{X}_\eta$ smooth (over Laurent series $k(\!(t)\!)$. $\mathfrak{X}$ is regular away from $p^e\in X$.
+ \[\hat{\mathcal{O}}_{\mathfrak{X},p^e}=\dfrac{k\llbracket t,u,v\rrbracket}{uv-t^{\ell_e}}\ell_e\in\mathbb{Z}_{>0}\]
+ where $\ell:E\longrightarrow Z_{>0}$ is the \textit{\textbf{edge lenght function}}. We also have $\Gamma=(G,\ell)$ the \textit{\textbf{metric graph}}, and
+\begin{itemize}
+\item $\omega_{\mathfrak{X} /B}$ the \textit{\textbf{relative canonical bundle }}on  $\mathfrak{X}$.
+\item $\omega_{\mathfrak{X} |B}|_{\mathfrak{X}_\eta}=\Omega_{\mathfrak{X}_\eta}$ the \textit{\textbf{bundle of differentials}}.
+ \item $\omega_{\mathfrak{X} |B}|_{X}=\omega_X$ the canonical bundle of $X$. $\omega_X$ is the \textit{\textbf{bundle of regular differentials}} (Rosenlicht 50's)
+\end{itemize}
+
+\begin{idea5}{Notation:}\leavevmode
+	 $\Omega_v$ is the space of meromorphic differentials of $C_v$, 
+	  \[\Omega=\bigoplus_{v\in V} \Omega_v \]
+	  $\alpha=(\alpha_{v})_{v}\in\Omega$ is regular if
+	  \begin{enumerate}
+	  	\item $\forall a\in\mathbb{E}$, $\alpha_{t_a}$ has at most a simple pole at $p^a$.
+		\item $\forall a\in\mathbb{E}$, $\operatorname{res}_{p_a}(\alpha_{t_a}+\operatorname{res}_{pa}(\alpha_{t_a})=0$.
+	  \end{enumerate}
+\end{idea5}
+
+\subsection{Abelian differentials}
+$C_v$,  $D\in D_N(C_v)$, $D=P-N$,  $P,N\geq 0$, $\operatorname{supp}(P)\cap \operatorname{supp}(N)=\varnothing$.
+\[\mathbb{H}_v(D)=\{\alpha\in\Omega_v|\operatorname{div}_\infty(\alpha)\leq P,\operatorname{div}_0(\alpha)\geq N\}\]
+\[\mathbb{H}_v\left(0 \right) =\text{Abelian differentials } \]
+\[W_0=\Gamma(X,\omega_X)\subseteq \bigoplus_{v} \mathbb{H}_v\left( \sum_{a\in\mathbb{E}}p_a \right)  \]
+where $W_0$ is the space of global regular differnetials. $\dim W_0=g_{\mathfrak{X}_\eta}=p_a(X)$, the arithmetic genus of $X$.
+
+If $D$ is general and characteristic of  $k$ is zero, then 
+\begin{align*}\dim_k \mathbb{H}_v(D)&=\max(g_v+\operatorname{deg}D-1,0)\qquad \text{if }p\gneq 0\\
+&=max(g_v+\operatorname{deg}D,0)\qquad \text{if} p=0\end{align*}
+
+\subsection{Back to our objective}
+
+\[\mathcal{L}_{h}=\omega_{\mathfrak{X} /B}\otimes"\mathcal{O}_{\mathfrak{X} }\left( -\sum h_vX_v \right) \]
+where $h:V\longrightarrow \mathbb{Z}$.
+\[\mathcal{L}_{h}|_{X_\eta}=\Omega^1_{\mathfrak{X}_\eta}\]
+\[\mathcal{L}_{h}|_{C_v}=\omega_{C_v}\left( \sum_{a\in\mathbb{E}_{v}} (1+\partial_{\ell}h(a)p^a \right) \]
+
+[$*$some missing formulas $*$]
+
+\[W_h=\operatorname{Im}(\Gamma(\mathfrak{X},\mathcal{L}_{h})\longrightarrow \Gamma(X,\mathcal{L}_{h}|_{X})\]
+\[\dim W_h=p_a(X)\]
+\[W_h\subseteq \bigoplus_{v\in V}\mathbb{H}_v\left( \sum_{a\in\mathbb{E}_v}(1+\partial_\ell h(a)p^a \right) \subseteq \bigoplus_{u\in V}\Omega_u    =\Omega\]
+
+\begin{idea2}{The goal}\leavevmode
+	is to describe and parametrize the collection of subspaces
+	\[\mathcal{C}=\{W_h\in\Omega|h\in\mathbb{Z}^\vee\}\]
+	when the points $p^a$ on  $C_v$ for  $a \in  \mathbb{E}$ are in general position.
+\end{idea2}
+
+\section{A space that parametrizes $W_h$}
+
+This is work by Kapranov. First of all, $W_h$ is not uniquely defined:
+\[V\twoheadrightarrow V_h=V/\sim_h\]
+where $u\sim_h v\iff h(u)=h(v)$.
+
+We have a torus action
+\[\mathbb{G}^{V_h}_m=\{\psi:V_h\longrightarrow K^*\} \subseteq \mathbb{G}^V_m\]
+\[W_h\subseteq \Omega,\qquad \psi\cdot W_h=\{(\psi_v\alpha_v)_v|(\alpha_v)_v\in W_h\}\]
+$\mathbb{G}^{V_h}_m\cdot W_h$ orbit is well-defined.
+
+The case of $h=0\implies V_h=\{V\}$, so $W_0$ is well-defined.
+
+So actually we want to parametrize not the $W_h$ but their orbits, $\mathbb{G}^V_m\cdot W_h\in \operatorname{Gr}(g,\Omega)/\mathbb{G}^V_m$.
+
+\[W\subseteq U=\bigoplus_{v} U_v\subseteq \bigoplus_{v} \Omega_v=\Omega \]
+\[\mathbb{G}^\vee_m\curvearrowright\operatorname{Gr}(g,U)\subset \operatorname{Gr}(g,\Omega)\curvearrowleft \mathbb{G}^\vee_m\]
+
+\section{Polyhedral approach}
+Basically what you realize is that the only orbits that matter are the maximal dimension ones, and these correspond to maximal dimesional polytopes. (These appeared in the work of Kapranov and was later generalized by others.
+
+The idea is as follows. Fix a decomposition of your space $W\subseteq \Omega=\bigoplus_{v\in N} \Omega_v $. A \textit{\textbf{submodular function}}
+\begin{align*}
+	\nu_W: 2^V &\longrightarrow \mathbb{Z} \\
+	V\supseteq I &\longmapsto \dim_k\theta_I(W)
+\end{align*}
+$*$ some formulas $*$ Definition of base polytope. The orbit is maximal dimensional if and only if the polytope is. Definition of bricks.
+
+\begin{thm}\leavevmode
+	The polytope associated to the $W_h$ is a union of bricks of maximal dimension.
+\end{thm}
+
+\end{document}

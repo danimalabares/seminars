@@ -1,0 +1,165 @@
+\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+\input{/Users/daniel/github/config/thms-eng.sty}%available at github.com/danimalabares/config
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Semin\'ario das Sextas \hfill PUC-Rio
+		
+		{\small\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+		\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge Geometric quantization on Kähler manifolds, Berezin-Toeplitz, coherent states}
+
+\hfill{\Large Bruno Suassuna}
+
+\hfill{\Large PUC-Rio}
+
+\hfill{\large 18 October 2024}
+
+The idea of geometric quantization is to start with a symplectic manifold $(M,\omega)$ and for some geometric structure that you have on $M$, like a line bundle with a hermitian metric, which is the geometric quantization data. 
+
+So on every point $x \in M$ you have a copy of $\mathbb{C}$, and you put a hermitian metric $h_x:\mathcal{L}_x\otimes \bar{\mathcal{L}}_x\to \mathbb{C} $.
+
+Now the second part of the geometric quantization data is a connection $\nabla$ on $\mathcal{L}$ that preserves $h$. Recall that this means that
+\[\nabla :\mathcal{L}\to \mathcal{L}\otimes \Omega^{1}(M)\]
+such that
+\begin{itemize}
+\item $\forall v\in\mathcal{C}^\infty(TM)$, $\nabla_v:\mathcal{L}\to  \mathcal{L}$ is $\mathbb{C}$-linear
+\item Leibniz in the sense that $\nabla_v(fs)=df(v)s+f \nabla_vs$.
+\end{itemize}
+
+\begin{thing6}{Property}[Bohr-Sommerfield]\leavevmode
+	$\frac{2\pi}{i}R_\nabla =\omega$, where $(E,\nabla )$ is a vector bundle with connection we define $R_\nabla \in\Omega^{2}_M \otimes \operatorname{End}(E)$ (the curvature).
+\end{thing6}
+
+\begin{defn}\leavevmode
+	$M$ is \textit{\textbf{quantizable}} when it admits the data above satisfyint the property Bohr-Sommerfield. 
+
+	We call $L^2(M,\mathcal{L})$ a \textit{\textbf{pre-quantum Hilbert space}}.
+\end{defn}
+
+\begin{question}\leavevmode
+	What is it that makes it better in Kähler manifolds? (Dani: I thought in general the function space didn't have to be the sections of a bundle)
+\end{question}
+
+\begin{remark}[Sergey]\leavevmode
+	When $\mathbb{R}^{2n}$ is the phase space and $\mathcal{L}$ is the trivial bundle then $L^2( \mathbb{R}^{2} )$ is \textit{too big!} 
+\end{remark}
+
+\begin{defn}\leavevmode
+	A \textit{\textbf{Kähler manifold} } is $(M, \omega,g,I)$ where $\omega$ is a symplectic structure, $g$ a riemannian structure and  $I$ a complex structure, and they are all compatible and $I$ is integrable. So remember that compatibility is for example that $g(u,v)=\omega(Iu,v)$ and $g$ is  $I$-invariant. On the other hand, integrability is a non-trivial PDE and gives holomorphic local coordinates.
+\end{defn}
+
+{\color{3}\bfseries Starting again,}\hspace{.5em} take a Kähler manifold $M$ and define a pre-quantum line bundle so  $\mathcal{L}$ holomorphic with the Chern connection $\nabla$. Also suppose that $\nabla$ satisfies the Bohr-Sommerfield property.
+
+\begin{remark}[Kodaira theorem]\leavevmode
+	The Kähler class (cohomology class of symplectic form) is the first Chern class, i.e., $[\omega]=c_1(\ell)\in H^{2}(M,\mathbb{Z})$ iff $\mathcal{L}$ is ample.
+\end{remark}
+
+\begin{defn}\leavevmode
+	\[\mathcal{H}_m=H^{0}(X,\mathcal{L}^{\otimes m})\]
+	so the sections of that bundle.
+\end{defn}
+
+You see hare making the space of sections smaller:
+	\[\mathcal{H}_m=H^{0}(X,\mathcal{L}^{\otimes m})\hookrightarrow L^2(M,\mathcal{L}^{\otimes m})\]
+And if $M$ is not compact, take
+\[H^{0}(M,\mathcal{L}^{\otimes m})\cap L_2\]
+
+\begin{question}[Altan]\leavevmode
+	What about the measure here?
+\end{question}
+
+\begin{thing9}{Answer}[Bruno]\leavevmode
+	Related to Liouville measure; a clever choice of $h$. So maybe
+	 \[\left<s_1,s_2\right> =\int_{M}h\left( s_1(x),s_2(x) \right) \frac{\omega^d}{d!}\]
+	 And now $d$ is what in Altan's talk was  $n$… or was it $m$?
+\end{thing9}
+
+\begin{remark}\leavevmode
+	So in the case of Altan's talk
+	\[\mathcal{H}=\left\{ f:\mathbb{C}^{n}\overset{\operatorname{entire}}{\longrightarrow}\mathbb{C}:\int_{\mathbb{C}^{n}}|f|^2\operatorname{exp}(-|z|^2) d \lambda(z) \right\} \]
+	so notice that the $\operatorname{exp}$ term is stopping the space to be trivial because bounded holomorphic functions are constant right?
+\end{remark}
+
+$\mathsf{OK}$ back to the quantization. Given $f \in\mathcal{C}^\infty(M)$ define $A_f \in\operatorname{End}(\mathcal{H}_m)$…
+
+\begin{thing4}{Berezin-Toeplitz}\leavevmode
+\[T_f(S)=\Pi_m(fS) \]
+$\Pi_m$ orthogonal projection to $H^{0}(M,\mathcal{L}^{\otimes m})$.
+\end{thing4}
+
+\begin{thing7}{Kostant-Sorian pre-quantum operators}\leavevmode
+	$f$ quantizable means $Q_f(s):=\nabla_{X_f}s-2\pi i fs$. Here $X_f$ is the hamiltonian vector field of  $f$ with respect to  $\omega$. 
+
+	So that's an operator associated to a function---quantization!
+
+	And we \textit{wish} that if  $s$ is holomorphic then so is $Q_f(s)$.
+\end{thing7}
+
+\begin{remark}[Sergey]\leavevmode
+	Also in the wish list is some property of brackets right?
+\end{remark}
+
+Right so we are doing
+\begin{align*}
+	\mathcal{C}^\infty(M) &\longrightarrow \operatorname{End}(V) \\
+	f &\longmapsto \hat{f}
+\end{align*}
+and we want
+\[ \hat{f},\hat{g}]=i\hbar \widehat{\{f,g\}}\qquad \hat{1}=\operatorname{Id},\qquad \widehat{\varphi\circ f}=\varphi(\hat{f})\]
+
+\begin{question}[Dani]\leavevmode
+	So why is it impossible that the wishes became true? Is that a difficult theorem?
+\end{question}
+
+Now 
+\[L_f(s)=\Pi_m(Q_f(s))\]
+and
+\begin{thing9}{Tuyman's lemma}\leavevmode
+	$iQ_f=T_f-\perp_{2m}\Delta f$
+\end{thing9}
+
+\begin{thing8}{Coherent state quantization}\leavevmode
+	$ p \in \mathcal{L}_x^{\otimes m}\setminus \{0\} \rightsquigarrow e_p \in \mathcal{H}_m$. So
+	\[s \in H^{0}(X,\mathcal{L}^{\otimes m})\longmapsto s(x)\in\mathcal{L}_x=\lambda_p(s)\cdot p\]
+	Now a \textit{\textbf{coherent state}} is defined via Riesz' representation theorem so  $\lambda_p \in\mathcal{H}_m^*$ such that
+	\[\lambda_p(s)=\left<e_p,s\right> \]
+\end{thing8}
+
+\begin{question}[Dani]\leavevmode
+	Why are coherent states so important?
+\end{question}
+
+They give us a rational map which is essentially Kodaira map (the map defined by any line bundle)
+\[\operatorname{coh}:M\dashrightarrow \mathbb{P}(\overline{\mathcal{H}}_m\]
+So given a bounded operator $A\in B(\mathcal{H}_m)$ we define \[\hat{A}(x)=\frac{\left<Ae_p,e_p\right> }{\|e_p\|^2}\qquad  x\in M\]
+called the \textit{\textbf{covariant symbol}}.  {\color{7}(That is not the same hat than the hat of the quantization!)} We have a map $B (\mathcal{H}_m)\to  \mathcal{C}^\infty(M)$.
+
+Now we try to invert this map: which functions are the covariant symbols of some bounded operators?
+
+\begin{remark}[Sergey]\leavevmode
+	This is like in altan talk, look for the kernel!
+\end{remark}
+
+Here's two formulas to go in the other direction:
+
+\[(As)(x)=\int_{M}h_y(s(y),s(y))\hat{A}(x,y)\frac{\omega^m}{n!}\]
+\[\operatorname{Tr}(A)=\int_{M}\hat{A}(x)\theta(x)\frac{\omega^n}{n!}\]
+and that's a nice formula wich has to do with Rawsley, $\theta(x)=|q|^2\cdot\|e_q\|^2$.
+
+\begin{remark}[Dani]\leavevmode
+	So it looks like we want an equivalence of operators and functions.
+\end{remark}
+
+\begin{thing7}{Bondermann-Meinken-Schlihenmeier}\leavevmode
+	$\|f\|_\infty-\frac{c}{m}\leq \|T_f^{m}\|\leq \|f\|_\infty$
+	\[\|m[T_f^{(m)}, T_y^{(m)} ]iT_{\{f,g\}}^{(m)}\|= \mathcal{O}(m^{-1})\qquad \text{as }n\to \infty \]
+\end{thing7}
+
+\end{document}

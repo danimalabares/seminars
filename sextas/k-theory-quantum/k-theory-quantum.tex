@@ -1,0 +1,162 @@
+\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+\input{/Users/daniel/github/config/thms-eng.sty}%available at github.com/danimalabares/config
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Semin\'ario das Sextas \hfill PUC-Rio
+		
+		{\small\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+		\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge Equivariant K-theory of the square of an $n$-step partial flag variety and a "$q=0$" version of the affine quantum group.}
+
+\hfill{\Large Mikhail Mazin}
+
+%\hfill{\Large university}
+
+\hfill{\large October 18 2024}
+
+\begin{thing7}{Abstract}\leavevmode
+	More than thirty years ago Beilinson, Lusztig, and MacPherson provided a geometric framework for quantum groups by considering a convolution product on the square of the n-step partial flag variety over finite fields. Since then there were several generalizations, in particular Ginzburg and Vasserot used equivariant K-theory of the Steinberg variety in the cotangent space of the square of the n-step flag variety to study the affine quantum group, with the quantum parameter corresponding to the dilation action in the cotangent direction. In a joint work with Sergey Arkhipov we use the convolution product on the equivariant K-theory of the square of the n-step flag variety itself to define and study a "q=0" version of the affine quantum group.
+
+In this talk, I will define our "q=0" version of the affine quantum group via generators and relations, introduce the convolution algebra on the equivariant K-theory of the square of the n-step flag variety, and outline the construction of a surjective morphism from the "q=0" affine quantum group onto the convolution algebra.
+\end{thing7}
+
+\tableofcontents
+
+\section{Convolution product}
+
+\subsection{Correspondence operators}
+
+Suppose we have some functor $F$ and some space  $X$. I want a morphism from $X$ to itself but I dont have it and instead I have two projections from $X \times  X$:
+\[\begin{tikzcd}
+&X\times X\arrow[dl,"\pi_1",swap]\arrow[dr,"\pi_2"]\\
+X\arrow[rr,"?"]&&X
+\end{tikzcd}\]
+(The functor will be equivariant …? $K^G(X)$.
+
+Anyway take a class $\alpha \in F(X\times X)$. And now for $f\in F(X)$ fo
+\[\varphi_\alpha(f)=\pi_{2*}(\pi_1^*(f)\times \alpha\]
+To define these correspondance operators we need
+\begin{itemize}
+\item Pullbacks
+	\item Pushforward
+		\item Product
+			\item Projection formula that $f_*(\beta)\times =f_*(\beta\times f^*\alpha)$
+\end{itemize}
+
+\subsection{Composition}
+
+\[\begin{tikzcd}
+&X\times X\arrow[dl,"\pi_1",swap]\arrow[dr,"\pi_2"]&&X\times X\arrow[dl,"\pi_1",swap]\arrow[dr,"\pi_2"]\\
+X\arrow[rr,"?"]&&X\arrow[rr,"?"]&&X
+\end{tikzcd}\]
+and we will do
+\[\alpha,\beta \in F(X\times X),\qquad  f\in F(X)\]
+ and the composition is
+ \[\varphi_\beta\circ \varphi_\alpha)(f)=\pi_{2*}(\pi_1^* (\pi_{2*}(\pi_1^*(f\times \alpha))\times \beta)\]
+And now
+\[\begin{tikzcd}
+	&  & X \times  X \times  X\arrow[dl,"\pi_{12}",swap]\arrow[dr,"\pi_{23}"]\\
+&X\times X\arrow[dl,"\pi_1",swap]\arrow[dr,"\pi_2"]&&X\times X\arrow[dl,"\pi_1",swap]\arrow[dr,"\pi_2"]\\
+X\arrow[rr,"?"]&&X\arrow[rr,"?"]&&X
+\end{tikzcd}\]
+and then
+ \begin{align*}\varphi_\beta\circ \varphi_\alpha)(f)&=\pi_{2*}(\pi_1^* (\pi_{2*}(\pi_1^*(f\times \alpha))\times \beta)\\
+	 &=\pi_{2*}(\pi_{23*}(\pi_{12}^*(\pi_1^*f\times \alpha))\times \beta)\\
+	 &=\pi_{2*}(\pi_{23*}(\pi^*_{12}(\pi_1^*f\times \alpha)\times \pi_{23}^*\beta))
+	 \end{align*}
+
+	 \[\begin{tikzcd}
+		&X\times X\times X\arrow[ddl,"p_1=\pi_1\circ \pi_{12}",swap]\arrow[d,"\pi_{13}"]\arrow[ddr,"p_3=\pi_2\circ \pi_{23}"]\\
+		& X\times X\arrow[dl,"\pi_1"]\arrow[dr,"\pi_2",swap]\\
+		X&&X
+	 \end{tikzcd}\]
+and then
+\begin{align*}
+	p_{3*}(\pi_{12}^* (\pi_1^* f\times \alpha)\times \pi_{23}^*\beta)&=p_{3*}(\pi_{12}^*\pi_1^* f\times \pi_{12}^*\alpha\times \pi_{23}^*\beta)\\
+	&=\pi_{2*}(\pi_1^* f\times \pi_{13*} (\pi_{12}^*\alpha\times \pi_{23}^*\beta)\\
+	&=\varphi_{\pi_{13*}(\pi_{12}^*\times \pi_{23}^*\beta)}(f)
+\end{align*}
+
+\begin{thing6}{This means}\leavevmode
+	that the composititon of two correspondances is a correspondance with repsect to this clsss.
+\end{thing6}
+
+\begin{remark}[Altan]\leavevmode
+	Like the product of matrices.
+\end{remark}
+
+Yes, essentially this is the product of matrices.
+
+\begin{defn}[Convolution]\leavevmode
+	$a\ star  \beta:=\pi_{13*}(\pi_{12}^*\alpha\times \pi_{23}^*\beta)$
+\end{defn}
+And we conclude that $F(X\times X)$ is a convolution algebra acting on $F(X)$ by corresponding operators.
+
+\section{Partial flags}
+
+$\mu=(\mu_1,\ldots,\mu_n)\in\mathbb{Z}_{\geq 0}^n$, $\sum \mu_i=d$, $d_k=\sum_{i=1}^k\mu_i$
+and define
+\[F_\mu:=\{U_1\subset U_2\subset\ldots \subset U_n=\mathbb{C}^{d}:\dim U_k=d_k\}\]
+where the $U_i$ are linear subspaces. Then take
+ \[X=F_n^d=\bigsqcup_\mu F_\mu\]
+
+\begin{thing5}{Concept:}\leavevmode
+	Convolution algebras on $F_n^d\times F_n^d$ as $d\to \infty$ should approximate the quantum group of $\mathfrak{gl}(n)$.
+\end{thing5}
+
+\begin{thing4}{Beautiful paper}\leavevmode
+	\textit{Geometric setting for the quantum deformation of $\mathsf{GL}(n)$} by Beilinson, Lusztig, MacPherson. 
+\end{thing4}
+
+\begin{remark}[Altan]\leavevmode
+	These authors also have a paper where they use Hopf algebras to …?
+\end{remark}
+
+\begin{thing4}{Paper}\leavevmode
+	\textit{Affine quantum groups and equivariant K-theory} by Vasserot, 1998. Not the partial variety but the cotangent bundle $X=T^*F_n^d$. $X\times X$ is a Steinberg subvariety, $F=K^{\mathsf{GL}(?)\times \mathbb{C}^{*}}$ and the $\mathbb{C}^*$ gives a quantum variety.
+\end{thing4}
+
+\begin{defn}[Altan]\leavevmode
+	\textit{\textbf{Steinberg variety}}
+	 \[\operatorname{St}=T^*\operatorname{Fl}\times_{N\times p}T^*\operatorname{Fl}\]
+	 where \[\operatorname{Fl}=\mathsf{GL}(n)/B\qquad \text{the flag variety} \]
+	 \[T^*\operatorname{Fl}\qquad \text{the cotangent bundle} \]
+\end{defn}
+
+\section{The algebra $\mathsf{U}(n)$}
+Define $\mathsf{U}(n)^1$ first ($\mathfrak{sl}(n)$ version).
+
+\begin{itemize}
+\item Generators: $E_i(p),F_i(p), 0<i<n,p\in\mathbb{Z}$.
+\item Realtions:
+	\[\text{*a lot of equations, descriptiono of this algebra*} \]
+	
+\end{itemize}
+
+\begin{thing6}{Our project:}\leavevmode
+	$X=F_n^d$ over $\mathbb{C}$, $F=K^{\operatorname{Gl}_d}$. $q=0$ degeneratorion of Vasserot.
+\end{thing6}
+
+\begin{remark}\leavevmode
+	One cannot simply plug
+\end{remark}
+
+\section{$K^6(F_\mu)$}
+This is a homogeneous space, a quotient. So
+\[F_\mu=\operatorname{Gl}_d/P_\mu\]
+where $P_\mu$ is the parabolic subgroup.
+
+In fact,
+\[K^6(F_\mu)=K^{P_\mu}(\operatorname{pt})=\mathbb{C}[x_1^\pm ,\ldots,x_d^\pm]^{S\mu} \]
+\[S_\mu=S_{\mu_1}\times \ldots \times S_{\mu_n}\]
+
+
+
+\end{document}

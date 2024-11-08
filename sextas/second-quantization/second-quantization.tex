@@ -98,17 +98,17 @@ We have an inner product:
 
 \begin{proof}[Proof (Exercise)]\leavevmode
 	Let's consider the case $n=1$. Then  $\varphi_a=\operatorname{exp}(z\bar{a})$ and
-	\[\left<f,\varphi_a\right> =\int_{\mathbb{C}}f(z)\overline{\operatorname{exp}(za) }e^{|z|^2}d \lambda(z)\]
+	\[\left<f,\varphi_a\right> =\int_{\mathbb{C}}f(z)\overline{\operatorname{exp}(za) }e^{-|z|^2}d \lambda(z)\]
 		{\color{2}But I'm not sure how to compute this integral. Upon difficulties let's suppose $f\equiv1$. Perhaps split complex exponential into real and imaginary parts? Then we get real-valued integrals over $\mathbb{R}^{2}=\mathbb{C}$:}
 		\begin{align*}
-			\int_{\mathbb{C}}\overline{\operatorname{exp}(za) e^{|z|^2}}d \lambda(z)&=\int_{\mathbb{R}^{2}}\overline{e^{\operatorname{Re}(za)}\big(\cos \operatorname{Im}(za)+i \operatorname{Im}(za)\big)}e^{|z|^2}d \lambda(z)\\
-										     &= \int_{\mathbb{R}^{2}}\overline{e^{\operatorname{Re}(za)}\cos \operatorname{Im}(za)}e^{|z|^2}d \lambda(z)+\int_{\mathbb{R}^{2}}\overline{e^{\operatorname{Re}(za)}i \operatorname{Im}(za)}e^{|z|^2}d \lambda(z)
+		\int_{\mathbb{C}}\overline{\operatorname{exp}(za)} e^{-|z|^2}d \lambda(z)&=\int_{\mathbb{R}^{2}}\overline{e^{\operatorname{Re}(za)}\big(\cos \operatorname{Im}(za)+i \operatorname{Im}(za)\big)}e^{-|z|^2}d \lambda(z)\\
+										     &= \int_{\mathbb{R}^{2}}\overline{e^{\operatorname{Re}(za)}\cos \operatorname{Im}(za)}e^{-|z|^2}d \lambda(z)+\int_{\mathbb{R}^{2}}\overline{e^{\operatorname{Re}(za)}i \operatorname{Im}(za)}e^{-|z|^2}d \lambda(z)
 			\end{align*}
 {\color{2}Not sure…}
 
 	In the general case we shall have
-	\begin{align*}\left<f,\varphi_a\right> &=\int_{\mathbb{C}^n}f(z)\overline{\varphi_a(z)}e^{|z|^2}d\lambda(z)\\
-		&=\int_{\mathbb{C}^{n}}f(z)\overline{\operatorname{exp}(z_1\overline{a}_1+\ldots +z_n\overline{a}_n)}e^{|z|^2}d \lambda(z)
+	\begin{align*}\left<f,\varphi_a\right> &=\int_{\mathbb{C}^n}f(z)\overline{\varphi_a(z)}e^{-|z|^2}d\lambda(z)\\
+		&=\int_{\mathbb{C}^{n}}f(z)\overline{\operatorname{exp}(z_1\overline{a}_1+\ldots +z_n\overline{a}_n)}e^{-|z|^2}d \lambda(z)
 		\end{align*}
 {\color{2}Maybe take this somehow to a line integral around $a$ to Cauchy integral formula…?} \end{proof}
 \clearpage

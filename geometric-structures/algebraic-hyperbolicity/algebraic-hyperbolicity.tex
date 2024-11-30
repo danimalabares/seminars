@@ -1,0 +1,182 @@
+\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+\input{/Users/daniel/github/config/thms-eng.sty}%available at github.com/danimalabares/config
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Geometric Structures on Manifolds Seminar\hfill IMPA
+		
+		{\small\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+		
+		%{\small\hfill\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge On the algebraic hyperbolicity of projective hypersurfaces}
+
+\hfill{\Large Lucas Mioranci}
+
+\hfill{\large November 14, 2024}
+
+\begin{upshot}\leavevmode
+	Recall that last week we talked about Kobashi hyperbolicity, which means that Kobayashi pseudo-distance is non-degenerate. We saw that this implies Brody hyperbolicity, which means that $X$ has no non-constant holomorphic maps. If $X$ is compact this is an equivalence.
+
+Today we shall see that this implies algebraic hyperbolicity. Demially's conjecture is that this last implication is actually iff.
+\end{upshot}
+
+\begin{thing4}{Abastract}\leavevmode
+A complex projective manifold $X$ is said to be algebraically hyperbolic if every integral curve $C$ of $X$ satisfies the inequality $2g(C)-2>\varepsilon \cdot deg(C)$
+ for a fixed positive $\varepsilon$ and ample divisor on $X$. This talk aims to review some techniques used to prove the algebraic hyperbolicity of very general hypersurfaces of degree $d>2n−2$ in $\mathbb{P}^n$.	
+\end{thing4}
+
+\begin{defn}\leavevmode
+	A complex projective variety $X$ is \textit{\textbf{algebraically hyperbolic}} if there exists $\varepsilon>0$ and ample divisor $H$ such that, for every integral curve $C \subset X$ of geometric genus $g(C)$,
+	\[2g(C)-2 \geq \varepsilon \operatorname{deg}_H(C)\]
+\end{defn}
+
+\begin{remark}[Vitorio]\leavevmode
+	Definition of \textit{\textbf{degree}} is $H.C$.
+\end{remark}
+
+\begin{remark}[Misha]\leavevmode
+	Is there not an associated metric here? Take the metric in all agebraic curves inside $X$. Perhaps it is equivalent?
+\end{remark}
+
+\begin{remark}\leavevmode
+	In particular, $X$ does not contain any rational or elliptic curves.
+\end{remark}
+
+In this talk: $X \subset \mathbb{P}^n$ very general projective hypersurface of degree $d$.
+
+\begin{conjecture}[Kobayashi]
+$X$ is algebraically hyperbolic for $d$ sufficiently large ($d\geq 2n-2$, $n\geq 4$ or $d\geq 2$, $n=3$).
+\end{conjecture}
+
+\section{$n\geq 3$}
+
+\begin{thm}[Clemens '86, E. '88]\leavevmode
+$n \geq  4$, $d\geq 2n$.
+\end{thm}
+
+\begin{thm}[Voisin, '96, 98]\leavevmode
+$n \geq 4$, $d \geq  2n-1$.
+\end{thm}
+
+\begin{thm}[Pocienza '04, Clemens-Ron '04]\leavevmode
+$n\geq 6$, $d \geq  2n-2$.
+\end{thm}
+
+\begin{thm}[Yeong '22]\leavevmode
+$n\geq 5$, $d\geq 2n-2$.
+\end{thm}
+
+Open: $(n,d)=(4,6)$.
+
+\section{$n=3$}
+
+\begin{thm}[Xu, '94]\leavevmode
+$n=3$, $d \geq  6$.
+\end{thm}
+
+\begin{thm}[Coskan-Ried, '99]\leavevmode
+$n=3$, $d \geq 5$.
+\end{thm}
+
+And $n=3$, $d=4$ is a  K3 so (or is it \textit{because}?)  it has rational curves.
+
+\section{Proof for $n=4$, $d\geq 2n-2$}
+
+
+\begin{proof}\leavevmode
+	Main reference  \textit{Algebraic hyperbolicity of the very general quintic surface in $\mathbb{P}^3$}, Coskun and Reid '99.
+
+	\textit{Algebraic hyperbolicity of very general surface}, Coker and Reid '22.
+
+	\textit{Algebraic hyperbolic of very general hypersurface in $\mathbb{P}^n\times\mathbb{P}^n$}, Young '22. 
+\end{proof}
+
+\textbf{Open}: $\mathbb{P}^2 \times \mathbb{P}^1$.
+
+\begin{proof}\leavevmode
+Let $S_d=\mathbb{P}H^{0}(\mathbb{P}^n,\mathcal{O}_{\mathbb{P}^n}(d))$ and let
+\[\mathcal{X}=\{(p,[X]):p\in X\}\subseteq \mathbb{P}^n\times s_d\]
+which is a universal degree $d$ hypersurface in $\mathbb{P}^n$.
+
+We can find a generically injective map $h:Y\to X$ over $U \overset{\operatorname{o p}}{\subseteq} S_d$ of curves of geometric genus $g$ and degree $e$. {\color{3}$Y$ is a family of curves $Y_t$ inside each hypersurface $X_t$ for every parameter $t\in U$}.
+
+Define the \textit{\textbf{vertical tangent bundles}} are the kernels
+\[\begin{tikzcd}0\arrow[r]&T_{X/\mathbb{P}^n}\arrow[r]&T_{\mathcal{X}}\arrow[r]&\pi^* _2T_{\mathbb{P}^n}\arrow[r]&0\end{tikzcd}\]
+\[\begin{tikzcd}0\arrow[r]&T_{Y/\mathbb{P}^n}\arrow[r]&T_Y\arrow[r]& h^*\pi^* _2T_{\mathbb{P}^n}\arrow[r]&0\end{tikzcd}\]
+\begin{itemize}
+\item $Y$ dominates $U$ under $\pi_1\circ h$.
+\item We can assume $Y$ is stable under the $\mathsf{GL}(n+1)$-action.
+\end{itemize}
+So $\pi_2\circ h$ dominates $\mathbb{P}^n$ and $T_Y \longrightarrow h^*\pi^* _2T_{\mathbb{P}^2} $ is surjective.
+
+Define the \textit{\textbf{normal bundles}} as cokernels of
+\[\begin{tikzcd}0\arrow[r]&T_Y\arrow[r]&h ^* T_{\mathcal{X}}\arrow[r]&N_{h/\mathcal{X}}\arrow[r]&0\end{tikzcd}\]
+\[\begin{tikzcd}0\arrow[r]&T_{Y_t}\arrow[r]&h_t^* T_{\mathcal{X}_t}\arrow[r]&N_{ht/\mathcal{X}_t}\arrow[r]&0\end{tikzcd}\]
+Denote
+\[i_t:\mathcal{X}_t\to\mathcal{X}\]
+\begin{align*}
+	j_t:Y_t &\longrightarrow Y \\
+	p &\longmapsto (p,t)
+\end{align*}
+
+\begin{thing4}{(technical) Lemma 1}\leavevmode
+	$N_{h_t/\mathcal{X}_t}\equiv j^* _t N_{h/\mathcal{X}}$
+\end{thing4}
+
+\begin{proof}\leavevmode
+Big commutative diagram.
+\end{proof}
+
+\begin{thing4}{Lemma 2}\leavevmode
+	$N_{h_t/\mathcal{X}_t}\cong j^*_t K$ where $K=\operatorname{coker}(T_{Y/\mathbb{P}^n}\to T_{Y/\mathbb{P}^n}$.
+\end{thing4}
+
+\begin{defn}\leavevmode
+	The \textit{\textbf{Lazarsfeld-Mukai bundle}} $M_d$ is the kernel of
+	\[\begin{tikzcd}0\arrow[r]&M_d\arrow[r]&\mathcal{O}_{\mathbb{P}^n}\otimes H^{0}(\mathbb{P}^n , \mathcal{O}_{\mathbb{P}^n}(d))\arrow[r,"\operatorname{ev}"]&\mathcal{O}_{\mathbb{P}^n}(d)\arrow[r]&0\end{tikzcd}\]
+\end{defn}
+
+\begin{remark}\leavevmode
+	The fiber over $p \in \mathbb{P}^n$ is $M_d$ is the space of sections vanishing at $p$.
+\end{remark}
+
+\begin{thing4}{Lemma 3}\leavevmode
+	$T_{\mathcal{X}/\mathbb{P}^n}\cong \pi ^*_2M_d$
+\end{thing4}
+
+By Lemma 2 and 3:
+\[j^*_sh^*  T_{\mathcal{X}/\mathbb{P}^n}\longrightarrow j^* _t K\cong N_{ht/\mathfrak{X}_t}\]
+So we have a surjection
+\[M_d|_{Y_t}\twoheadrightarrow N_{ht/X_t}.\]
+
+\begin{defn}\leavevmode
+	Let $\mathcal{E}$ be a vector bundle on $\mathbb{P}^n$, let $L$ be a globally gen line bundle. We say $L$ is \textit{\textbf{section-dominating}} for $\mathcal{E}$ if $\mathcal{E} \otimes \mathcal{L}^\vee$ is globally gen. and
+	\[H^{0}(L \otimes I_p)\otimes H^{0}(\mathcal{E} \otimes \mathcal{L}^\vee)\longrightarrow H^{0}(\mathcal{E} \otimes I_p)\]
+	is surjective for all $p \in \mathbb{P}^n$.
+\end{defn}
+
+\begin{example}\leavevmode
+	in $\mathbb{P}^n$, $\mathcal{E}=\mathcal{O}_{\mathbb{P}^n}(d)$, $L=\mathcal{O}_{\mathbb{P}^n}(1)$.
+\end{example}
+
+\begin{prop}\leavevmode
+	There is a sujection 
+\end{prop}
+
+
+
+
+
+
+
+\end{proof}
+
+
+\end{document}

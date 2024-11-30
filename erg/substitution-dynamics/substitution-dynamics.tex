@@ -1,0 +1,74 @@
+\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+\input{/Users/daniel/github/config/thms-eng.sty}%available at github.com/danimalabares/config
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Ergodic Theory Seminar \hfill IMPA
+		
+		{\small\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+
+		
+		%{\small\hfill\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge Substitution dynamics on infinite alphabets}
+
+\hfill{\Large Ali Messãoudi}
+
+{\Large \hfill UNESP}
+
+\hfill{\large November 28, 2024}
+
+\begin{thing4}{Abstract}\leavevmode
+A substitution is a map from an alphabet A to the set
+of finite words in A. To any substitution we can naturally associate
+a symbolic dynamical system that is well studied in the literature
+when the alphabet is a finite set and connected to several areas such
+as ergodic theory and number theory among others. In this work,
+we study ergodic and geometric properties of dynamical systems
+associated to substitutions in infinite alphabets. This study involves
+finite and infinite invariant measures, countably infinite matrices
+and Rauzy Fractals.	
+\end{thing4}
+
+\tableofcontents
+
+\section{Introdução para quem não é da área}
+
+\begin{defn}\leavevmode
+	Um \textit{\textbf{sistema dinâmico}}  é um par $(X,f)$ com  $X \neq  \varnothing$ and $f:X\to X$.
+\end{defn}
+
+Em sistemas dinâmicos estamos interessados em estudar a órbita
+\[O(x)=\{f^n(x), n \in \mathbb{N}, f^n:=f \circ f \circ\ldots \circ f\}\]
+para $x \in X$.
+
+Quando tem uma medida invariante, i.e. $\mu(f^{-1}(A)=\mu(A),; \forall A \in \mathcal{B}$,  quase todo ponto volta perto dele mesmo.
+
+\section{Introdução de verdade}
+
+Considere um alfabeto $A$ que é só um conjunto finito. $A^*$ são as palavras finitas. $A^\mathbb{N}$ são as palavras infinitas. $A^\mathbb{Z}$ são as palavras infinitas pra diante e pra atrais.
+
+Uma \textit{\textbf{substitução}} é um mapa
+\begin{align*}
+	\sigma: A &\longrightarrow A^* \\
+	a &\longmapsto \sigma(a)
+\end{align*}
+
+\begin{lemma}\leavevmode
+	Existe $u \in A^\mathbb{N}$ e $k \in \mathbb{N}^*$ tal que $\sigma^k(u)=u$ é um ponto periódico de $\sigma$.
+\end{lemma}
+
+\begin{remark}\leavevmode
+	A substituição de Fibonacci $A=\{0,1\}$ $\sigma(0)=01, \sigma(1)=0$ tem um ponto fixo, o limite de $\sigma(0)$, ie.
+	\[u:=\lim_{n \to \infty} \sigma^n(0),\qquad \sigma(u)=u.\]
+	Pode codificar a informação da substituição $\sigma$ numa matriz: cada renglón é o numero de vezes que aparece cada letra do alfabeto na imagem de $\sigma$.
+\end{remark}
+
+\section{Classical results}
+

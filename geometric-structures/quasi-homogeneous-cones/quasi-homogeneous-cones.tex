@@ -1,0 +1,228 @@
+\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+\input{/Users/daniel/github/config/thms-eng.sty}%available at github.com/danimalabares/config
+
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Geometric Structures on Manifolds \hfill IMPA
+		
+		{\small\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+
+		
+		%{\small\hfill\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge Quasi-homogeneous cones}
+
+
+\hfill{\Large Ivan Frolov}
+
+{\Large \hfill IMPA}
+
+\hfill{\large October 24, 2024}
+
+\vspace{1em}
+
+
+{\color{6}\bfseries Abstract.}\hspace{.5em} A cone $V$ in a Euclidean space is quasi-homogeneous if it contains a compact subset $K$ such that every point of $V$ can be mapped into $K$ by a linear automorphism of $V$. I will discuss a theorem of Kac-Vinberg, which says that the projectivisation of a quasi-homogeneous cone in $\mathbb{R}^{3}$ with piecewise $C^2$ boundary is either an ellipse or a triangle.
+
+\tableofcontents
+
+\begin{defn}\leavevmode
+	$V\subset \mathbb{R}^{3}$ is a \textit{\textbf{cone}} if
+	\begin{enumerate}
+		\item $V$ is open.
+	
+		\item $\forall v\in V$, $\lambda>0$, $\lambda v \in V$.
+		\item Closure of the convex hull of $V$ contains no lines.
+	\end{enumerate}
+	Its automorphism group is composed of linear automorphisms of $\mathbb{R}^{3}$ that preserve $V$. $V$ is \textit{\textbf{homogeneous}} if $\operatorname{Aut}(V)$ acts transitively on $V$, and  \textit{\textbf{quasi-homogeneous}} if there exists a compact subset $K\subset V$ such that $\operatorname{Aut}(V)\cdot K=V$. {\color{8}So it's "generated" by a compact subset?} {\color{3}"The intuiton is that the quotient is compact, though we don't know if it is Hausdorff."}
+\end{defn}
+
+\begin{remark}[Misha]\leavevmode
+	Most of the work on cones was done by Vinberg.
+\end{remark}
+
+The projectivization of a cone is contained in projective plane, $PV\subset \mathbb{R}P^{2}$, and it is a "convex subset". Its boundary $ \Gamma=\partial(PV)$ is a Jordan curve.
+
+\begin{thm}[Kac-Vinberg, 1965?]\leavevmode
+	Let $V$ be a quasi-homogeneous cone. If $\Gamma$ is piecewise $C^2$, then $\Gamma$ is either an ellipse or a triangle.
+\end{thm}
+
+We shall unsuccesfully try to prove this theorem.
+
+\begin{thing4}{Lemma 1}\leavevmode
+	$V$ quasi-homogeneous cone $\implies $ $V$ is convex.
+\end{thing4}
+
+\begin{proof}\leavevmode
+	Let $V'$ be the convex hull of  $V$. Then  $V'$ is a convex cone and  $\operatorname{Aut}(V)$ acts on $V'$. Now condier its projectivization $PV'$. There is a distance in $PV'$:
+	 \[d(a,b)=\operatorname{log}\frac{|ay|\cdot |bx|}{|ax|\cdot |by|}\]
+	 So $d(PK,PV'\setminus \overline{PV})>\varepsilon$, so there exists $x \in PV'\setminus \overline{PV}$. Then there exists a point $y \in PV$ very close to $\varepsilon$. I think here convexity was used, perhaps we can take $y $ in the boundary.
+
+	 $g\in\operatorname{Aut}(V)$ such that $gy \in K$. But then $\underbrace{d(x,y)}_{<\varepsilon}=\underbrace{d(gx,gy)}_{<\varepsilon}$, which means $gx\in PV'\setminus PV$.
+\end{proof}
+
+Now let $V$ be a quasi-homogeneous cone,  $G\subset \operatorname{Aut}(V)$ such that $ \exists K\subset V$ with $GK=V$.
+
+If  $G'$ is a finite index subgroup of  $G$, then $G'$ also satisfies the property above.
+
+\begin{thing5}{Lemma 2}\leavevmode
+	$g \in G$. If $g$ has a 2-dimensional eigenspace, then $g^2=\operatorname{Id}$.
+\end{thing5}
+
+\begin{proof}\leavevmode
+	Let $\ell$ be the projectivization of the eigenspace, $g$ fixes $\ell$ pointwise. Then $\forall x\in\ell\setminus PV$, $g^2$ fixes tangents from $x$ to $PV$. Hence  $g^2=\operatorname{Id}$.
+\end{proof}
+
+\begin{thing7}{Lemma 3}\leavevmode
+	$g\in G$ cannot have exactly two different eigenvalues.
+\end{thing7}
+
+\begin{proof}\leavevmode
+\[g=\begin{pmatrix} \lambda &1&0\\0& \lambda 0\\0 &0& \mu \end{pmatrix} ,\qquad \lambda,\mu \in\mathbb{R}\]
+$x \in \mathbb{R}P^{2}$, then for a basis $v_1,v_2,v_3$, \[\lim_{n \to \infty} g^n(x)=[v_1]\qquad \text{if $x_\neq v_3$} \]
+\[\lim_{n \to \infty} g^{-n}=[v_3],\qquad \text{ if $x  \not\in(v_1,v_2)$} \]
+then $x$ can be on $\Gamma \implies [v_1],[v_3]\in\Gamma$.
+
+Then $g$ preserves  $[v_1]$ and $[v_3]$. There is a curve $\Gamma$ preserved by $g$. Then $g$ also preserves the tangents. And $g^2$ preserves tangents. But the tangents, like tangents to a circle, intersect, and that gives a third point fixed by $g^2$, but that's impossible because there are only two eigenvalues ($g^2$ has the same form as $g$). But the end of this proof was sketchy.
+\end{proof}
+
+\begin{thing9}{Lemma 4}\leavevmode
+	$G$ cannot be unipotent (=exponent of Lie algebra, bracket several times gives zero, and also that it cannot be strictly upper triangular that is, it has not the following form:
+	\[G\subset \left\{ \begin{pmatrix} 1 & a & b\\ 0 & 1 & c\\ 0 & 0 & 1 \end{pmatrix}  \right\} \]
+\end{thing9}
+
+\begin{proof}\leavevmode
+	Suppose it has that form. If $[G,G]\ni g\neq 1$. So if $g$ is
+	\[g=\begin{pmatrix} 1 & 0 & a\\ 0 & 1 & 0\\ 0 & 0 & 1 \end{pmatrix} \]
+	which contradicts lemma 2.
+
+	If
+	\[g=\begin{pmatrix} 1 & a & 0\\ 0 & 1 & a\\ 0 & 0 & 1 \end{pmatrix} \subset G\]
+\[G=\left\{ \begin{pmatrix} 1& a & b\\0 & 1 & a\\ 0 & 0 1 \end{pmatrix}  \right\} \]
+	\begin{remark}[Misha]\leavevmode
+		This is a 2-dimensional commutative subgroup of Heisenberg.
+	\end{remark}
+Now notice that
+\[\{g^nv:n \in \mathbb{Z}\}\]
+lies on parabolas. Is it true no? Concluding this is proof left as a (non-trivial I guess) {\color{4}exercise}.
+\end{proof}
+
+\begin{thing4}{Lemma 5}\leavevmode
+	If the $G$ is diagonal then $\Gamma$ is a triangle.
+\end{thing4}
+
+\begin{proof}\leavevmode
+	This is easy. We already have three points, they are limit points; they are sitting in the boundary… also an {\color{4}exercise}. No let's prove it.
+
+	$G\subset \{\text{diagonal matrices} \}$ so take an alement there
+	\[g=\begin{pmatrix} \lambda_1 & 0 & 0\\ 0 & \lambda_2 & 0\\ 0 & 0 & \lambda_3 \end{pmatrix} \]
+	And three eigenpoints $[v_1], [v_2], [v_3]$. We can order the eigenvalues $|\lambda_1|>|\lambda_2|>|\lambda_3|$. Looks like there is some recurrent argument: $[v_1]$ and $[v_3]$ are in $\Gamma$ and the lines $[v_1][v_2]$ and $[v_3][v_2]$ are tangent to the curve and of course intersect at $[v_2]$.
+
+	And then the proof of lemma 1 comes back. Because the group preserves the triangle and a cocompact convex figure inside. But the distance between a point outside the convex region and the compact set is bounded ($T$ is triangle):
+	\[d(T\setminus PV,K)>\varepsilon\]
+	but you can take $x \in PV$ and $y\in T\setminus PV$ but you can map $y$ into $K$ with a distance preserving map. (The very same argument.)
+\end{proof}
+
+\begin{thing1}{Lemma 6}\leavevmode
+	If $G$ is upper-triangular then $\Gamma$ is either an ellipse or a triangle.
+\end{thing1}
+
+\begin{proof}\leavevmode
+	If $G$ is commutative take some non-unipotent element, If it was exactly 2 eigenvalues it's bad, if it has 1, the whole group will be diagonal out of commutativity and apply lemma 5. So take $g\in [G,G]$, it must be like this:
+\[g=\begin{pmatrix} 1 & a & 0 \\ 0 & 1 & a \\ 0 & 0 & 1 \end{pmatrix} \]
+Now note that $[G,G]$ is commutative, since  \[[ [G,G],[G,G]]\in\begin{pmatrix} 1 & b & *\\ 0 & 1 & 0\\ 0 & 0 & 1 \end{pmatrix} \] $hgh^{-1}$ must commute with $g$.
+
+Then \[\begin{pmatrix} \lambda_1 & * & *\\ 0 & \lambda_1 & *\\ 0 & 0 & \lambda_1 \end{pmatrix} \begin{pmatrix} 0 & a & * \\ 0 & 0 & a\\ 0 & 0 & 0 \end{pmatrix} \begin{pmatrix} \lambda_1^{-1} & * & *\\ 0 & \lambda_2^{-1} & *\\ 0 & 0 & \lambda_3^{-1} \end{pmatrix}=\begin{pmatrix}  0 &  \frac{\lambda_2}{\lambda_3}a &  *\\ &  0 &  \frac{\lambda_2}{\lambda_3}a\\ & & 0 \end{pmatrix} \]
+where
+\[hgh^{-1}=\begin{pmatrix} 1 & \lambda a & *\\ 0 & 1 & \lambda a\\ 0 & 0 & 1 \end{pmatrix} \]Now do this several times to obtain
+\[h^ngh^{-n}=\begin{pmatrix} 1 & \lambda^na & *\\ 0 & 1 & \lambda^n a\\0 & 0 & 1 \end{pmatrix} \]
+and you can see perhaps that it is not discrete. And so what? We have a 1-parametric subgroup. Why? Because of the closed subgroup theorem (closed subgroup of a Lie group is Lie subgroup). $\mathsf{OK}$ but then you need to show that the automorphism group of the cone is closed. (Shown---because $G$ is closed, that has to be written somewhere.)
+
+$\mathsf{OK}$ so we have a 1-parametric subgroup, namely
+\[\begin{pmatrix} 1 & t & t^2/2\\ 0 & 1 & t\\ 0 & 0 & 1 \end{pmatrix} \]
+so the boundary \textit{is} an ellipse.
+\end{proof}
+
+Now let's review what happened:
+
+{\color{4}\bfseries Lemma 1.}\hspace{.5em} $V$ is convex.
+
+{\color{7}\bfseries Lemma 2.}\hspace{.5em} If $g \in G$ has 2-dimensional eigenspaces then $g^2=\operatorname{Id}$.
+
+{\color{6}\bfseries Lemma 3.}\hspace{.5em}$g \in G$ cannot have 2 eigenvalues.
+
+{\color{5}\bfseries Lemma 6.}\hspace{.5em} If $G$ is upper triangular, then we are done.
+
+Now let's do another lemma:
+
+\begin{thing9}{Lemma 7}\leavevmode
+	If the whole automorphism fixes a point of the boundary, then the curve is either an ellipsoid or a triangle (we are done).
+\end{thing9}
+
+\begin{proof}\leavevmode
+	Follows from Lemma 6, since we have a fixed flag. There exists a subgroup of index 2 that fixes a point and a line---it means it is upper tiangular. Another way to put this: we have a fixed flag, what fixes a flag in projective space is upper triangular.
+\end{proof}
+
+Now they (Vinberg and Kac) say that we can assume that the curve is smooth everywhere.
+
+\begin{thing6}{Lemma 8}\leavevmode
+	We can assume that the curve is smooth everywhere.
+\end{thing6}
+
+\begin{proof}\leavevmode
+	There exists a finite index subgroup $G'\subset G$ preserving all non-smooth points of $\Gamma$. Then apply lemma 7.
+\end{proof}
+
+\begin{thing2}{Lemma 9}\leavevmode
+	If you have an element of infinite order that fixes a point inside ($v\in PV$) then the curve $\Gamma$ is an ellipse.
+\end{thing2}
+
+\begin{proof}\leavevmode
+	Since distance is preserved, $\{g^n\}$ is not discrete. This gives a 1-parametric subgroup.
+\end{proof}
+
+\begin{thing2}{Lemma 10}\leavevmode
+	If $G$ has an element of arbitrarily large finite order, then $\Gamma$ is an ellipse.
+\end{thing2}
+
+\begin{proof}\leavevmode
+	If $g \in G$ with $g^n=\operatorname{Id}$,  $v \in V$, then the cone
+	\[v+gv+\ldots +g^{n-1}v=v'\qquad g(v')=v'\]
+\[g^{k_n}_n=\operatorname{Id}\qquad k_n\to \infty\qquad g_n(v_n)=v_n\]
+somehow we map them to $K$, $v_n\in K$ and then we can assume they converge $v_n\to v$. So there is a subsequence $g_n^{m_n}$ that will converge to an irrational rotation around $v$. Then we use that the group is closed and apply the previous lemma.
+\end{proof}
+
+\begin{thing6}{Lemma 11}\leavevmode
+	If $g \in G$ preserves $ x\in \Gamma$, then eigenvalues of $ g$ are real.
+\end{thing6}
+
+\begin{proof}\leavevmode
+	We already assume that the curve is smooth, so there is a unique tangent, so $g$ preserves the unique tangent, so preserves the flag. (Also there's a way to show this without smoothness but $\mathsf{OK}$)
+\end{proof}
+
+\begin{thing4}{Lemma 12}\leavevmode
+	If every $g \in G$ is either unipotent or of finite order then the boundary is an ellipse.
+\end{thing4}
+
+\begin{proof}\leavevmode
+	By lemma 10 there exists $N$ such that every $g\in G$ of finite order satisfy $g^N=1$.
+\[(g^N-1)^3=0\]
+	So there is an algebraic group… let $\overline{G}$ be the Zariski closure of $G$ and $G_0$ connected component of $1\in \overline{G}$. Now recall that
+
+	\begin{thm}\leavevmode
+		Real algebraic variety has finitely many connected components.
+	\end{thm}
+	which implies that the index $[\overline{G}:G_0]<\infty$ is finite. So $G_0\cap G$ is unipotent. Apply lemma 6.
+\end{proof}
+
+From all this it should supposedly be clear that there is an element
+\[g=\begin{pmatrix} \lambda_1 & 0 & 0\\0 & \lambda_2 & 0\\0 & 0 & \lambda_2 \end{pmatrix} \in G\]
+
+\end{document}

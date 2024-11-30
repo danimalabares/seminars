@@ -1,0 +1,200 @@
+\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+\input{/Users/daniel/github/config/thms-eng.sty}%available at github.com/danimalabares/config
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Geometric Structures on Manifolds Seminar\hfill IMPA
+		
+		{\small\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+		
+		%{\small\hfill\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge Automorphisms of algbraically hyperbolic manifolds}
+
+\hfill{\Large Misha Verbitsky}
+
+\hfill{\large November 21, 2024}
+
+\tableofcontents
+\begin{upshot}\leavevmode
+using dynamic argument, hyperkähler is non hyperbolic. In the end it is beacuse of automorphism group. We shall see how to prove it is finite.
+\end{upshot}
+\begin{thing3}{Past upshot}\leavevmode
+	
+Recall that last week we talked about Kobashi hyperbolicity, which means that Kobayashi pseudo-distance is non-degenerate. We saw that this implies Brody hyperbolicity, which means that $X$ has no non-constant holomorphic maps. If $X$ is compact this is an equivalence.
+
+Today we shall see that this implies algebraic hyperbolicity. Demially's conjecture is that this last implication is actually iff.
+\end{thing3}
+
+\begin{thing3}{Abstract}\leavevmode
+	Kobayashi hyperbolic manifold is a compact Hermitian manifold $M$
+ such that any holomorphic map from the Poincare disk to $M$
+ is C-Lipschitz, with a fixed constant C. Such manifolds admit a metric, called ``Kobayashi metric'', which is invariant under all holomorphic automorphisms; this immediately implies that the group of holomorphic automorphisms is compact. It is not hard to see that compactness implies that this group is finite. Algebraic hyperbolicity is a seemingly weaker algebraic version of this notion which was first defined by J.-P. Demailly. Conjecturally, it is equivalent to Kobayashi hyperbolicity. I will explain why algebraically hyperbolic manifolds have finite fundamental group. This is a result obtained jointly with F. Bogomolov and L. Kamenova. I will explain how it implies that hyperkahler manifolds with Picard rank $\geq 3$
+ are not algebraically hyperbolic.
+\end{thing3}
+
+\section{Introduction}
+
+
+\begin{question}\leavevmode
+	What is up with Picard rank $\geq  3$ hypothesis?
+\end{question}
+
+\begin{thing4}{Another characterizarion of Koba hyp}\leavevmode
+	$(M,I,\omega)$ compact, Hermitian manifold such that there exists $C>0$ and for each holomorphic map from $(\Delta,$Poincaré metric $)$ to $M$ is $C$-Lipschitz.
+\end{thing4}
+\begin{proof}\leavevmode
+Because we bound kobayashi pseudo distance from below with the hermitian/riemannian metric, making it into a distance. I think I read this sometime ago in some Kobayashi book.
+\end{proof}
+
+\begin{claim}\leavevmode
+	If kobayashi sectional curvature is bounded from below by $-\varepsilon$ with $\varepsilon\gg 0$ then any map $\Delta \to M$ is $C$-Lipschitz with $C=\frac{c}{\varepsilon}$
+\end{claim}
+
+\begin{thm}[Brody]\leavevmode
+if $M$ is compact Kobayahi hyperbolic is equivalent to not having a copy of $\mathbb{C}$.
+\end{thm}
+
+\section{Review/other perspective of algebraically hyperbolic}
+
+\begin{defn}\leavevmode
+	$M$ projective manifold. (makes 0 sense for Kähler). $M$ is called \textit{\textbf{kobayashi hyperbolic}} if for each compact curve  $S \subset M$, 
+	\[\int_{S}M\omega\leq (g-q)C\]
+	for some $C>0$
+\end{defn}
+
+\begin{remark}\leavevmode
+	So Lucas just put degree, but the integral is the intersection number with hyperplane sections. (the two definitions \textit{are} equivalent)
+\end{remark}
+
+\begin{question}\leavevmode
+	 H o o o ow!? To pass from the integral to the intersection form.
+\end{question}
+
+\begin{thm}[Who?]\leavevmode
+Kobayashi hyperbolic implies algebraically hyperbolic.
+\end{thm}
+
+\begin{thing4}{conjecture}[Demailly]\leavevmode
+	converse implication holds. He proposed a scheme to prove this that was later proved wrong by his students.
+\end{thing4}
+
+now we prove
+
+\begin{thm}[Who?]\leavevmode
+Kobayashi hyperbolic implies algebraically hyperbolic.
+\end{thm}
+
+\begin{proof}\leavevmode
+\begin{enumerate}[label=\textbf{Step \arabic*}]
+\item Start with a curve $C$ of genus $>1$. Then $C=\Delta/\Gamma$. Then $\operatorname{Vol} C=-\int_{C}c_1(c)=(g-1)\alpha$. Where $\alpha$ is probably $2\pi$---just a constant. \textit{Because curvature is Chern class! $\ddot\cup $}. So that proves it.
+
+\item Suppose $M$ is Kobayashi hyperbolic compact Hermitian manifold. "By compactness" there exists a constant $\varepsilon$ such that $h \leq \varepsilon h_K$, where  $h$ is normal hermitian metric and $h_K$ is Kobayashi metric.
+
+ \item Let $j:S \hookrightarrow M$ be a curve in a projective manifold, its genus is $\geq 2$  by hyperbolicity. Notice $j$ is 1-Lipschitz with respect to Kobayashi hyperbolic metric because it is holomorphic. Now
+	 \[(g-1)\alpha=\operatorname{Vol}_{K}(S)\geq \operatorname{Vol}_{KM}(S)\geq \varepsilon\operatorname{Vol}_{\text{Fubini-Study}}S \]
+This gives $g-1\geq \frac{\varepsilon}{2 \alpha}\operatorname{deg} S$ proving hyperbolicity. 
+\end{enumerate}
+\end{proof}
+
+\section{The automorphism group of an algebraically hyperbolic manifold is discrete}
+
+\begin{claim}\leavevmode
+	Any hyperbolic manifold $M$ has discrete automorphism group.
+\end{claim}
+
+\begin{proof}\leavevmode
+\begin{enumerate}[label=\textbf{Step \arabic*}]
+\item The group of automorphisms of a projective manifold is a complex Lie group. Its connected component of identity $G_0$ {\color{4}Couldn't follow}
+\end{enumerate}
+\end{proof}
+
+\begin{thm}[Not in slides]\leavevmode
+$X$ projective admits a self map $f:X \to X$ of degree $\operatorname{deg}f>1$ then $X$ it not algebraically hyperbolic.
+\end{thm}
+\begin{proof}\leavevmode
+Degree is the number o preimages (or the image of the fundamental class in cohomology) so we have $\operatorname{deg} S \operatorname{deg} f$ and "the same for genus"
+\end{proof}
+
+\begin{claim}\leavevmode
+	The automorphism group of a compact Kobayashi hyperbolic manifold is finite.
+\end{claim}
+
+\begin{proof}\leavevmode
+Compactness and using the claim whose prof I didn't follow.
+\end{proof}
+
+\begin{thm}[with F. Bogomolov and L. Kamenova]\leavevmode
+The automorphism group of an algebraically hyperbolic manifold is finite.
+\end{thm}
+
+Proof is in three statements.
+
+\begin{prop}\leavevmode
+	If there is an automorphism of $M$ not preserving the rational Kähler class then $M$ is not algebraically hyperbolic. (If the image of $\operatorname{Aut}(M)$ in $\mathsf{GL}(H^{1,1}(M,\mathbb{R}))$ does not preserve any rational Kähler class, then $M$ is not algebraically hyperbolic.)
+\end{prop}
+
+\begin{thing4}{Proposition 2}[The trickyiest]\leavevmode
+	The image of the automorphism group in $\mathsf{GL}(H^{1,1}(M))$ is finite and image of automorphism group in $\operatorname{Aut}(\operatorname{Pic}(M))$ infinite. Then $M$ is noa algebraically hyperbolic.
+\end{thing4}
+
+\begin{thing3}{Proposition 3}\leavevmode
+	$\operatorname{Aut}(M)$ infinite, image in $\operatorname{Aut}(\operatorname{Pic}(M))$ finite. Then $M$ is not algebraically hyperbolic.
+\end{thing3}
+
+\begin{upshot}\leavevmode
+	Torus dynamics breaks hyperbolicity.
+\end{upshot}
+
+\section{HyperKähler case}
+
+\begin{thm}[Them?]\leavevmode
+$M$ hyperkähler with $\operatorname{rk}(\operatorname{Pic}(M))\geq 3$ then $M$ is not algebraically hyperbolic.
+\end{thm}
+
+\begin{proof}\leavevmode
+Quadraitc lattice has infinietly many automorphisms (infinite automorphism group) if $(1,n)$ fr  $n\geq  2$. And in thie case we have that the picard  lattice is such a lattice; on board:
+\[\operatorname{Sym}(M)\cong\mathsf{O}(H^{1,1}(M,\mathbb{Z}),q)\]
+where $\operatorname{Sym}(M)$ is holomorphic symplectic automorphisms.
+
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,158 @@
+\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+\input{/Users/daniel/github/config/thms-eng.sty}%available at github.com/danimalabares/config
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Geometric Structures on Manifolds Seminar\hfill IMPA
+		
+		{\small\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+		
+		%{\small\hfill\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge Cusps of hyperbolic 4-manifolds and rational homology spheres}
+
+\hfill{\Large Leonardo Ferrari}
+
+\hfill{\large November 28, 2024}
+
+\begin{thing4}{Abstract}\leavevmode
+Abstract: A non-compact finite-volume complete hyperbolic n-manifold has a finite number of ends called cusps, whose sections are flat manifolds called cusp types. The possible configurations of cusp types on hyperbolic manifolds, however, is not entirely understood, and it was an open question whether a hyperbolic manifold could have only rational homology spheres as cusp types. An affirmative answer, in particular, would contradict some established results on the spectrum of the Laplacian on k-forms for cusped hyperbolic manifolds. We will briefly introduce the geometry of hyperbolic manifolds, describe the problem of cusp realisation, and then explain a combinatorial tool to construct manifolds by gluing copies of right-angled polytopes - a technique called colouring. We will then construct a 4-manifold such that all cusp types are the Hansche-Wendt manifold, the unique flat rational homology 3-sphere up to diffeomorphism.
+\end{thing4}
+
+\tableofcontents
+
+\section{Reminder on hyperbolic geometry}
+
+Hyperbolic $n$-space is $(\mathbb{H}^n,g^{\mathbb{H}^n})$. Here $\mathbb{H}^N\cong B_1^N(0)$ and $g^{\mathbb{H}^N}_x=\left( \frac{2}{1-\|x\|^2} \right)^2 g^{\mathbb{R}^N}_x$. This is called the Poincaré ball.
+
+Half-space model: $\{(x_1,\ldots,x_{N-1},y) \in \mathbb{R}^N:y>0\}$. Here the metric is $g_{(x_1,\ldots,x_{N-1},y)}=\frac{1}{y^2}g^{\mathbb{R}^N}_(x_1,\ldots,x_{N-1},y)$.
+
+$M$ is \textit{\textbf{hyperbolic}} if  $M=\mathbb{H}^N/\Gamma$ for some discrete, freely-acting $\Gamma \subset \operatorname{Isom}(\mathbb{H}^N)$.
+
+\section{Cusp geometry}
+
+\begin{remark}\leavevmode
+	$M$ can have finite volume without being compact. These manifolds are called \textit{\textbf{cusped}}.
+\end{remark}
+
+\begin{example}\leavevmode
+	The \textit{\textbf{truncated cusp}}, that is, the hyperbolic funnel. (But it is not complete.)
+\end{example}
+
+\begin{prop}\leavevmode
+	Every complete finite-volume hyperbolic manifold has a decomposition into compact part and a union of truncated cusps $T_i$. This is called the \textit{\textbf{thick-thin decomposition}}. Moreover, each $T_i\overset{\operatorname{is o}}{\cong}F \times [a, +\infty)$ where $F$ has a flat metric $g_T=\frac{1}{\mu}g_F$ (so its like a torus product half line).
+
+	$F$ is called the \textit{\textbf{cusp type}} and $(F,g_F)$ the  \textit{\textbf{cusp shape}}.
+\end{prop}
+
+
+\begin{thing4}{Problem}\leavevmode
+	Which flat manifolds are cusp types of some hyperbolic manifold?
+\end{thing4}
+
+In dimension 3, the only orientable one is the torus. The only other example in dim 3 is any complement of a hyperbolic knot (not torus knot, not satelite knot).
+
+\begin{thm}[M C Reynolds, '09]\leavevmode
+Every orientable flat $N$-manifold arises as cusp type of some hyperbolic $(N+1)$-manifold.
+\end{thm}
+
+\begin{thm}[Nimershwin, 90's]\leavevmode
+The set of metrics that arise as cusp shapes of hyperbolic manifolds is dense in the moduli space of flat metrics on that cusp type.
+\end{thm}
+
+\begin{question}[Misha]\leavevmode
+What are the elliptic curves that have those metrics?
+\end{question}
+
+\begin{remark}\leavevmode
+	For example, take the torus, it has an uncountable number of possible metrics. The matrics that arise as cusp shapes is dense in that space.
+\end{remark}
+
+\begin{thing4}{Problem}[Still open]\leavevmode
+	Which orientable flat manifolds arise as cusp types of single-cusped hyperbolic manifolds?
+\end{thing4}
+
+In dimension 3: there are 6 closed, flat, orientable diffeomorphism types of 3-manifolds. They can be distinguished by their first homology
+\begin{enumerate}
+\item The 3-torus (a cube gluing sides by translations). $\mathbb{Z}^3$
+\item The orientable circle bundle over the Klein bottle $S^1\overset{\sim}{\times}K$, also a cube with some gluing, $\mathbb{Z}\oplus  \mathbb{Z}^2_2$
+\item  and the same cube with some alternative gluing, $\mathbb{Z} \oplus  \mathbb{Z}_2$.
+\item A hexagonal prism gluing things somehow with 1/3 spin, $\mathbb{Z}\oplus \mathbb{Z}_3$,
+\item and a similar hexagonal prism with 1/6 spin, $\mathbb{Z}$.
+\item  Hasche-Wendt manifolds. $\mathbb{Z}^2_4$. This is the only rational homology sphere. In general these have holonomy $\mathbb{Z}_4^{N-1}$.
+\end{enumerate}
+
+So which can be realised by a single cusp?
+
+\begin{thm}[Long-Reid, '01]\leavevmode
+For cusped hyperbolic 4-manifold $X^4$, the signature of the manifold is
+\[\sigma(X^4)=-\sum_{c \text{ cusp} }\eta(c)\in\mathbb{Z},\]
+where $\eta$ is called \textit{\textbf{eta invariant}} and is constant in flat manifolds.
+\end{thm}
+
+\begin{thm}[Kolakov-Martelli '13, Kolakov-Slavich '16]\leavevmode
+$S^1 \times S^1\times S^1$, $S^1\tilde{\times}K$.
+\end{thm}
+
+\begin{thm}[F.-Kopakov-Slavich, 21]\leavevmode
+There exists $X^4$ hyperbolic such that all cusps types are Hasche-Wendt.
+\end{thm}
+
+\section{Polyhedra}
+
+Now let's explain a bit how we constructed this manifold.
+
+\begin{defn}\leavevmode
+	A  \textit{\textbf{polyhedron}} in $\mathbb{H}^N$ is the finite-volume intersection $\bigcap H_i $ of $H$ half-spaces.
+\end{defn}
+
+\begin{example}[How to construct a hyperbolic manifold from polyhedra]\leavevmode
+A polyhedron can have vertices in the absolute. The group of reflections along the sides of a triangle with three vertices in the absolute is $\Gamma=\left<\Gamma_1,\Gamma_2,\Gamma_3\right>$ with relations $\Gamma_1^2=\Gamma_2^2=\Gamma_3^2=1$ so $\Gamma\cong\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_2$.
+
+Now reflect on one side. This gives another triangle with ideal vertices, sharing exactly two with the first triangle, and with the remaining vertex in a place where the two triangles dont intersect (except for one edge). Then glue. You get the pillow: a sphere with three punctures. That's a hyperbolic surface.
+\end{example}
+
+	A polyhedron such that two faces that intersect a linearly independant in $\mathbb{Z}_2$. More precisely, there is $\lambda:\underbrace{\mathcal{F}(p)}_{\text{facets}}\to \mathbb{Z}_2^2$; $\lambda$ is \textit{\textbf{proper}} when $\{\lambda(F_1),\ldots,\lambda(F_k)\}$ are $\mathbb{Z}_2$-linearly independent whenever $F_1 \cap\ldots\cap F_k\neq  \varnothing$.
+
+	Alternatively, take a copy of a square for every element in $\mathbb{Z}_2^2$. Color with the same colour two edges that are on the same straight line in such an arrangement. Glue! something like… “Glue two vectors when the difference of the faces is the label"
+
+More precisely, let $P \subset \mathbb{H}^N$ be a right-angled polyhedron with set of facets $\mathcal{F}(p)$. A \textit{\textbf{colouring}} is a map $\lambda:\mathcal{F}(p) \to \mathbb{Z}^k_2$ for some $k \in \mathbb{N}$. Define $M_\lambda = (P \times \mathbb{Z}_2^k)/\sim$ where $(F\times \{ g\})\sim_{\operatorname{id}_F} (F\times \{ h\})$ when $h-g=\lambda(F)$.
+
+\begin{prop}[Davis-Januskiew, '91]\leavevmode
+	If $\lambda$ is proper then the resulting manifold $M_\lambda$ is hyperbolic.
+\end{prop}
+
+\begin{remark}\leavevmode
+	I think we have said that $M_\lambda$ is an orbifold cover.
+\end{remark}
+
+\begin{remark}[Misha]\leavevmode
+	There is a tiling.
+\end{remark}
+
+\begin{prop}\leavevmode
+If $\lambda(F)$ has always odd many 1s for all faces, then $M_\lambda$ is orientable.
+\end{prop}
+
+\begin{prop}\leavevmode
+	If $P$ has ideal vertices then $M_\lambda$ is cusped, and the cusp type is given by the following induced colouring in the vertex figure. In dimension 3, if $P$ is a right angled-hyperbolic polyhedron with ideal vertices, then its vertex figures are flat---squares. There is an induced colouring in the vertex figure is the edges of the original $P$ where colored.
+\end{prop}
+
+\begin{prop}\leavevmode
+	Up to symmetries, there exists a unique colouring $\lambda$ of the 3-cube such that $M_\lambda$ is HW of rank $k=4$.
+\end{prop}
+
+\begin{thm}\leavevmode
+	There is a colouring $\lambda$ of the 24-cell such that all cusp types are the HW colouring.
+\end{thm}
+
+\begin{remark}\leavevmode
+	Mazzeo-Philips, '93 showed the spectrum of the laplacian in cusp manifolds is continuous; normally it is discrete for compact manifolds. Golecnia-Mordianu '08, see Schrodinger laplacian paper.
+\end{remark}
+\end{document}

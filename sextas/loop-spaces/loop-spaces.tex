@@ -1,0 +1,98 @@
+\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+\input{/Users/daniel/github/config/thms-eng.sty}%available at github.com/danimalabares/config
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Semin\'ario das Sextas \hfill PUC-Rio
+		
+		{\small\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+		\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+
+{\Huge Loop spaces:}{\huge \hspace{.1em} conformal center of mass and infinite dimensional GIT for the space of isometric loops}
+
+\hfill{\Large Dmitrii Korshunov}
+
+\hfill{\Large IMPA}
+
+\hfill{\large 22 November 2024}
+
+\begin{thing4}{Abstract}
+We show, following Millson and Zombro, how to construct a Kähler structure on the moduli space of isometric maps of a circle into Euclidean space. The proof upgrades the Kirwan/Kempf--Ness theorem relating symplectic reduction and GIT to the infinite dimensional setting. The construction crucially uses the Douady--Earle's notion of conformal center of mass, which is of independent interest.
+\end{thing4}
+
+\section{Three spaces}
+
+\begin{defn}\leavevmode
+	\textit{\textbf{Millson-Zombro}} space is
+	\[\left\{ (S^1,g)\xrightarrow{\text{isometric} }\mathbb{R}^3 \right\}\Big/\mathsf{SO}(3)\ltimes \mathbb{R}^3 \]	
+\end{defn}
+\begin{enumerate}
+\item It is a Kähler manifold.
+\item $J$ is integrable. This means there are holomorphic coordinates, \textit{not} algebraic integrability (N tensor vanishes). 
+\end{enumerate}
+The upshot is that there is no Newlander-Niremerg theorem in infinite dimension.
+\begin{defn}\leavevmode
+	\textit{\textbf{Brylinskly loop space}} is: for $M$ 3-dimensional Riemannian manifold,
+	\[\left\{ S^1\to M \right\} \Big/\operatorname{Diff}^+(S^1)\]
+	(Without isometry condition.)
+\end{defn}
+Take a normal vector field $V_1$ to a curve $\gamma:S^1\to M$,
+\begin{enumerate}
+\item Define a complex structure $J v_1:=v_1 \times \frac{\dot \gamma}{|\dot \gamma|}$. This is formally integrable (N tensor vanishes) but never has a holomorphic structure (infinite dimensional!)
+\item $\int_{S^1}\left<V_1,V_2\right>dt$ where $V_2$ is another vector field along $\gamma$, and perhaps we must choose arclength parametrization. A Riemannian structure.
+\item Now consider the volume form on $M$. The form $V(\cdot,\cdot,\frac{\dot\gamma}{|\dot\gamma|}$ is skew symmetric. So, a symplectic structure.
+\end{enumerate}
+
+\begin{defn}\leavevmode
+	\textit{\textbf{Kapovich-Millson space of polygons}}. First, a \textit{\textbf{polygon}} is all the embeddings of $n$ points joined by edges of lengths  $\ell_1,\ldots,\ell_n$ in that order and possibly intersecting each other. Now fix a point …? The polygon space is
+	\[P=\text{polygons}\Big/\mathsf{SO}(3)\times \mathbb{R} .\]
+\begin{question}\leavevmode
+	Why $\times\mathbb{R}$?
+\end{question}	
+	\[P\subset S^2_{\ell_1}\times\ldots\times S^2_{\ell_n}\mathbb{x} \mathsf{SO}(3)\]
+	where action is diagonal action.
+\end{defn}
+In fact, this action is hamiltonian. Because the action $\mathsf{SO}(3)\mathbb{y}S^2$ is hamiltonian with moment map the identity. Then the moment map of the product of spheres is just the sum of moment maps. Also it's simple because $\mathfrak{so}(3)^*\cong \mathbb{R}^3$. So we may perform symplectic reduction and obtain a symplectic manifold $\mu^{-1}(0)/\mathsf{SO}(3)$. \textit{And the resulting space is the space of polygons!} That's the symplectic structure. 
+
+\begin{question}\leavevmode
+	what about complex and Riemannian strutures? are they more straightforward to show?
+\end{question}
+
+\subsection{Back to MZ space = the loop space}
+Consider a loop that does not necessarily close up, so a map $\gamma:\mathbb{R} \to \mathbb{R}^3$. And suppose it is \textit{\textbf{smoothly periodic}} so unit veolicity and derivative $\dot\gamma:S^1\to S^2$ periodic. Now Gauss map gives us $\mathbb{R}\to S^2$, but since veolicity is periodic it's actually $S^1 \to S^2$. Now let's put some structures on the space of all $S^1 \to S^2$:
+\begin{enumerate}
+\item (Almost complex structure) Tangent vectors to this space are vector fields tangent to $S^2$---tangent to the loop! Again: loop is point, vector at this point is a vector field tangent to the loop. Anyway we can act with the complex structure of $S^2$ on that vector and that's the complex structure.
+\item The riemannian structure is inherited from the sphere: pair them and integrate. The question is wether that depends on parametrization. Last time we just declared that we use unit speed parametrization.
+\item Symplectic structure:
+	\[\omega(v_1,v_2)=\int \dot\gamma\cdot(v_1\times v_2) dt\]
+	where $(v_1\times v_2)$ is the triple product presented before.
+	\begin{prop}\leavevmode
+		$\omega$ is closed.
+	\end{prop}
+	\begin{proof}\leavevmode
+	Consider
+	\[\operatorname{ev}:LS^2\times S^1\to S^2\]
+	\[\pi:LS^2\times S^2\to LS^2.\]
+	Then
+\[\omega_{LS^2}=\pi_*\operatorname{ev}^*(\omega_{S^2})\wedge dt\]
+	where $\omega$ is the symplectic structure on $S^2$ and $\pi$ is "fiber integration over ?" .
+	\end{proof}
+	\begin{coro}\leavevmode
+		$\frac{\omega}{8\pi^2}$ is integral. (There will be a prequantization)
+	\end{coro}
+\end{enumerate}
+
+And there's an action $LS^2 \mathbb{x}\mathsf{SO}(3)$. And it's hamiltonian with moment map $\mu:LS^2 \to \mathbb{R}^3\cong \mathfrak{so}(3)^*$. So the fundamental vector field is $\xi \times \beta$. And the moment map is, for $\beta \in LS^2$
+\[\mu(\beta)=\int_{0}^{2\pi}\beta(t)dt\]
+\[\int v\cdot\xi ds = \int_{0}^{2\pi}\beta\cdot \Big((\xi \times \beta)\times v\Big)ds\]
+
+
+
+
+
+\end{document}

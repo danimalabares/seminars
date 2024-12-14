@@ -1,0 +1,152 @@
+\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+\input{/Users/daniel/github/config/thms-eng.sty}%available at github.com/danimalabares/config
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Geometric Structures on Manifolds Seminar\hfill IMPA
+		
+		{\small\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+		
+		%{\small\hfill\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+\vspace{10pt}
+
+{\Huge Some problems in Hamiltonian geometry of PDEs}
+
+\hfill{\Large Raffaele Vitolo}
+
+\hfill{\large December 5, 2024}
+
+\begin{thing4}{Abstract}\leavevmode
+The Hamiltonian formulation of Partial Differential Equations is one of the cornerstones of the theory of Integrable Systems. Being carried out by analogy with finite-dimensional Hamiltonian systems, it has an intrinsic geometric nature. In this talk we will review differential-geometric aspects of the Hamiltonian theory of PDEs as well as new projective-geometric properties of known Integrable Systems that are emerging in recent years.
+\end{thing4}
+
+\tableofcontents
+
+\section{Introduction to the Hamiltonian formalism of PDEs}
+
+Integrablity of PDEs is defined as the existence, for a given equation, of an infinite sequence of symmetries or conserved quantities in involution.
+
+\begin{itemize}
+\item KDV equation. Gardner, Greene, Kruskal, Muira. \textit{Method for solving the KdV Equation}. 
+\end{itemize}
+
+An evolutionary system of PDEs
+ \[F=u^i_t-f^i(t,x,u^j,u^j_x,u^j_{xx},\ldots)=0\]
+ {\color{4}(so no variables $u$ depending on $t$ inside the parenthesis)} admits a Hamiltonian formulation if there exist $A$, $\mathcal{H}=\int h dx$ such that
+ \[u^i_t=A^{ij}\left( \frac{\delta \mathcal{H}}{\delta u^j} \right)\]   where $ \frac{\delta \mathcal{H}}{\delta u^j}=(-1)^\sigma\partial_\sigma\frac{\partial h}{\partial u^j_\sigma}$ is the variational derivative. Here $A=(A^{ij})$ is the \textit{\textbf{Hamiltonian operator}} which is like the Poisson tensor: {\color{4}an classical finite-dimensional mechanics, $A$ is the Poisson tensor, i.e. inverse of the matrix of the tangent-cotangent isomorphism induced by a symplectic form.}
+ 
+\section{Hamiltonian operators}
+$A$ is a Hamiltonian operator iff
+\[\{F,G\}_A=\int \frac{\delta F}{\delta u^i}A^{ij\sigma} \partial_{\sigma}\frac{\delta G}{\delta u^j}dx\]
+is a Poisson bracket (skew-symmetric and Jacobi).
+
+\begin{remark}\leavevmode
+	There is an intrinsic definition of differential operators given by Grothendieck. If you want a map of modules $\Delta:A\to B$ to be a differential operator, take an element of their common underlying ring $\rho$ and the multiply-by-$\rho$ operator $\delta_\rho:A \to B$ and ask that
+	\[[\delta_{\rho_1},[\delta_{\rho_2},\ldots [\delta_{\rho_k},\Delta]\ldots]=0.\]
+	
+\end{remark}
+
+Anyway, there's two conditions that characterize the bracket being Poisson: skew-adjoint $A^*=-A$ and another named after someone.
+
+
+\begin{example}[KdV equation] \leavevmode
+	Take
+	\[u_t=u u_x+u_{x x x}\]
+There are two Hamiltonian structures:
+\[H_1=\frac{u^3}{6}+\frac{u^2_x}{2},\qquad H_2=\frac{u^2}{2}\]
+with 
+ \[A_1=\partial_x,\qquad  A_2=\frac{1}{3}u_x	+\frac{2}{3}u\partial_x+\partial_{x x x}\]
+one first order operator, and the sum of one first order plus one third order. This is the model for several other cases of bi-Hamiltonian systems that we'll se in a moment.
+\end{example}
+
+
+\section{Motivation for Hamiltonian PDEs}
+A Hamiltonian operator maps \textit{conservation laws}  to \textit{symmetries}.
+
+Magri: two  \textit{compatible } Hamiltonian operators $A_1,A_2$ generate a sequence of conserved quantities:
+\[A_1\left( \frac{\delta H_{n+1}}{\delta u^i} \right) =A_2\left( \frac{\delta H_n}{\delta u^i} \right) \]
+the operator maps the variational derivative into a symmetry.
+
+\textbf{Integrability:} the above sequence $H_1,\ldots,H_n,\ldots$ is in involution:
+\[\{H_i,H_j\}=0\]
+which is the {\color{3}most important property}. What to do with this sequence? You can prove that you can integrate the equation once this sequence exists!
+
+There is no analogue of Liouville theorem for PDEs, but maybe you can find good coordinates, or prove it is C-integrable via scattering transform.
+
+\section{Structure of bi-Hamiltonian pairs}
+
+Clsses of hamiltonian operators which are invariant under certain operators.
+
+\section{First-order homogeneous operators}
+
+These were introduced by Dubrovin and Novikov:
+\[P^{ij}_1=g^{ij}(\underbrace{b^{ij}_k(\mathbf{u})u^k_x}_{\text{term with derivatives} }+\underbrace{b^{ij}_k(\mathbf{u})u^k_x}_{\text{free term} }.\]
+(Tensor.) Every summand in the operator containd the same number of $x$ derivatives (homogeneous).
+
+If we require --- we get ---:
+\begin{itemize}
+\item Skew-adjointness is equivalent to: symmetry of $g^{ij}$ and the connection $\Gamma$ is metric.
+\item Jacobi identity holds iff connection $\Gamma$ is symmetric and pseudo-Riemannian metric is flat.
+\end{itemize}
+
+\begin{remark}\leavevmode
+	A paper by Cartan (from 1932?) on classification of flat metric connections with torsion $T$.
+\end{remark}
+
+\section{Classification of bi-Hamiltonian pairs}
+If we classify bi-Hamiltonian pairs we clasfiy hiechrachies of conservations laws.
+
+Compatible triples (e.g. KdV), compatible paris (e.g. Monge-Ampère).
+
+Compatibnle triple means
+
+\[P_1=\partial_x,\qquad Q=?,\qquad   R=?\]
+
+ \[A_1=P,\qquad  A_2=Q+R?\]
+
+
+\section{Classification by projective reciprocal transformations}
+ 
+We now put a group. We see that the operators of the higher order remain the same under the action of the group, while the lower-order ones change.
+
+Second order and third order operators can be classified by means of this group. So fix an operator of higher order, then rest is classified.
+
+Second order homogeneous Hamiltonian operators $R_2$ are in bijective correspondence with linear line congruences. Third order homogeneous Hamiltonian operators are in correspondence with ?
+
+\textit{\textbf{Lie coordinates for Plücker embedding}} are given by: take two infinitesimally closed points, so their difference is a differential, then take minors of a matrix. Looks like you get  $\mathbb{P}\Lambda^{2}(V)$.
+
+\section{Projective classification of triples}
+
+Initiated by Lorenzoni, Savoldi, V. JPA 2017. Here we classify triples
+\[A_1=P_1+R_2,\qquad  A_2=Q_1.\]
+$R_2$ is second order, $P_1,Q_1$ are Ferapontov operators.
+
+They are classified by a quadratic line complex. Probably the compatibility of the two varieties gives information about …
+
+\begin{example}[Kaup-Broer system]\leavevmode
+	The quadratic line complexes are conics. With this mechanism we can construct an integrable system.
+
+	\begin{remark}[Dani]\leavevmode
+		Looks like every operator is giving a metric.
+	\end{remark}
+\end{example}
+
+Many fanous integrable systems, there are algebraic varieties that determine the integrable system.
+
+	\begin{tabular}{c | c}
+		Third order Hamiltonian operator& Quadratic line complex\\
+Second order Hamiltonian operator & System of $n$ linear line complexes\\
+$R_2$-comp. first order Hamiltionian operator& Quadratic line complex\\
+$R_3$-comp. first-order Hamiltonian operator & ??
+	\end{tabular}
+
+
+
+
+
+
+\end{document}

@@ -1,4 +1,5 @@
-\input{/Users/daniel/github/config/preamble.sty}%available at github.com/danimalabares/config
+\input{/Users/daniel/github/config/preamble.sty}%This is available at github.com/danimalabares/config
+\input{/Users/daniel/github/config/thms-eng.sty}%This is available at github.com/danimalabares/config
 
 \begin{document}
 
@@ -14,7 +15,12 @@
 \end{minipage}\vspace{.2cm}\hrule
 
 \vspace{10pt}
+{\Huge Two talks by Carolina Araujo}
 
+\tableofcontents
+
+\clearpage
+\addcontentsline{toc}{section}{Automorphisms of quartic surfaces and Cremona transformations}
 {\Huge Automorphisms of quartic surfaces and Cremona transformations}
 
 \hfill{\Large Carolina Araujo}
@@ -23,9 +29,8 @@
 
 \hfill{\large September 24, 2024}
 
-\tableofcontents
 
-\section{Motivation}
+\subsection{Motivation}
 
 $X$ a smooth hypersurface of degree $d $, $X\subset \mathbb{P}^{n+1}$. We want to understand the group $\operatorname{Aut}(X)$. These are invertible polynomial maps from $X$ to itself. $X$ is defined by a single polynomial equation of degree $d$.
 
@@ -37,7 +42,7 @@ $X$ a smooth hypersurface of degree $d $, $X\subset \mathbb{P}^{n+1}$. We want t
 	where $\operatorname{Aut}(X,Y)$ means automorphisms of $X$ that stabilize  $Y$.
 \end{thm}
 
-\section{Exceptional cases}
+\subsection{Exceptional cases}
 
 Let's look at the exceptionals cases.
 
@@ -104,13 +109,13 @@ $S$ is a K3 surface. $H^{2}(S,\mathbb{Z})\cong \mathbb{Z}^{22}$ and the Picard g
 	Not exactly, but "there is a moduli space for K3 surfaces of dimension $20-\rho(S)$". The generic case is $\rho(S)=1$.
 \end{remark}
 
-\section{K3 surfaces}
+\subsection{K3 surfaces}
 
 \begin{defn}
 	A \textit{\textbf{K3 surface}} is a smooth projective surface that is simply connected and has a nowhere vanishing symplectic form $\omega\in H^{0}(S,\Omega^2_S)$
 \end{defn}
 
-\subsection{Lattices of $S$}
+\subsubsection{Lattices of $S$}
 
 A \textit{\textbf{lattice}} is a finitely-generated abelian group with a nondegenerate pairin.
 
@@ -169,7 +174,7 @@ So to understand the surface we want to understand those bundles and that is all
 
 Given the quadratic form we can find the automorphisms.
 
-\subsection{Main theorem}
+\subsubsection{Main theorem}
 
 \begin{thm}[A-Paiva-Zika]\leavevmode
 	$S\subset \mathbb{P}^3$ general smooth quartic surface with $\rho(S)=2$ and $\operatorname{disc}(S)=r$.
@@ -183,7 +188,7 @@ Given the quadratic form we can find the automorphisms.
 \end{enumerate}
 \end{thm}
 
-\section{Birational geometry}
+\subsection{Birational geometry}
 
 Take the case of
 \[\begin{tikzcd}
@@ -247,6 +252,145 @@ So for the main theorem, it was checked that if $r>57$ there are no curves from 
 	C\subset S\subset \mathbb{P}^3\arrow[r,dashed]&\mathbb{P}^3\supset S'\supset C'
 \end{tikzcd}\]
 So for example in case $(2,8)$ you obtain something of the same type.
+
+\clearpage
+\addcontentsline{toc}{section}{Birational geometry of Calabi-Yau pairs}
+{\Huge Birational geometry of Calabi-Yau pairs}
+
+\hfill{\Large Carolina Araujo}
+
+{\Large \hfill IMPA}
+
+\hfill{\large 31 January, 2025}
+
+\subsection{Pairs \((X,D)\)}
+Itaca's program (1970's): \(U\) complex algebraic variety. We want to find invariants like Kodaira dimension. Compactify \(U \rightsquigarrow X\), and consider \(X\setminus U:=D\) (the boundary). The \(\Omega^q_X(\operatorname{log}D)\)
+
+\begin{thm}[Itaca, 1977]\leavevmode
+Kodaira dimension of the pair \((X,D)\) does not depend on the choice of compactification (and it exists ;)
+\end{thm}
+
+\begin{defn}[Lu-Zhang, 2017]\leavevmode
+\((X,D)\) is \textit{\textbf{Brody-hyperbolic}} \textit{\textbf{(Mori-hyperbolic)}} if there is no nonconstant holomorphic (analytic) morphism  \(f:\mathbb{C} \to X\setminus D\) and the same holds for the open strata of \(D\).
+\end{defn}
+
+\begin{conjecture}
+\((X,D)\) is Brody-hyperbolic then \(K_X + D\) is ample.
+\end{conjecture}
+
+\begin{thm}[Sraldi, 2019]\leavevmode
+\((X,D)\) Mori-hyperbolic then \(K_X+D\) is nef.
+\end{thm}
+
+\begin{question}\leavevmode
+How to make sense of ``the birational geometry of \((X,D)\)"
+\end{question}
+
+\subsection{Calabi-Yau pairs}
+
+\begin{defn}[Calabi-Yau pair]\leavevmode
+We relax a condition: we won't ask that \(X\) is smooth, but that it is a terminal projective variety. And also that \(K_X+D \sim 0\) (I think this ``would be equivalent to" Kodaira dimension 0). Also ask that \((X,D)\) is log canonica.
+\end{defn}
+
+\begin{remark}\leavevmode
+The condition \(K_X+D \sim 0\) says that there is unique up to scaling volume form \(\omega_D \in \Omega^m_{\mathbb{C}(X)}\) that does not vanish and has a simple pole along \(D\), i.e.  \(\operatorname{div}(\omega_D)=-D\).
+\end{remark}
+
+Now we study the birational geometry of CY pairs:
+
+\begin{defn}\leavevmode
+Let \((X,D_X),(Y,D_Y)\) CY pairs and \(f: X \dashrightarrow Y\) a birational map. We get a pullback \(f_*:\Omega^n_{\mathbb{C}(X)}\overset{\cong}{\to} \Omega^n_{\mathbb{C}(Y)}\). Then \(f:(X,D_X) \dashrightarrow (Y,D_Y)\) is \textit{\textbf{volume preserving}} is \(f_*(\omega_{D_X}=\lambda \omega_{D_Y}\).
+\end{defn}
+
+\begin{remark}[Valuative characterization]\leavevmode
+
+\end{remark}
+
+\begin{defn}\leavevmode
+\((X,D)\) CY pair,
+\[\operatorname{Bir}(X,D):=\{f \in \operatorname{Bir}(X) : f:(X,D) \dashrightarrow (X,D) \text{ is volume preserving} \}\]
+\end{defn}
+
+\subsection{The Sarkisov-Program}
+
+\(\operatorname{Bir}(\mathbb{P}^n)\) Cremona group.
+
+\begin{thm}[Noether-Castelnuovo, 1870-1901]\leavevmode
+The creoma group of \(\mathbb{P}^2\) has a nice set of generators: maps of degree 1 and \(q\):
+\[\operatorname{Bir}(\mathbb{P}^2) = \left<\operatorname{Aut}(\mathbb{P}^2),q\right>\]
+where \(q\) is the \textit{\textbf{standard quadratic transformation}} given by \((x:y:z) \overset{q}{\mapsto }(yz:xz:xy)\)
+\end{thm}
+
+You might think that because it has such a nice group generators it'd be easy to study this group. It's not the case.
+
+Now in dimension 3:
+
+\begin{thm}[Hilda Hudson (1927)]\leavevmode
+\(\operatorname{Bir}(\mathbb{P}^n)\) does not admit a set of generators of bounded degree.
+\end{thm}
+
+\begin{thm}[Sarkisov Program, Corti 1995; Hazon-McKunam 2013 for \(n \geq 4\)]\leavevmode
+	\[\begin{tikzcd}
+		\mathbb{P}^n\arrow[r,dashed,"\varphi_1"]\arrow[d]\arrow[rrrr,bend left,"\varphi"]&X_1\arrow[r,dashed,"\varphi_2"]\arrow[d]&X_2\arrow[r,dashed]\arrow[d]&\cdots \arrow[r,dashed]&X_k=\mathbb{P}^n\arrow[d]\\
+	\{\operatorname{pt}\}	&T_1&T_2&&\{\operatorname{pt}\}
+	\end{tikzcd}\]
+The intermediate varieties \(X_i/T_i\) are called \textit{\textbf{Mori-fiber spaces}}, and \(\varphi_i\) are \textit{\textbf{Sarkisov links}}. So the theorem is that a map (what map?) can be factorized by Sarkisov links.
+\end{thm}
+
+\begin{thm}[Corti-Kalog(?) 2016]\leavevmode
+Any volume-preserving birrational map between Mori-fiber CY pairs is a composition of volume-preserving Sarkisov links. Now every intermidiate variety admits a divisor making it a CY pair:
+	\[\begin{tikzcd}
+		(X,D_X)\arrow[r,dashed,"\varphi_1"]\arrow[d]\arrow[rrrr,bend left,"\varphi"]&(X_1,D_1)\arrow[r,dashed,"\varphi_2"]\arrow[d]&(X_2,D_2)\arrow[r,dashed]\arrow[d]&\cdots \arrow[r,dashed]&(Y,D_Y)\arrow[d]\\
+	T_X	&T_1&T_2&&T_Y
+	\end{tikzcd}\]
+\end{thm}
+
+\begin{remark}\leavevmode
+\begin{itemize}
+\item The Sarkisov links
+\[\begin{tikzcd}
+	 \mathbb{P}^n\arrow[r, dashed]\arrow[d]&X_1\arrow[d]\\\operatorname{pt}&T_1
+\end{tikzcd}\]
+are not classified.
+
+\item Depending on \(D\), the volume-preserving Sarkisov links
+\[\begin{tikzcd}
+	 \mathbb{P}^n\arrow[r, dashed]\arrow[d]&X_1\arrow[d]\\\operatorname{pt}&T_1
+\end{tikzcd}\]
+can be classified.
+\end{itemize}
+\end{remark}
+
+\begin{thm}[A-Coti-Massareti]\leavevmode
+\(D \subset \mathbb{P}^n\) a \textit{general} hypersurface of degree \(n+1\). If you want to study the birational group of the pair \((\mathbb{P}^n,D)\), \(\operatorname{Bir}(\mathbb{P}^n,D)\), then this group is not interesting. Because \(\operatorname{Bir}(\mathbb{P}^n,D)=\operatorname{Aut}(\mathbb{P}^n,D)\).
+
+And then also consider \(D\) smooth instead of general, and with Picard rank \(\rho(D)=1\).
+\end{thm}
+
+\begin{thm}[A-C-M]\leavevmode
+\(D \subset \mathbb{P}^3\) general (A1 singularity and \(\rho(S)=1\)) quartic with a singularity. \(\operatorname{Bir}(\mathbb{P}^3,D)\cong \mathbb{G} \rtimes \mathbb{Z}/2\mathbb{Z}\), where \(\mathbb{G}\) is ``form of \(\mathbb{G}m\) over \(\mathbb{C}(x,y)\)".
+\end{thm}
+
+\subsection{Last application}
+
+\(X=X_d \subset \mathbb{P}^{n+1}\) smooth hypersurface of degree \(d\). I want to study the automorphism group.
+
+\begin{thm}[Matsumata-Monsky, 1964]\leavevmode
+Except for the two cases when \(\mathcal{H}\), \((n,d)=(1,3)\) or \((2,4)\), any smooth automorphism is the restricition of an automorphism of the ambient space, i.e. \(\operatorname{Aut}(\mathbb{P}^{n+1},X)\twoheadrightarrow \operatorname{Aut}(X)\).
+
+In the exceptional cases: for \((n,d)=(1,3)\) we get \(\operatorname{Bir}(\mathbb{P}^2,C) \twoheadrightarrow \operatorname{Aut}(C)\) {\color{6}\(C\) is a curve}. For \((n,d)=(2,4)\), we  \textit{ask}: when \(\operatorname{Bir}(\mathbb{P}^3,S) \twoheadrightarrow \operatorname{Aut}(S)\)?
+\end{thm}
+
+\begin{thm}[A-Paiva-Zika]\leavevmode
+Complete solution \(\rho(S)=2\).
+\end{thm}
+
+
+
+
+
+
+
 
 
 

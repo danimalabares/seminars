@@ -1,0 +1,1475 @@
+\input{/Users/daniel/github/config/preamble.sty}%This is available at github.com/danimalabares/config
+\input{/Users/daniel/github/config/thms-eng.sty}%This is available at github.com/danimalabares/config
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		 \hfill 		
+		{\small\hfill\href{https://github.com/danimalabares/seminars}{github.com/danimalabares/seminars}}
+
+		
+		%{\small\hfill\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+{\Huge Notes on seminars}
+
+{\large (and what-not)}
+
+\phantomsection
+\tableofcontents
+
+\clearpage
+\phantomsection\stepcounter{section}\addcontentsline{toc}{section}{\thesection\quad Automorphisms of quartic surfaces and Cremona transformations}\addtocontents{toc}{\hspace{1em}\textit{Carolina Araujo, \hspace{.2em}IMPA,\hspace{.5em}24 September, 2024}\par}
+{\Huge Automorphisms of quartic surfaces and Cremona transformations}
+
+\hfill{\Large Carolina Araujo}
+
+{\Large \hfill IMPA}
+
+\hfill{\large 24 September, 2024}
+\iffalse
+\phantomsection\stepcounter{section}\addcontentsline{toc}{section}{\thesection\quad 
+Automorphisms of quartic surfaces and Cremona transformations}\addtocontents{toc}{\hspace{1em}\textit{Carolina Araujo}\par}
+{\Huge Automorphisms of quartic surfaces and Cremona transformations}
+
+\hfill{\Large Carolina Araujo}
+{\Large \hfill IMPA}
+
+\hfill{\large September 24, 2024}
+\fi
+
+\subsection{Motivation}
+
+$X$ a smooth hypersurface of degree $d $, $X\subset \mathbb{P}^{n+1}$. We want to understand the group $\operatorname{Aut}(X)$. These are invertible polynomial maps from $X$ to itself. $X$ is defined by a single polynomial equation of degree $d$.
+
+\begin{thm}[Matsumura-Mousky, 1964]\leavevmode
+	Except in two special cases, all automorphisms of $X$ come from automorphisms of the ambient space:
+	
+	If $(n,d)\neq (1,3),(2,4)$, there is a surjective map
+	\[\operatorname{Aut}(\mathbb{P}^{n+1},X)\overset{\pi}{\longrightarrow}\operatorname{Aut}(X)\]
+	where $\operatorname{Aut}(X,Y)$ means automorphisms of $X$ that stabilize  $Y$.
+\end{thm}
+
+\subsection{Exceptional cases}
+
+Let's look at the exceptionals cases.
+
+\begin{enumerate}
+	\item $(n,d)=(1,3)$. In this case  $C=X_3\subset \mathbb{P}^2$ is an elliptic curve and we have
+		\[\operatorname{Aut}(C)\cong C\rtimes \mathbb{Z}_m\quad m=2,4,6\]
+and
+ \[\operatorname{Aut}(\mathbb{P}^2,C)\text{ is finite.} \]
+
+ Elements in $C$ are translations of the torus. The \textit{\textbf{translation of $x$ with respect to $p$ and $(x:y:z)$}} is done by intersecting the curve with the line that joins $p$ and $(x:y:z)$ and reflecting. So we have a map
+  \[t_p(x:y:z)=(F_1(x,y,z),F_2(x,y,z),F_3(x,y,z)\]
+  We have created a \textit{\textbf{Cremona transformation}} (=biholomorphic birational map?).
+ 
+  \begin{defn}[Cremona group]
+	\[\operatorname{Bir}(\mathbb{P}^n)=\{\varphi :\mathbb{P}^n\overset{\operatorname{bir}}{\longrightarrow}\mathbb{P}^n:\text{bimeromorphic map} \}\]
+\end{defn}
+
+And we then have the surjective map
+\[\operatorname{Bir}(\mathbb{P}^2,C)\overset{\pi}{\longrightarrow}\operatorname{Aut}(C)\]
+
+
+	\item $(n,d)=(2,4)$. Here  $S=X_4=\mathbb{P}^3$ is a smooth quartic surface.
+
+		\paragraph{Problem} (Gizatullin) Which automorphisms of $S$ are induced (not necesarily by automorphisms of $\mathbb{P}^3$) but at least by Cremona transformations of $\mathbb{P}^3$? ie. are restrictions of $\varphi\in\operatorname{Bir}(\mathbb{P}^3,S)$
+
+\begin{remark}
+	Related to K3 surface structure,
+	\[\operatorname{Bir}(\mathbb{P}^3,S)\overset{\pi}{\longrightarrow}\operatorname{Bir}(S)\cong \operatorname{Aut}(S)\]
+\end{remark}
+
+$S$ is a K3 surface. $H^{2}(S,\mathbb{Z})\cong \mathbb{Z}^{22}$ and the Picard group acts on this lattice.
+
+\begin{defn}[Picard rank of $S$]
+	\[\rho(S)=\operatorname{rk}(\operatorname{Pic}(S))\in\{1,\ldots,20\}\]
+\end{defn}
+
+\begin{itemize}
+\item If $S$ is very general, then $\rho(S)=1$ and $\operatorname{Aut}(S)=\{1\}$.
+
+\item We are interested in $\rho(S)\geq 2$.
+\end{itemize}
+\end{enumerate}
+
+\begin{example}[Oguiso, 2012]\leavevmode 
+	\begin{enumerate}
+		\item $\rho(S)=2$. Any cremona transformation that stabilizes the quadric is the identity:
+			\[\operatorname{Aut}(S)=\mathbb{Z}\qquad \operatorname{Bir}(\mathbb{P}^3,S)=\{1\}\]
+	
+			
+		\item $\rho(S)=3$,
+			\[\operatorname{Aut}(S)=\mathbb{Z}_2*\mathbb{Z}_2*\mathbb{Z}_2\]
+			All automorphisms are induced by Cremona transformations, ie. there is a surjective map
+			\[\operatorname{Bir}(\mathbb{P}^3,S)\overset{\pi}{\longrightarrow}\operatorname{Aut}(S)\]
+
+		\item (Paiva, Quedo 2023) Constructed surfaces with $\rho(S)=2$, $\operatorname{Aut}(S)=\mathbb{Z}_2$ and $\operatorname{Bir}(\mathbb{P}^3,S)=\{1\}$.
+	\end{enumerate}
+\end{example}
+
+\begin{thm}[A-Paiva-(Socrates) Zika]\leavevmode
+	Solution of Giztallin S problem for $\rho(S)=2$.
+\end{thm}
+
+\begin{remark}
+	Not exactly, but "there is a moduli space for K3 surfaces of dimension $20-\rho(S)$". The generic case is $\rho(S)=1$.
+\end{remark}
+
+\subsection{K3 surfaces}
+
+\begin{defn}
+	A \textit{\textbf{K3 surface}} is a smooth projective surface that is simply connected and has a nowhere vanishing symplectic form $\omega\in H^{0}(S,\Omega^2_S)$
+\end{defn}
+
+\subsubsection{Lattices of $S$}
+
+A \textit{\textbf{lattice}} is a finitely-generated abelian group with a nondegenerate pairin.
+
+\begin{enumerate}
+	\item $H^{2}(X,\mathbb{Z})\cong \mathbb{Z} \overset{\pi}{\hookleftarrow}\operatorname{Pic}(S) $. And if we tensor this with $\mathbb{C}$ we get $H^{2}(C,\mathbb{C})$, which admits a Hodge decomposition.
+
+		Let's study automorphisms of a K3 surface. Let $g\in\operatorname{Aut}(S)$. It yields an element $g^*$ that acts on cohomology, ie $g^*\in\mathcal{O}(H^{2}(X,\mathbb{Z}))$ preserving the Hodge decomposition. This is called \textit{\textbf{Hodge isometry}}.
+
+\begin{thm}[Global Torelli theorem]\leavevmode
+	\begin{itemize}
+	\item The correspondence $g\mapsto g^*$ is injective 
+	
+	\item If $\varphi\in\mathcal{O}(H^{2}(X,\mathbb{Z}))$ is a Hodge isometry preserving the ample classes, then $\varphi=g^*$ for some $g\in\operatorname{Aut}(S)$.
+	\end{itemize}
+\end{thm}
+\end{enumerate}
+
+\begin{example}
+	$S\subset \mathbb{P}^3$ smooth quartic surface with $\rho(S)=2$. Using the equivalence of line bundles module isomorphism and curves modulo intersection,
+	\[\operatorname{Pic}(S)= \left<H,C\right> \]
+	where $H$ is a hyperplane section of $\mathbb{P}^3$. Then
+	\[Q=\begin{pmatrix} H^2& H\cdot C\\H\cdot C& C^2 \end{pmatrix} =\begin{pmatrix} 4&b\\b&2c \end{pmatrix} \]
+	using that $2g(c)-1$, so the number in the lower-right on RHS is even.
+\end{example}
+
+\begin{remark}
+	Hodge Index Them $Q$ is rank (1,1).
+\end{remark}
+
+\begin{defn}[Discriminant]
+	\[r=\operatorname{disc}(S)=-\det Q\]
+\end{defn}
+
+\begin{prop}
+	$S$ general K3 surface (not needed that it is a quartic) with $\rho(S)=2$. Then
+	\[\operatorname{Aut}(S)=\begin{cases}
+		\{1\}\qquad &\text{(finite)}  \\
+		\mathbb{Z}_2\qquad &\text{(finite, Dani-Ana)} \\
+		\mathbb{Z}\qquad&\text{(infinite, Oguiso 1)}  \\
+		\mathbb{Z}_2*\mathbb{Z}_2\qquad &\text{(infinite, Dani-Ana)} 
+	\end{cases}\]
+	where the first two are characterized by containing a en elliptic curve or a rational? curve, ir. $\exists D\in\operatorname{Pic}(S)$ such that $D^2=0,-2$. On the other hand, the last two cases are distinguised by $\not\exists D\in\operatorname{Pic}(S)$ such that $D^2=0,-2$.
+
+	\[\exists \sigma\in\operatorname{Aut}(S)\text{ of order 2}\iff \exists  \text{ ample }A\in\operatorname{Pic}(S) \text{ such that }A^2=2.\]
+\end{prop}
+
+\begin{remark}
+	In low Picard numbers there are no symplectic involutions…?
+\end{remark}
+
+So to understand the surface we want to understand those bundles and that is all in the discriminant (not in the lattice itself!).
+
+\begin{remark}
+	$\exists D\in\operatorname{Pic}(S)$ s.t. $D^2=k \iff x^2-ry^2=4k$  has integer solutions.
+\end{remark}
+
+Given the quadratic form we can find the automorphisms.
+
+\subsubsection{Main theorem}
+
+\begin{thm}[A-Paiva-Zika]\leavevmode
+	$S\subset \mathbb{P}^3$ general smooth quartic surface with $\rho(S)=2$ and $\operatorname{disc}(S)=r$.
+\begin{enumerate}
+	\item (Negative answer to Gizatulla's problem) If $r>57$ or  $r=52$ then
+		 \[\operatorname{Bir}(\mathbb{P}^3,S)=\{1\}\]
+		 So we cannot realize any automorphism as a Cremona transformation.
+
+	\item If $r\leq 57$ and $r \neq 52$, then we get the full automorphism group, ie. a surjective map
+		\[\operatorname{Bir}(\mathbb{P}^3,S)\overset{\pi}{\longrightarrow}\operatorname{Aut}(S)\]
+\end{enumerate}
+\end{thm}
+
+\subsection{Birational geometry}
+
+Take the case of
+\[\begin{tikzcd}
+	\operatorname{Bir}(\mathbb{P}^2)=\left<\operatorname{Aut}(\mathbb{P}^2),q\right> \\
+	\operatorname{Aut}(\mathbb{P}^2)\arrow[u,hook]
+\end{tikzcd}\]
+and the map
+\begin{align*}
+	q: \mathbb{P}^2 &\overset{\operatorname{bir}}{\longrightarrow}\mathbb{P}^2  \\
+	(x:y:z) &\longmapsto \left(\frac{1}{x}:\frac{1}{y}:\frac{1}{z}\right)=(yz:xz:xy)
+\end{align*}
+which is well-known (Noether-Castelnuovo). So that is a decomposition of automorphisms and quadratics. Now in greater dimension, $n\geq 3$ we have
+
+\begin{thm}[Sakisov Program]\leavevmode
+	(The theorem is much more general) Any $\varphi \in\operatorname{Pic}(\mathbb{P}^n)$ can be factorized with  \textit{\textbf{Sarkisov links}}  $\varphi_i$:
+	\[\begin{tikzcd}
+		\mathbb{P}^n\arrow[r,dashed,"\varphi_1"]\arrow[rrrr,bend left,"\varphi"]&X_1\arrow[r,dashed,"\varphi_2"]\arrow[d]&X_2\arrow[r,dashed]\arrow[d]&\cdots \arrow[r,dashed]&X_k=\mathbb{P}^n\\
+		&T_1&T_2
+	\end{tikzcd}\]
+\end{thm}
+
+Now look at $n=3$, $\operatorname{Bir}(\mathbb{P}^3,S)\subset \operatorname{Bir}(\mathbb{P}^3)$. This is a Calabi-Yau pair:
+
+\begin{defn}[Calabi-Yau pair]\leavevmode 
+	A pair $(X,D)$
+	\begin{itemize}
+	\item Terminal projective variety.
+	\item $K_X+D\sim0$ that is, a meromorphic top form that does not vanish on hypersurface and has simple pole on $D$. Then $(X,D)$ is called \textit{\textbf{log canonical}}.
+	\end{itemize}
+
+Now take two Calabi-Yau pairs $(X,D_X)$ and  $(Y,D_Y)$.
+
+ \begin{align*}
+	\operatorname{div}(\omega_{D_X})&=-D_X\\
+	\operatorname{div}(\omega_{D_Y})&=-D_Y
+\end{align*}
+We say that a birrational map $f:X\to Y$ is \textit{\textbf{volume preserving}} is  $f_*\omega_{D_X}=\omega_{D_Y}$.
+
+\end{defn}
+
+
+\begin{thm}[Volume-Preserving]\leavevmode
+	Everything like in the Sarkisov theorem but now maps are volume-preserving.
+\end{thm}
+
+In our case, $(\mathbb{P}^3,S)$, we can classify the v.p. Sakisov links from  $(\mathbb{P}^3,S)$. It starts by blowing up a curve $C\subset S$. But this curve has genus and degree very restricted, it's something like
+\[(g(C),\operatorname{deg}(C))\in\{(0,1),(0,2),\ldots,(11,10),(14,11)\}\]
+
+So for the main theorem, it was checked that if $r>57$ there are no curves from the list. And in the second item of the main theorem, there exist these curves, for instance curve  $(14,11)$ for rank 56, then produce a link that starts by blowing it up and magically gives you the Cremona transformation that restricts with automorphism with which you started.
+
+\begin{remark}
+	So perhaps we expect the answer to G. problem to be almost never.
+\end{remark}
+
+\begin{question}
+	How does that blowing-up work?
+\end{question}
+
+\[\begin{tikzcd}
+	X\arrow[r,"\text{flops}" ]\arrow[d,"\operatorname{Bl}_C"]& X\arrow[d,"\text{contract?}" ]\\
+	C\subset S\subset \mathbb{P}^3\arrow[r,dashed]&\mathbb{P}^3\supset S'\supset C'
+\end{tikzcd}\]
+So for example in case $(2,8)$ you obtain something of the same type.
+
+\clearpage
+\phantomsection\stepcounter{section}\addcontentsline{toc}{section}{\thesection\quad Birational geometry of Calabi-Yau pairs}\addtocontents{toc}{\hspace{1em}\textit{Carolina Araujo}\par}
+{\Huge Birational geometry of Calabi-Yau pairs}
+
+\hfill{\Large Carolina Araujo}
+
+{\Large \hfill IMPA}
+
+\hfill{\large January 31, 2025}
+
+\vspace{2em}
+\subsection{Pairs \((X,D)\)}
+Itaca's program (1970's): \(U\) complex algebraic variety. We want to find invariants like Kodaira dimension. Compactify \(U \rightsquigarrow X\), and consider \(X\setminus U:=D\) (the boundary). The \(\Omega^q_X(\operatorname{log}D)\)
+
+\begin{thm}[Itaca, 1977]\leavevmode
+Kodaira dimension of the pair \((X,D)\) does not depend on the choice of compactification (and it exists ;)
+\end{thm}
+
+\begin{defn}[Lu-Zhang, 2017]\leavevmode
+\((X,D)\) is \textit{\textbf{Brody-hyperbolic}} \textit{\textbf{(Mori-hyperbolic)}} if there is no nonconstant holomorphic (analytic) morphism  \(f:\mathbb{C} \to X\setminus D\) and the same holds for the open strata of \(D\).
+\end{defn}
+
+\begin{conjecture}
+\((X,D)\) is Brody-hyperbolic then \(K_X + D\) is ample.
+\end{conjecture}
+
+\begin{thm}[Sraldi, 2019]\leavevmode
+\((X,D)\) Mori-hyperbolic then \(K_X+D\) is nef.
+\end{thm}
+
+\begin{question}\leavevmode
+How to make sense of ``the birational geometry of \((X,D)\)"
+\end{question}
+
+\subsection{Calabi-Yau pairs}
+
+\begin{defn}[Calabi-Yau pair]\leavevmode
+We relax a condition: we won't ask that \(X\) is smooth, but that it is a terminal projective variety. And also that \(K_X+D \sim 0\) (I think this ``would be equivalent to" Kodaira dimension 0). Also ask that \((X,D)\) is log canonica.
+\end{defn}
+
+\begin{remark}\leavevmode
+The condition \(K_X+D \sim 0\) says that there is unique up to scaling volume form \(\omega_D \in \Omega^m_{\mathbb{C}(X)}\) that does not vanish and has a simple pole along \(D\), i.e.  \(\operatorname{div}(\omega_D)=-D\).
+\end{remark}
+
+Now we study the birational geometry of CY pairs:
+
+\begin{defn}\leavevmode
+Let \((X,D_X),(Y,D_Y)\) CY pairs and \(f: X \dashrightarrow Y\) a birational map. We get a pullback \(f_*:\Omega^n_{\mathbb{C}(X)}\overset{\cong}{\to} \Omega^n_{\mathbb{C}(Y)}\). Then \(f:(X,D_X) \dashrightarrow (Y,D_Y)\) is \textit{\textbf{volume preserving}} is \(f_*(\omega_{D_X}=\lambda \omega_{D_Y}\).
+\end{defn}
+
+\begin{remark}[Valuative characterization]\leavevmode
+
+\end{remark}
+
+\begin{defn}\leavevmode
+\((X,D)\) CY pair,
+\[\operatorname{Bir}(X,D):=\{f \in \operatorname{Bir}(X) : f:(X,D) \dashrightarrow (X,D) \text{ is volume preserving} \}\]
+\end{defn}
+
+\subsection{The Sarkisov-Program}
+
+\(\operatorname{Bir}(\mathbb{P}^n)\) Cremona group.
+
+\begin{thm}[Noether-Castelnuovo, 1870-1901]\leavevmode
+The creoma group of \(\mathbb{P}^2\) has a nice set of generators: maps of degree 1 and \(q\):
+\[\operatorname{Bir}(\mathbb{P}^2) = \left<\operatorname{Aut}(\mathbb{P}^2),q\right>\]
+where \(q\) is the \textit{\textbf{standard quadratic transformation}} given by \((x:y:z) \overset{q}{\mapsto }(yz:xz:xy)\)
+\end{thm}
+
+You might think that because it has such a nice group generators it'd be easy to study this group. It's not the case.
+
+Now in dimension 3:
+
+\begin{thm}[Hilda Hudson (1927)]\leavevmode
+\(\operatorname{Bir}(\mathbb{P}^n)\) does not admit a set of generators of bounded degree.
+\end{thm}
+
+\begin{thm}[Sarkisov Program, Corti 1995; Hazon-McKunam 2013 for \(n \geq 4\)]\leavevmode
+	\[\begin{tikzcd}
+		\mathbb{P}^n\arrow[r,dashed,"\varphi_1"]\arrow[d]\arrow[rrrr,bend left,"\varphi"]&X_1\arrow[r,dashed,"\varphi_2"]\arrow[d]&X_2\arrow[r,dashed]\arrow[d]&\cdots \arrow[r,dashed]&X_k=\mathbb{P}^n\arrow[d]\\
+	\{\operatorname{pt}\}	&T_1&T_2&&\{\operatorname{pt}\}
+	\end{tikzcd}\]
+The intermediate varieties \(X_i/T_i\) are called \textit{\textbf{Mori-fiber spaces}}, and \(\varphi_i\) are \textit{\textbf{Sarkisov links}}. So the theorem is that a map (what map?) can be factorized by Sarkisov links.
+\end{thm}
+
+\begin{thm}[Corti-Kalog(?) 2016]\leavevmode
+Any volume-preserving birrational map between Mori-fiber CY pairs is a composition of volume-preserving Sarkisov links. Now every intermidiate variety admits a divisor making it a CY pair:
+	\[\begin{tikzcd}
+		(X,D_X)\arrow[r,dashed,"\varphi_1"]\arrow[d]\arrow[rrrr,bend left,"\varphi"]&(X_1,D_1)\arrow[r,dashed,"\varphi_2"]\arrow[d]&(X_2,D_2)\arrow[r,dashed]\arrow[d]&\cdots \arrow[r,dashed]&(Y,D_Y)\arrow[d]\\
+	T_X	&T_1&T_2&&T_Y
+	\end{tikzcd}\]
+\end{thm}
+
+\begin{remark}\leavevmode
+\begin{itemize}
+\item The Sarkisov links
+\[\begin{tikzcd}
+	 \mathbb{P}^n\arrow[r, dashed]\arrow[d]&X_1\arrow[d]\\\operatorname{pt}&T_1
+\end{tikzcd}\]
+are not classified.
+
+\item Depending on \(D\), the volume-preserving Sarkisov links
+\[\begin{tikzcd}
+	 \mathbb{P}^n\arrow[r, dashed]\arrow[d]&X_1\arrow[d]\\\operatorname{pt}&T_1
+\end{tikzcd}\]
+can be classified.
+\end{itemize}
+\end{remark}
+
+\begin{thm}[A-Coti-Massareti]\leavevmode
+\(D \subset \mathbb{P}^n\) a \textit{general} hypersurface of degree \(n+1\). If you want to study the birational group of the pair \((\mathbb{P}^n,D)\), \(\operatorname{Bir}(\mathbb{P}^n,D)\), then this group is not interesting. Because \(\operatorname{Bir}(\mathbb{P}^n,D)=\operatorname{Aut}(\mathbb{P}^n,D)\).
+
+And then also consider \(D\) smooth instead of general, and with Picard rank \(\rho(D)=1\).
+\end{thm}
+
+\begin{thm}[A-C-M]\leavevmode
+\(D \subset \mathbb{P}^3\) general (A1 singularity and \(\rho(S)=1\)) quartic with a singularity. \(\operatorname{Bir}(\mathbb{P}^3,D)\cong \mathbb{G} \rtimes \mathbb{Z}/2\mathbb{Z}\), where \(\mathbb{G}\) is ``form of \(\mathbb{G}m\) over \(\mathbb{C}(x,y)\)".
+\end{thm}
+
+\subsection{Last application}
+
+\(X=X_d \subset \mathbb{P}^{n+1}\) smooth hypersurface of degree \(d\). I want to study the automorphism group.
+
+\begin{thm}[Matsumata-Monsky, 1964]\leavevmode
+Except for the two cases when \(\mathcal{H}\), \((n,d)=(1,3)\) or \((2,4)\), any smooth automorphism is the restricition of an automorphism of the ambient space, i.e. \(\operatorname{Aut}(\mathbb{P}^{n+1},X)\twoheadrightarrow \operatorname{Aut}(X)\).
+
+In the exceptional cases: for \((n,d)=(1,3)\) we get \(\operatorname{Bir}(\mathbb{P}^2,C) \twoheadrightarrow \operatorname{Aut}(C)\) {\color{6}\(C\) is a curve}. For \((n,d)=(2,4)\), we  \textit{ask}: when \(\operatorname{Bir}(\mathbb{P}^3,S) \twoheadrightarrow \operatorname{Aut}(S)\)?
+\end{thm}
+
+\begin{thm}[A-Paiva-Zika]\leavevmode
+Complete solution \(\rho(S)=2\).
+\end{thm}
+
+
+
+
+
+
+
+\begin{thm}\leavevmode
+\(\nabla I = 0\) (connection preserves complex structure) and connection is torsion free, then \(I \) is integrable.
+\end{thm}
+
+\begin{exercise}\leavevmode
+
+Flat bundle on simply connected is trivial
+\end{exercise}
+
+
+\clearpage\phantomsection\stepcounter{section}\addcontentsline{toc}{section}{\thesection\quad A primer on symplectic grupoids}\addtocontents{toc}{\hspace{1em}\textit{Camilo Angulo, \hspace{.2 em}Jilin University,\hspace{.5em}13 February, 2025, Geometric Structures Seminar}\par}
+{\Huge A primer on symplectic grupoids}
+
+\hfill{\Large Camilo Angulo}
+
+{\Large \hfill Jilin University}
+
+\hfill{\large 13 February, 2025 
+
+\hfill \textit{Geometric Structures Seminar}}
+\vspace{2em}
+
+\begin{thing4}{Abstract}
+In the late 17th century, Simeon Denis Poisson discovered an operation that helped encoding and producing conserved quantities. This operation is what we now know as a Lie bracket, an infinitesimal symmetry, but what is its global counterpart? Symplectic groupoids are one possible answer to this question. In this talk, we will introduce all the basic concepts to define symplectic groupoids, and their role in Poisson geometry. We will discuss key examples, and applications. The talk will be accessible to those familiar with differential geometry, but no prior knowledge of groupoids will be assumed.  
+\end{thing4}
+\vspace{.5em}
+
+\subsection{Part 1: Poisson geometry}
+
+Hamiltonian formalism. Recall that being a conserved quantity \(f \in C^\infty(X)\) is the same thing as \(\{H,f\}=0\).
+
+\begin{itemize}
+\item We have seen that it is always possible to take quotient of a symplectic manifold with a group action to obtain a \textbf{Poisson manifold}.
+\item Then we have found a way to produce a symplectic foliation from a 2-vector \(\pi \in \mathfrak{X}^2(M):=\Lambda^{2}(TM)\).
+\item
+	\begin{remark}\leavevmode
+	\[\left\{ \text{Lie algebra on \(\mathfrak{g}\)} \right\} \xrightarrow{1-1}\left\{ \text{Linear Poisson bracket on \(\mathfrak{g}^*\)}  \right\}  \]
+	\end{remark}
+\item We saw very nice examples of foliation that have to do with Lie algebras. So \(\mathfrak{b}^*_3\) which gives the ``open book foliation", and \(\mathfrak{e}^*\) that gives a foliation by cilinders.
+\end{itemize}
+
+\subsection{Part 2: symplectic realizations}
+
+Consider
+\[(\Sigma,\omega) \xrightarrow{\mu}(M,\pi)\]
+
+\[\begin{tikzcd}
+	T_p\Sigma \arrow[r,"d_p\mu"]\arrow[d,"\omega^\flat"]&T_xM\\
+	T_p^*\Sigma &  T^*_pM\arrow[l,"(d\mu)^*",swap]\arrow[u,"\pi ^\sharp"]
+\end{tikzcd}\]
+So that 
+\[\pi ^\sharp=d_p\mu \circ \omega^{-1} \circ(d\mu)^*\]
+
+
+
+\begin{lemma}\leavevmode
+\(\dim (\Sigma) \geq  2 \dim (M) - \operatorname{rk}(\pi_x)\) for all \(x \in M\).
+\end{lemma}
+
+\begin{proof}\leavevmode
+Done in seminar.
+\end{proof}
+
+\begin{example}\leavevmode
+\((\mathbb{R}^2,0)\). So the map
+\begin{align*}
+	(\mathbb{R}^4,dx \wedge du + dy \wedge dv) &\longrightarrow  \mathbb{R}^2\\
+	(x,y,u,v) &\longmapsto (x,y)
+\end{align*}
+
+\end{example}
+
+\begin{exercise}\leavevmode
+Find the symplectic realization \(\omega\) in \((\mathbb{R}^4, \omega ) \xrightarrow{\mu}(\mathbb{R}^2,(x^2+y^2)\partial_x \wedge \partial_y\)
+
+\begin{align*}
+	(\mathbb{R}^4, \omega) &\longrightarrow (\mathbb{R}^2,(x^2+y^2) \partial_x \wedge \partial _y) \\
+	(x,y,z,w) &\longmapsto (x,y)
+\end{align*}
+
+Also find the symplectic realization of \(\operatorname{ a f f }^*\) with \(\{x,y\}=x\).
+\end{exercise}
+
+\subsection{Part 3: Grupoids}
+
+\subsubsection{Motivation}
+\begin{enumerate}
+\item Fundamental grupoid: objects are points in the manifold and arrows are paths.
+\item \(S^1 \mathbb{y} S^2\) by rotation does not give a nice quotient because there are two singular points. Consider the groupoid  \(S^1 \times S^2\) of orbits. These are the arrows. The points are just the points of \(S^2\).
+\item Consider a foliation (like Möbius foliation of circles; where there is a singular circle, the soul). You can do the same thing as in fundamental groupid \textbf{leafwise}. Arrows then are equivalence classes of paths that live inside leaves. This is called monodromy of a foliation. Again objects are points.
+\item You can take a quotient of monodromy using a connection given by the foliation. This allows to identify certain paths between the leaves. This is called \textit{\textbf{holonomy (of a foliatiation)}}. (So you can make this notion match the usual holonomy given by riemmanian connection.)
+	\begin{upshot}\leavevmode
+	So the point is taking some sort of function space on these groupoids you can gather the information given by the non-smooth quotient (like in the case of the sphere rotating). So this groupoid motivation says how to get some structure that resembles a non smooth quotient.
+	\end{upshot}
+\item Last motivation: the grid of squares has a tone of symmetries. If you restrict to just a few squares you loose so many symmetries. But there's a grupoid hidden in there that tells you what you intuition knows about this finite grid of squares.
+\end{enumerate}
+
+\begin{defn}\leavevmode
+A \textit{\textbf{grupoid}} is a category where all morphisms are invertible.
+\end{defn}
+
+So there is a kind of product among the objects, given by composition but: \textbf{not every two pair of objects can be multiplied!}---only those whose source and target match. So that's the lance about grupoids.
+
+Just so you make sure you understand: the groupoid \(G\) is the morphisms of the category. The objects are points (of a manifold).
+
+\begin{defn}\leavevmode
+\textit{\textbf{Lie grupoid}} is when the following diagram is inside category of smooth manifolds and \(s,t\) (source and target maps) are submersions:
+\[\begin{tikzcd}
+	G^{(2)}\arrow[r,"m"]& G \arrow[ r,"s"]\arrow[r,"t",swap]& M \arrow[r,"u"]& G
+\end{tikzcd}\]
+\end{defn}
+
+\begin{thing6}{Properties of Lie groupoids}\leavevmode
+\begin{itemize}
+\item \(m\) is also a submersion.
+\item \(i\) (inversion) is a diffeomorphism.
+\item  \(u\) (unit=identity) is an embbeding.
+\end{itemize}
+\end{thing6}
+
+\begin{defn}\leavevmode
+Consider \(x \in M\) and the inverse image of source map: \(s^{-1}(x)=\{\text{arrows that start at \(x\)} \}\). Now if you act with \(t\) on this set you get \textit{\textbf{the orbit}} of \(x\): \(\{\text{\(y \in M\) such that there is an arrow from \(x\) to \(y\)} \}\).
+
+And there also \textit{\textbf{an isotropy}} \(G_x=\{g \in G: \text{\(g\) goes from \(x\) to \(x\)} \}\)
+\end{defn}
+
+\begin{example}\leavevmode
+\begin{enumerate}
+\item \(G=M\),  \(M=M\).
+ \item Lie groups.
+	\item Lie group bundles.
+\item \(G=M \times M\), \(M =M\).
+ \item Fundamental groupoid. Isotropy group is fundamental group! And orbit is…\clearpage universal cover!
+\item Subgroupoids.
+\item  Foliations.
+\item If you have a normal group action \(G \mathbb{y} M\) you construct a groupoid action with groupoid \(G \times M\) and objects \(M\), with product given on the group part of the product. Orbits are orbits. Isotropy group is isotropy group.
+ \item Principal bundles.
+\end{enumerate}
+\end{example}
+
+\subsection{Back to Poisson}
+
+There's also a notion of Lie algebroid. Which is strange. But the point is that to every Poisson manifold there is a Lie algebroid.
+
+So the question is whether there is a Lie groupoid associated to that Lie algebroid. Not always.
+
+\begin{thing6}{Big question}[Fernandez and ?]\leavevmode
+When a symplectic manifold is integrable?
+\end{thing6}
+
+(Remember that integrating means go from algebra(oid) to group(oid).
+
+And the point is that
+\begin{thing7}{The point}\leavevmode
+When you \textit{can} go back, you get a \textit{\textbf{symplectic groupoid}}. 
+\end{thing7}
+
+\begin{remark}\leavevmode
+Look for Kontsevich's notes on Weinstein!
+\end{remark}
+
+\begin{remark}\leavevmode
+History: Weinstein did this intending to do quantization (geometric?) on Poisson manifolds. (That involves a \(C^*\)algebra coming from the symplectic groupoid.)
+\end{remark}
+
+\begin{defn}\leavevmode
+A \textit{\textbf{symplectic groupoid}} is a groupoid \(G, M\) together with  \(\omega \in \Omega^2(M)\) such that \(\omega\) is symplectic and multiplicative, meaning that \(\partial  \omega =0\), that is, \(\iff m^*\omega=\operatorname{pr}_1^*\omega+\operatorname{pr}^*_2\omega\in \Omega^{2}(G^{(2)})\iff\) take two vectors \( X_k,Y_k \in TG\), and \(\omega(X_0 \star Y_0,X_1\star Y_1) =  \omega(X_0,Y_0) + \omega (X_1,Y_1)\)
+\end{defn}
+
+\begin{thm}\leavevmode
+If \((G, \omega)\) is a symplectic groupoid, then
+\begin{enumerate}
+\item \(\exists !\) poisson structure on \(M\) 
+\item for which \(t: G \to M\) is a symplectic realization,
+\item  Leaves are connected components of orbits,
+\item \(\mathsf{Lie}(G)\cong T^*M\) via \(X \mapsto -u ^*(i_X \omega\).
+\end{enumerate}
+\end{thm}
+
+\begin{remark}\leavevmode
+Look for Alejandro Cabrera, Kontsevich. There are two things one is de Rham and the other…
+\end{remark}
+
+\begin{upshot}\leavevmode
+The obstruction to knowing when symplectic groupoid exists is ``variation of symplectic form \(\omega=(1+t^2) \omega_{S^2}\)". So how does the symplectic group vary from leaf to leaf. So there are two situations in which the thing doesn't work.
+\end{upshot}
+
+\iffalse
+####This is a talk that I couldn't follow very far.
+
+\phantomsection\stepcounter{section}\addcontentsline{toc}{section}{\thesection\quad Jets, arcs and sigularities}\addtocontents{toc}{\hspace{1em}\textit{Nero Badur}\par}
+{\Huge Jets, arcs and sigularities}
+
+\hfill{\Large Nero Badur}
+
+{\Large \hfill KU Leuven}
+
+\hfill{\large February 20, 2025}
+
+\subsection{Introduction}
+
+\begin{defn}\leavevmode
+	An \textit{\textbf{arc}} on a \(\mathbb{C}\)-algebraic variety \(X\) is a morhpism of \(\mathbb{C}\)-schemes \(\operatorname{Spec}\mathbb{C}[[t]] \to X\). Equivalently, if \(X = \operatorname{Spec} R\), a morphism of \(C\)-algebras \(R \to \mathbb{C}[[t]]\).
+
+	The \textit{\textbf{arc space}} is \(\mathcal{L}_\infty(X) = \operatorname{Hom}_{\mathbb{C}-\operatorname{s c h}}(\operatorname{Spec} \mathbb{C}[[p ]],X)\).
+\end{defn}
+
+\begin{thing6}{Affine case}\leavevmode
+\begin{align*}
+	\mathcal{L}_{\infty}(\mathbb{A}^n)&=\operatorname{Hom}_{\mathbb{C}-\operatorname{a l g}}(\mathbb{C}[x_1,\ldots,x_n],\mathbb{C}[ [ t ] ]) \cong \mathbb{A}^\infty= \operatorname{Spec} \mathbb{C}[x_{ij}:0 \leq  i \leq n
+\end{align*}
+\end{thing6}
+
+\begin{defn}\leavevmode
+	An \textit{\textbf{\(m\)-jet}} is just truncating this, i.e., a morphism \(\operatorname{Spec}\mathbb{C}[t]/(t^{m+1}) \to X\). And \textit{\textbf{jet-space}} is
+	\[\mathcal{L}_m(X)= \operatorname{Hom}_{\mathbb{C}-\operatorname{s c h}}(\operatorname{Spec}(\mathbb{C}[t]/(t^{m+1},X)\]
+\end{defn}
+
+\textbf{Truncation gives morphisms.} 
+\[\begin{tikzcd}[column sep=small]
+	\mathcal{L}_\infty(X)\arrow[r]\arrow[rrr,bend left,"\pi_m"]&\cdots \arrow[r]&\mathcal{L}_m(X)\arrow[r]&\mathcal{L}_{m-1}(X)\arrow[r]&\cdots \arrow[r]&\mathcal{L}_0(X)=X
+\end{tikzcd}\]
+where \(\pi_0\), which goes all the way to \(\mathcal{L}_0\) ``takes to the center".
+\begin{thing4}{Example}\leavevmode
+If \(X\) is smooth (or \(X= \mathbb{A}^n\), then the  \(\pi_{m,m-1}\) are locallu trivial \(\mathbb{A}^n\)-fibrations.
+\end{thing4}
+
+{\color{6}We are interested in singular subvarieties of a smooth manifold.}
+
+\begin{defn}\leavevmode
+	Let \(f \in \mathbb{C}[x_1,\ldots,x_n]\setminus \mathbb{C}\). The \textit{\textbf{\(m\)-contact locus of \(f\)}} is
+	\[\mathfrak{X}_{m}^\infty(f):=\{\gamma \in \mathcal{L}_\infty(\mathbb{A}^n): \operatorname{ord}_\gamma f=m\}\]
+	so
+\end{defn}\fi
+
+\clearpage\phantomsection\stepcounter{section}\addcontentsline{toc}{section}{\thesection\quad Higher dimensional Fano varieties}\addtocontents{toc}{\hspace{1em}\textit{Joaquín Moraga, \hspace{.2 em}UCLA, USA,\hspace{.5em}August 12-16, 2025, V-ELGA (CIMPA Cabo Frío)}\par}
+{\Huge Higher dimensional Fano varieties}
+
+\hfill{\Large Joaquín Moraga}
+
+{\Large \hfill UCLA, USA}
+
+\hfill{\large August 12-16, 2025
+
+\hfill \textit{V-ELGA (CIMPA Cabo Frío)}}
+
+\vspace{2em}
+
+\begin{thing4}{Abstract}
+This will be a 6 hour mini-course about Fano varieties.
+We will start with the classic classification of del Pezzo (smooth
+Fano) and smooth Fano 3-folds (Iskhoskikh-Prokhorov). This will
+be an overview of the known results and a highlight of why understanding Fano varieties is important for Algebraic Geometry. Then
+we will introduce Kawamata log terminal singularities and discuss
+some classic and new results about this class of singularities. We will
+explain why understanding these singularities is vital, for instance,
+through the classification of Gorenstein Fano surfaces of Picard rank
+one. Finally, we will explore some new results regarding Fano varieties and klt singularities, discussing the existence of complements
+on Fano varieties and the boundedness of Fano varieties.
+\end{thing4}
+\vspace{2em}
+
+\subsection*{Plan}
+
+\begin{enumerate}
+	\item Introduction to Fano varieties.
+	\item Log terminal singularities.
+	\item Singular Fano varieties.
+	\item Cluster Fano varieties.
+\end{enumerate}
+
+\subsection{Lecture 1}
+
+$X$ smooth projective variety of dimension $n$. $T_{X}$ its tangent bundle. $\Omega_{X}:=T^{*}_{X}$. The \textit{\textbf{canonical line bundle}} is  $\omega_{X}=\Lambda^{n} \Omega_{X}$. $\omega_{X}\cong \mathcal{O}_{X}(K_{X})$ where $K_{X}$ is the canonical divisor.
+
+\subsubsection{Trichotomy}
+\begin{enumerate}
+	\item $X$ is \textit{\textbf{Fano}} if $\omega_{X}^{-m}$ is very ample for some $m$ divisible enough.
+	\item $X$ is \textit{\textbf{Calabi-Yau}} if $\omega_{X}^{m} \cong  \mathcal{O}_{X}$.
+	\item $X$ is \textit{\textbf{canonically polarized}} if $\omega_{X}^{m}$ ($m\geq 0$) is very ample for $m$ divisible enough.
+\end{enumerate}
+\iffalse
+\begin{tabular}{c c c c c c c}
+	&dim 1&$\pi_{1}$&Aut&Birrational aut&Higher degree endomorph.&Rational points $X(\mathbb{Q})$\\\hline\hline
+	Fano&$\mathbb{P}_{\mathbb{C}}^{1}$&Simply connected (Kobay. 70's)&Linear algebraic groups&{\color{blue}only for toric}&{\color{blue}dense or empty}\\\hline
+	CY&Torus&Virtually abelian of rank $\geq 2\operatorname{dim}X$ (Gromov-Cheggar 80's)&?&?&{\color{blue}only for abelian}&?\\\hline
+	Can. pol.&Higher genus&?&finite&finite&No&{\color{blue}Contained in a proper Zarisky closed}\hline\hline\\
+		 &&Topology&Dynamics&Number theory
+\end{tabular}
+\fi
+
+\begin{example}
+	$X_{d}\subset \mathbb{P}^{n}$ is a smooth hypersurface of degree $d$. Then 
+	\begin{align*}
+		\omega_{X_{d}}&=(\omega_{\mathbb{P}^{n}}+\mathcal{O}(X_{d})|_{X_{d}}\\
+			      &((-n-1)H+dH)|_{X_{d}}\\
+			      &=(J-1-n)H|_{X_{d}}
+	\end{align*}
+	\begin{itemize}
+		\item $d<n+1$,  $X_{d}$ is Fano.
+		\item $d=n+1$, $X_{d}$ is CY.
+		\item $d>n+1$,  $X_{d}$ is canonically polarized.
+	\end{itemize}
+\end{example}
+
+So the idea is start from $\mathbb{P}^{2}$ and blow-up up to 8 points.
+
+\begin{thm}
+	Any smooth Fano surface (del Pezzo) is either isomorphic to $\mathbb{P}^{1} \times \mathbb{P}^{1}$ or the blow-up of $\mathbb{P}^{2}$ at $k\leq 8$ points in general position.
+\end{thm}
+
+\begin{defn}
+	The \textit{\textbf{volume}} of a smooth Fano surface  $X$ is $(-K_{X})^{2}$.
+\end{defn}
+
+\begin{tabular}{ccc}
+	smooth fano surface&volume&automorphism group\\\hline
+	$\mathbb{P}^{2}$ &9& $\mathbb{P}\operatorname{GL}(3,\mathbb{C})$\\\hline
+	$\operatorname{Bl}_{p}\mathbb{P}^{2}, \mathbb{P}^{1} \times \mathbb{P}^{1}$ &8&connected group of rank $\geq 2$/$\mathbb{P}\operatorname{GL}(2,\mathbb{C})\times \mathbb{P}\operatorname{GL}(2,\mathbb{C})\ltimes \mathbb{Z}_{2}$ \\\hline
+	$\operatorname{Bl}_{p,q}\mathbb{P}^{2}$ &7&connected group\\ of rank 2\\\hline
+	$\operatorname{Bl}_{p,q,1}$ &6&$\mathbb{C}_{m}${\color{magenta}?}$ S_{2}\times S_{3}$
+\end{tabular}
+
+\subsection{Section}
+\begin{defn}
+	A class of varieties $\mathcal{C}$ is \textit{\textbf{bounded}} if there exists a projective morphism between finite type schemes $\mathcal{X}\to T$ such that for every $X\in \mathcal{C}$ we can find $t\in T$ such that $X_{t}\cong \mathcal{X}_{t}$.
+\end{defn}
+
+\begin{thm}[Koll\'ar, Miyaoka-Mori, 92]
+	Fix $n \in \mathbb{Z}_{\geq 1}$. The class of $n$-dimensional smooth Fano varieties is bounded. $|-mK_{X}|$ is very ample, it is controlled in terms of $n$.
+\end{thm}
+
+\begin{quotation}
+	So it works in dimension 1, it works in dimension 2, so it should work in dimension 3, right? This is actually not true. So let me introduce the following definition:
+\end{quotation}
+
+\begin{defn}
+	A variety $X$ is \textit{\textbf{rational}} if $ X$ is birrational to $\mathbb{P}^{n}$ for some $n$.
+\end{defn}
+
+Griffiths and Clemens got to the right answer, though their proof was wrong.
+
+\begin{quotation}
+	This is actually valid in mathematics.
+\end{quotation}
+
+\begin{thm}[Griffiths-Clemens, 72]\leavevmode
+	A smooth cubic 3-fold is not rational
+\end{thm}
+
+\begin{defn}
+	A normal projective variety $X$ is \textit{\textbf{toric}} if there is a dense open set of $X$ isomorphic to $\mathbb{C}^{n}_{\mathbb{T}_{m}}$ and the action of $\mathbb{G}^{n}_{m}$ on itself extends to $X$.
+\end{defn}
+
+{\color{persimmon}*Explanation of the polytope*}
+
+\begin{thm}[Cox]\leavevmode
+	There is a bijection between
+	\[\left\{ \substack{n\text{-dimensional}  \\\text{smooth projective} \\\text{Fano toric varieties}  } \right\}/\cong   \qquad \longleftrightarrow\qquad  \left\{ \substack{n\text{-dimensional}  \\ \text{reflexive smooth} \\\text{lattice polytopes} } \right\}/\operatorname{GL}(m,\mathbb{Z}) \]
+	where the quotient accounts for moving around the polytope.
+\end{thm}
+
+\begin{conjecture}[Folklore?]
+	Any $n$-dimensional smooth reflexive lattice polytope is inside $[-1,1]^{n}$ up to translation and $\operatorname{GL}(n,\mathbb{Z})$.
+\end{conjecture}
+
+\begin{tabular}{cc}
+	$\mathbb{P}^{2}$ &right-angle triangle\\
+	$\mathbb{P}^{1} \times \mathbb{P}^{1}$&square\\
+	$\operatorname{Bl}_{p}\mathbb{P}^{2}$ &right angle triangle with truncated right angle\\
+	$\operatorname{Bl}_{p,q,r}\mathbb{P}^{2}$& the third and last corner truncated
+
+\end{tabular}
+\begin{remark}
+	In 1982 Batyrev classified smooth toric Fano 3-folds. There's 16. In 00's Krauser and Skarke classified smooth toric Fano 4-foulds, there's 124. In 15's Kraused and Nill classified 5-folds. In 2007 \O bro wrote and algorithm to classify smooth toric Fano $n$-folds.
+
+	The number of smooth toric Fano $n$-folds grows at least as $5^{n}$ assymptotically.
+\end{remark}
+
+\begin{quotation}
+	What is the bad part of smooth toric Fanos? The following theorem:
+\end{quotation}
+
+\begin{thm}[Cox]
+	A smooth toric Fano variety is rigid.
+\end{thm}
+
+\begin{quotation}
+	On one side, smooth toric Fanos are nice because they are combinatorial. On the other side, not so much because they do not have moduli.
+\end{quotation}
+
+\begin{tabular}{cccccc}
+	Smooth Fano\\surface&Volume&Aut&Rational&Toric&dimension of moduli\\\hline\hline
+	$\mathbb{P}^{2}$&9& $\mathbb{P}\operatorname{GL}(3,\mathbb{C})$&Yes&Yes&0\\\hline
+	$\mathbb{P}^{1} \times \mathbb{P}^{1}$, $\operatorname{Bl}_{p}\mathbb{P}^{2}$&8&$\geq \mathbb{G}^{2}_{m}$&Yes&Yes&0\\\hline
+	$\operatorname{Bl}_{p,q}\mathbb{P}^{2}$&7&$\geq \mathbb{G}^{2}_{m}$&Yes&Yes&0\\\hline
+	$\operatorname{Bl}_{p}\mathbb{P}^{2}$&6&$\geq \mathbb{G}^{2}_{m}$&Yes&Yes&0\\\hline
+	$\operatorname{Bl}_{p}\mathbb{P}^{2}$&6&finite&Yes&Yes&0\\\hline
+\end{tabular}
+
+\begin{thm}[Ikovsky-Prokov, Mori-Mukai, Shokurov, 90's]\leavevmode
+	(I-S) There are 105 families of smooth Fano 3-folds.
+
+	The general point of precisely 88 families corresponds to a rational Fano variety.
+
+	16 "families" correspond to toric Fano varieties.
+\end{thm}
+
+\begin{question}
+	What happens in dimension 4? We are far from a classification. \textit{Can we classify smooth Fano 4-folds?}
+
+	\hfill No.
+\end{question}
+
+\begin{thm}[Casagrande,24]
+	A smooth Fano 4-fold $X$ with $\rho(X)>12$ is a product of surfaces. In particular $\rho(X)\leq 18$.
+\end{thm}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	dimension&\# number of families&rational&toric\\\hline
+	1&1&1&1\\\hline
+	2&10&10&5\\\hline
+	3&105&88&16\\\hline
+	4&??&??&124\\\hline
+\end{tabular}\end{center}
+
+\begin{quotation}
+	The aim of this minicourse is to introduce a new notion of algebraic varieties that lies between rational and toric. They are called \textit{\textbf{cluster type varieties}}, and study clusted Fano varieties.
+\end{quotation}
+
+\subsection{Lecture 2}
+
+\begin{defn}
+	A \textit{\textbf{log pair}} is a couple  $(X,\Delta)$ where $X$ is a normal quasi-projective variety and $\Delta \geq 0$ is a $\mathbb{Q}$-divisor for which $K_{X}+\Delta$ is $\mathbb{Q}$-Cartier.
+\end{defn}
+
+\begin{example}
+	$E$ elliptic, $i:E\to E$. $\mathbb{Z}_{12}\hookrightarrow E$. {\color{magenta}…} The conclusion is that studying the pair $(\mathbb{P}^{1},D)$ is equivalent to studying $\mathbb{P}^{1}$. In-equivariantly.
+\end{example}
+
+\begin{example}
+	$S\subset X$, $(K_{X}+S)|_{S}\sim K_{S}$. Understanding the log pair $(X,S)$ is useful to understand $S$.
+\end{example}
+
+\begin{defn}
+	Let $(X,\Delta )$ be a log pair and $\pi:Y\to  X$ a projective birational morphism from a normal variety $E\subset Y$ prime divisor. For
+	\[\pi^{*}(K_{X}+\Delta )=K_{Y}+\Delta_{Y}\]
+	where $\Delta_{Y}$ may not be effective, the \textit{\textbf{log discrepancy}} of $(X,\Delta )$ at $E$ is
+	\[\alpha_{E}(X,\Delta ):=1-\operatorname{coeff}(\Delta_{Y}).\]
+\end{defn}
+
+\begin{remark}
+	The number $\alpha_{E}(X,\Delta )$ gets more negative as the multiplicity of $(X,\Delta )$ along the tangent directions corresponding to $E$ "gets higher".
+\end{remark}
+
+\begin{example}
+\begin{enumerate}\leavevmode 
+	\item $X=\mathbb{A}^{n}$, $\Delta =0$, $\pi:Y\supset E\cong \mathbb{P}^{1}\to \mathbb{A}^{n}$ the blow-up at $(0,\ldots,0)$. $pi^{*}(K_{\mathbb{A}^{n}}=K_{\mathbb{P}^{n} +(1-n)}E$, $\alpha_{E}(\mathbb{A}^{n} =n$.
+	\item $ X=\mathbb{A}^{n}$, $\Delta =\lambda_{1}H_{1}+\ldots+\lambda_{n}H$, $\pi^{*}(K_{\mathbb{A}^{n} +\Delta}=K_{Y}+(1-n)E+\sum_{i=1}^{n} \lambda_{i}E+\sum_{i=1}^{n} \lambda_{i}\tilde{H}_{i}$, $\alpha_{E}(\mathbb{A}^{n} +\Delta )=n-\sum_{i}\lambda_{i}$.
+\end{enumerate}
+\end{example}
+
+\begin{defn}
+	A log pair $(X,\Delta)$ has  \textit{\textbf{log terminal singularities}} if all its log discrepancies are $>0$.
+
+	A log pair $(X,\Delta )$ is \textit{\textbf{log canonical}} if all its log discrepancies are $\geq 0$.
+
+	A log pair $(X,\Delta )$ is \textit{\textbf{terminal}} if all its log discrepancies from exceptional divisors are $>1$.
+
+	A log pair $(X,\Delta)$ is \textit{\textbf{canonical}} if all its log discrepancies are $\geq 1$.
+\end{defn}
+
+\begin{exercise}
+	$(X,\Delta )$ is log terminal iff $\lambda_{i}<1$ for all $i$.
+
+	$(X,\Delta )$ is log canonical iff $\lambda_{i}\leq 1$ for all $i$.
+\end{exercise}
+
+\begin{remark}[Historical note]\leavevmode
+	$X$ smooth pair, $K_{X}$ is big. \begin{tikzcd}X\arrow[r,dashed]&X'\end{tikzcd}. $K_{X'}$ big and nef. {\color{blue}Terminal singularities are the singularities appearing in the terminal (minimal) model.}
+
+	\[\begin{tikzcd}
+		X\arrow[r,dashed]\arrow[dr,dashed]&X'\arrow[d]\\
+				 &X''
+	\end{tikzcd}\]
+	{\color{blue}Canonical singularities are the singularities appearing in the canonical model.}
+\end{remark}
+
+\begin{example}
+	$G\hookrightarrow (\mathbb{A}^{n},0)$, $X=\mathbb{A}^{n} /G$. $ X$ has log terminal singularity.
+	\[\begin{tikzcd}
+		\tilde{E}\subset \tilde{Y}\arrow["/G",r]\arrow[d]&Y\supseteq E\arrow[d]\\
+		\mathbb{A}^{n}\arrow[r,"/G"]&X
+	\end{tikzcd}\]
+	$\alpha_{E}(X)=\alpha\overset{\sim}{E}(\mathbb{A}^{n} )/r>0$. And $r$ is the ramification index at $E$.
+\end{example}
+
+\begin{prop}
+	Let $X$ be a smooth projective variety with $\rho(X)=1$, $H$ an ample divisor on $X$, $v\in C_{X}:=\operatorname{Spec}\left( \bigoplus_{n\geq 0} H^{0}(X,\mathcal{O}_{X}(mH))  \right) $,
+	\begin{itemize}
+		\item $C_{X}$ is log terminal iff $X$ is Fano.
+		\item $C_{X}$ is log canonical iff $X$ is CY.
+		\item $C_{X}$ is not lc iff $X$ is canonically polarized.
+	\end{itemize}
+\end{prop}
+
+\begin{exercise}
+	$H\subseteq \mathbb{A}^{n}$ if $\operatorname{mult}_{0}H>n+1$, then $(H,0)$ is not log canonical.
+\end{exercise}
+
+\paragraph{Dimension 1} {\color{blue}is not very intersting:} locally analytically this is the only example: $(\mathbb{A}^{1},\lambda \{0\} )$, log terminal iff $\lambda<1$, log canonical iff $\lambda\leq 1$.
+
+\paragraph{Dimension 2}
+
+$(X,x)$ is terminal iff smooth.
+
+$(X,x)$ is canonical iff ADE sing.
+
+$(X,x)$ is log terminal iff quotient sing.
+
+$(X,x)$ is strictly lc iff elliptic sing.
+
+\begin{thm}[Reid, 80's]\leavevmode
+	A terminal 3-fold singularity $(X,x)$ is a hyperquotient singularity.
+\end{thm}
+
+\begin{defn}
+	Let $(X,x)$ be a the germ of a minimal singularity over $\mathbb{C}$. $\varepsilon >0$ small and $\operatorname{Link}(X;x)=S_{\varepsilon }^{(x)} \cap X$, $S_{\varepsilon }$ is sphere of radius $\varepsilon $ around $x$ in $\mathbb{A}^{N}$.
+
+	The \textit{\textbf{local fundamental group}} of  $(X;x)$ is $\pi_{1}(\operatorname{Link}(X;x)) $.
+\end{defn}
+
+\begin{thm}[Kollár, 2010]\leavevmode
+There is a sequence $(X_{r};0)$ of terminal 4-fold singularities with $\operatorname{emdim }(X_ {r})\to \infty$. $\pi_{1}(X_{r};0) =\{1\} $ and $\operatorname{Cl}(X_{r},0)=0$
+\end{thm}
+
+{\color{magenta}*Some table classifing dimensions 2,3,4, Terminal-smooth, hyperquotient,?, Canonical, Ade-?,?,?, log termi-quotient,?,?, log cas-Elliptic singularity finetely many families,?,?}
+
+\begin{defn}
+	A singularity $(X;x)$ is of  \textit{\textbf{log terminal type}} if there exists $\Delta \geq 0$ such that $(X,\Delta;x)$ is log terminal.
+\end{defn}
+
+\begin{remark}
+	The $\Delta$ can be used as a correction term for the lack of $\mathbb{Q}$-Gorensteiness.
+\end{remark}
+
+\begin{example}
+	$\sigma=\left<e_{1},e_{2},e_{3},2e_{1}+2e_{2}-e_{3}\right> $. $X(\sigma)$ is not $\mathbb{Q}$-Gorenstein. $(X(\sigma),\frac{2}{3}D_{4}$ is log terminal.
+\end{example}
+
+\begin{thm}
+	A toric singularity is log terminal type.
+\end{thm}
+
+\begin{thm}
+	A singularity $(X;x)$ is toric if and only if it is a torus quotient singularity.
+\end{thm}
+
+\begin{thm}[Biaun-Greb-Langlass-M, 22]\leavevmode
+	Log terminal type singularities are preserved by reductive quotient
+\end{thm}
+
+\begin{thm}[Jordan, 1870's]\leavevmode
+	There is a constant $c(n)$ satisfying the following. Let $G\leq \operatorname{GL}(n,\mathbb{C})$ be a finite subgroup. Then $G$ admits a normal abelian subgroup if index $\leq c(n)$.
+\end{thm}
+
+\begin{thm}[Collins, 2010]\leavevmode
+	$c(n)=(n+1)!$ provided $n\geq 71$
+\end{thm}
+
+\begin{coro}
+	Let $(X;x)$ be an $n$-dimensional quotient singularity. Then $\pi_{1}^{\operatorname{loc}}(X;X)$ admits a normal abelian group index $\leq c(n)$.
+\end{coro}
+
+\begin{thm}[Braun-Filipazzi-M-Svaldi, 20]\leavevmode
+	There is a constant $K(n)$ only depending on $n$ and satisfying the following. Let $(X;x)$ be a log terminal singularity of dimension $n$. Then $\pi_{1}^{\operatorname{loc}}(X;x)$ admits a normal finite abelian subgroup of rank $\leq n$ and $\operatorname{index}\leq K(n)$.
+\end{thm}
+
+\begin{defn}
+	Let $(X,\Delta)$ be a log pair. The \textit{\textbf{regularity}} of $(X,\Delta)$ is
+	%\[\operatorname{reg}(X,\Delta)=\operatorname{max}\left\{ k|\substack{\text{there is a $\operatorname{log}$ resolution $(Y,\Delta_{Y}$}  \\ \text{and $k$ distinct components of $\Delta_{Y}^{=1}$} }\\$s_{1},\ldots,s_{k}$ \text{ with non-trivial int}  \right\} \]
+
+	The \textit{\textbf{absolute regularity}} of $(X,\Delta)$ is
+	\[\hat{\operatorname{reg}}(X,\Delta):=\operatorname{max}\left\{ \operatorname{reg}(X,\Delta +B|(X,\Delta +B), B\geq 0, \text{ is lc}  \right\} \]
+\end{defn}
+
+\begin{thm}[M (speaker),21]\leavevmode
+	Let $(X;x)$ be a $n$-dimensional log terminal singularity of absolute regularity $r\in \{-1,\ldots,n-1\} $. Then there exists an analytic embedding $(\mathbb{D}^{*} )^{r+1} \hookrightarrow X^{\operatorname{sm}}$ such that the image of the induced homomorphism
+	\[\pi_{1}(\left(\mathbb{D}^{*}  \right)^{r+1})\to \pi_{1}^{\operatorname{loc}}(X;x) \]
+	is finite, normal and of cokernel of order $\leq K(n)$.
+\end{thm}
+
+\paragraph{Summary} 
+\begin{enumerate}
+	\item Definition of log terminal.
+	\item Log terminal sing cannot be classified.
+	\item Reductive quotient singularities are log terminal type.
+	\item Reductive quotient sings are log terminal type.
+	\item  The fundamental groups of log terminals sing is controlled by {\color{blue}heav} toric geometry.
+\end{enumerate}
+
+\subsection{Lecture 3}
+
+\subsubsection{Singular Fano varieties}
+
+\paragraph{Why singular Fano varieties?}
+\begin{enumerate}
+	\item Aloows to understand symmetries of smooth Fano varieties.
+	\item Singular Fano varieties naturally appear when compactigyinf moduli spaces og smooth Fano varieties.
+	\item Smooth CY manifolds often admit degeneratoions to recudible varities where the central fiber has singular Fanos as irreducible components.
+\end{enumerate}
+
+\begin{defn}
+	A \textit{\textbf{Fano variety}} is a normal projective variety $X$ with log terminal singularities and $-K_{X}$ ample. A \textit{\textbf{log Fano}} is a pair $(X,\Delta)$ with $-(X_{X}+\Delta)$ ample and $(X,\Delta)$ log terminal. A variety $X$ is \textit{\textbf{Fano type}} if $(X,\Delta)$ is log terminal and $(-K_{X},\Delta)$ is nef and big for some suitable $\Delta \geq 0$. A pair $(X,\Delta)$ is \textit{\textbf{log CY}} if $(X,\Delta)$ is lc and $K_{X}+\Delta$.
+\end{defn}
+
+\begin{exercise}
+	$\mathbb{P}^{1} \times \mathbb{P}^{1}$ smooth Fano, blow-up all torus inv points $X\to \mathbb{P}^{1} \times \mathbb{P}^{1}$, then $X$ is not Fano.
+\end{exercise}
+
+\begin{remark}
+	Any projective normal toric variety is Fano type.
+\end{remark}
+
+\begin{thm}[Prokhorov, X 14]\leavevmode
+	Let $(X,x)$ be a log terminal sing. Then there exists a projective birational morphism $\pi:Y\to  X$ extracting a unique normal divisor $E$ with $\pi(E)=x$, $X\setminus \{x\} \cong Y\setminus E$, and $E$ is a Fano type.
+\end{thm}
+
+\[\begin{tikzcd}
+	\left\{ \substack{\text{Fano type}  \\ \text{varieties of dim } n}  \right\} \arrow[r,"\text{cones} ",bend left]&\left\{ \substack{\text{log terminal}  \\ \text{type sing of dim } n+1} \right\} \arrow[l,bend left,"\text{plt blow-ups} "]
+\end{tikzcd}\]
+
+and now another answer to the initial question of this lecture:
+
+\begin{enumerate}
+	\item[4.] Singular Fanos allow us to understand log terminal singularities (of one dimension more).
+\end{enumerate}
+
+\paragraph{What we know \textit{classificationwise}}
+
+\begin{itemize}
+	\item Canonical Fano surfacs of $\rho(x)=1$ are classified. 28 families.
+	\item Terminal Fano 3-folds, not classified but a lot of explicit work.
+	\item Canonical toric Fano varities are classified up to dimension 7 (at least six months ago) (Nill,…) These grow double exponentially with dimension.
+\end{itemize}
+
+\subsubsection{Regularity of a pair $(X,\Delta)$}
+
+\begin{quotation}
+	Let's do some qualitative mathematics. So we aim to describe the properties of these varieties.
+\end{quotation}
+
+Let $(X,\Delta)$ be a log pair. Recall the definitions of regularity and absolute regularity.
+
+\begin{remark}
+	The \textit{\textbf{absolute regularity}} of a toric singularity $= \dim -1$.
+\end{remark}
+
+\begin{defn}
+	The \textit{\textbf{absolute coregularity}} of  $(X,\Delta ;x)$ is
+	\[\hat{\operatorname{coreg}}(X,\Delta,x)=\dim X-\hat{\operatorname{reg}}(X,\Delta;x)\]
+\end{defn}
+
+By definition, $\hat{\operatorname{coreg}}(X,\Delta ;x)\in \{0,\ldots,\dim X\} $.
+
+\begin{defn}
+	Let $X$ be a Fano type variety. The \textit{\textbf{absolute regularity}} of $X$ is
+	\[\hat{\operatorname{reg}}(X):=\max \{\operatorname{reg}(X,B):(X,B)\text{ is CY} \} \]
+	\[\hat{\operatorname{coreg}}(X):=\dim X-\hat{\operatorname{reg}}(X)-1\]
+\end{defn}
+
+\begin{thm}[M,21]\leavevmode
+	Let $X$ be a Fano type variety of dimension $n$ and absolute regularity $r$. Then there is a local analytic embedding
+	\[(\mathbb{D}^{*} )^{r+1} \hookrightarrow X^{\operatorname{sm}}\]
+	such that the image of the homomorphism on fundamental groups $\mathbb{Z}^{r+1} \to \pi_{1}(X^{\operatorname{em}}) $ is finite, normal and of index $\leq k(n)$.
+\end{thm}
+
+\begin{coro}
+	Fano varieties with regularity $-1$ and dimension $n$ have size of the fundamental group of the smooth loci bounded by $k(n)$, that is,  $|\pi_{1}(X^{*m}) |\leq k(n)$.
+\end{coro}
+
+\begin{remark}
+	The expectation is that $k(n)$ is $\mathcal{O}((in)!)$.
+\end{remark}
+
+\begin{defn}
+	An \textit{\textbf{exceptional Fano variety}} is a Fano variety $X$ for which $\hat{\operatorname{coreg}}(X)=\dim X$. Iff $\alpha(X)>1$ (for the birrationally-inclined).
+\end{defn}
+
+\subsubsection{Boundedness of Fano varieties}
+
+\begin{question}
+	Are all the Fano varieties of the same dimension bounded?
+\end{question}
+
+\paragraph{Answer} No. $\mathbb{P}(1,1,n)$, $n\to \infty$.
+
+\begin{defn}
+	A Fano variety $X$ is \textit{\textbf{$\varepsilon $-log terminal}} if all its log discrepancies are $>\varepsilon $.
+	\[0\text{-log termial} \iff\text{log terminal} \]
+	\[1\text{-log terminal} \iff\text{terminal} \]
+\end{defn}
+
+\begin{thm}[Birkari, 2016, "singularities of linear systems and boundedness", hardcore and technical, there are surveys]\leavevmode
+	Fix $n$ a positive integer and $\varepsilon >0$. Then the class of $n$-dimensional $\varepsilon $-log terminal varieties is bounded.
+
+	$\varepsilon -H$ in toric geometry corresponds to controlling angles in the polytope away from $\varepsilon $.
+\end{thm}
+
+\begin{thm}[Birkari, 2016, used by the one above, "Anti-pluricanonical linear systems", hardcore and technical, there are surveys]\leavevmode
+	Fix $n$ a positive integer. Then the class of $n$-dimensional exceptional Fano varieties is bounded.
+\end{thm}
+
+\begin{quotation}
+	We shall see come recent developments about this.
+\end{quotation}
+
+\begin{defn}
+	Let $X$ be a normal projective variety. A \textit{\textbf{$\mathbb{Q}$ement}} is a divisor $0\leq B \sim_{\mathbb{Q}}-K_{X}  $ for which $(X,B)$ is log CY.
+
+	A $\mathbb{Q}$-complement $B$ is said to be a \textit{\textbf{$N$-complement}} if $N(K_{x}+B)\sim 0$.
+\end{defn}
+
+\begin{thm}[Birkari, 2016, the real breakthrough, after this we posted the one on the top]\leavevmode
+	Fix $n \in \mathbb{Z}_{>0}$, there exists $N(n)$ satisfying the following. Any $n$-dimension Fano variety admits a $N(n)$-complement.
+\end{thm}
+
+\begin{thm}[Totaro, 22]\leavevmode
+	$N(n)$ grows at least doubly exponentially. There is a Fano 4-fold (exceptional) $X$ with $|-mK_{X}|=\varnothing $ for all $m\leq 4.677.233$.
+\end{thm}
+
+\begin{quotation}
+	To prove this essentially you need to give examples.
+\end{quotation}
+
+\begin{remark}
+	All toric varieties admit 1-complements of coreg=0.
+\end{remark}
+
+\begin{thm}[Figueroa-Filipazzi-M-Peng,22]\leavevmode
+	A Fano variety of absolute corregularity zero amits either a complement or a 2-complement of corregularity zero. In particular, $|-2K_{X}| \neq \varnothing $.
+\end{thm}
+
+\begin{quotation}
+	This is a generalization that the toric boundary exists for toric variety.
+\end{quotation}
+
+\[\begin{tikzcd}
+	&\{n\text{-dimensional Fano variety} \}&\\
+	\left\{ \substack{n\text{-dimensional rational}  \\ \text{Fano varieties} } \right\}\arrow[rr,"?\text{(not sure)}", hook]\arrow[ur,hook]&&\left\{ \substack{n\text{-dim coregularity}  \\ \text{zero Fano varieties} } \right\} \\
+&\left\{ \substack{n\text{-dim toric}  \\ \text{Fano varieties} } \right\} \arrow[ul,hook]\arrow[ur,hook]
+\end{tikzcd}\]
+
+\begin{thm}[Kaloghiro, 10]\leavevmode
+	There exists a terminal Fano 3-fold which birationally superrigid that has absolut coreg =0.
+\end{thm}
+
+
+\clearpage\phantomsection\stepcounter{section}\addcontentsline{toc}{section}{\thesection\quad Introduction to K-stability of Fano varieties}\addtocontents{toc}{\hspace{1em}\textit{Pedro Montero, \hspace{.2 em}UTFSM-Chile,\hspace{.5em}February 17-28, 2025, IMPA Verão}\par}
+{\Huge Introduction to K-stability of Fano varieties}
+
+\hfill{\Large Pedro Montero}
+
+{\Large \hfill UTFSM-Chile}
+
+\hfill{\large February 17-28, 2025
+
+\hfill \textit{IMPA Verão}}
+
+\subsection{Lecture 3, Oops!}
+
+\subsubsection{Intro for today}
+
+{\color{4}\bfseries Aim.}\hspace{.5em}To study the K-stabilty using only the birational geometry of \((X,L)\) instead of all \(\mathfrak{X},\mathcal{L})\). We will study a corresponding
+\[\left\{ \text{T. C. } \mathfrak{g}, (X,L) \right\} \leftrightsquigarrow \left\{ \text{Filtrations } \mathfrak{g}, R(X,L)=\oplus_{m \in \mathbb{N}}H^{0}(X,L^{\otimes m}) \right\} \]
+\[\leftrightsquigarrow \left\{ \text{(divisorial) valuations on \(\mathbb{C}(x)\)}  \right\} \]
+\begin{remark}\leavevmode
+Most of what follows is based on \textit{Uniform K-stability, DH measures and singularity of pairs} by Buckson Hisamoto, Jonsson (2017). Barely 100 pages. Super nice.
+\end{remark}
+
+{\color{6}\bfseries Recall.}\hspace{.5em}(this is what we used to define the \textit{\textbf{weight of an action}}.) \(V\) \(k\)-vector space of finite dimension. Then \(\mathbb{G}_n \mathbb{y} V\) induces a weight decomposition
+\[V = \bigoplus_{x \in \mathbb{Z}}V_\lambda\]
+where \(V_\lambda=\{v \in V:tv = t^{-\lambda v}\forall  t \in \mathbb{G}_m\}\)
+
+Conversely, given such a decomposition, we define
+\[t\cdot v:= \sum_{\lambda \in \mathbb{Z}}t^\lambda v_\lambda,\qquad \text{for } v = \sum_{\lambda}v_\lambda.\]
+
+\textbf{New stuff.} 
+
+\begin{defn}\leavevmode
+Let \(V\) be a finite-dimensional vector space (e.g. \(V= H^{0}(X,L)\)). A \textit{\textbf{\(\mathbb{Z}\)-filtration}} of \(V\) is
+\[\{F^\lambda V\}_{\lambda \in \mathbb{Z}}\subset V\qquad \text{sub v.s.} \]
+such that
+\begin{enumerate}
+\item \textbf{(Decreasing.)} \(F^{\lambda +1}V \subseteq F^{\lambda}V\).
+\item \textbf{(Stabilizes.)} \(F^\lambda V=0 \forall \lambda \gg 0\) and \(F^{\lambda}V=V \forall  \lambda \ll 0\).
+\end{enumerate}
+The important thing is that we have an associated algebra: the \textit{\textbf{associated Rees algebra}} is the finitely generated and torsion-free \(k[t]\)-module
+\[\operatorname{ R e e s}(F^* V):=\bigoplus_{\lambda \in \mathbb{Z}}(F^\lambda V) E^\lambda \subseteq V[t,t^{-1}] \overset{\operatorname{def}}{=} V \otimes_k k[t,t^{-1}]\]
+where \(t \cdot (vt^{-\lambda})=v t ^{- \lambda +1}= vt^{-(\lambda-1)}\).
+\end{defn}
+
+\begin{remark}\leavevmode
+In practice you \textit{are} looking at the vector space of sections.
+\end{remark}
+
+\subsubsection{Rees correspondence}
+
+It is a correspondence of vector bundles on \(\mathbb{A}^1\) that are compatible with the \(\mathbb{C}^*\) action, i.e. toric vector bundles in \(\mathbb{A}^1\). Right so this is a particular case of the ``Klyasko's classification" of toric vector bundles. So remember that the point of toric geometry is that you have everything encoded in combinatorics, these vector bundles are studied combinatorically.
+
+\[\left\{ \substack{\text{\(Z\)-filtrations of}  \\ \text{fin. dim. \(k\)-v.s. \(V\)} } \right\} \overset{1-1}{\leftrightsquigarrow}\left\{ \substack{\mathbb{G}_m \text{-linearized}  \\ \text{v.b. \(V \to \mathbb{A}^1\)} } \right\} \]
+
+\(R=\operatorname{ R e e s}F^* \mapsto  V= \mathbb{V}(\tilde{R}) \to \mathbb{A}^1=\operatorname{Spec}k[t]\)
+
+\(\mathbb{G}_m\)-linear since \(\mathbb{Z}\)-grading is compatible with the one in \(k[t]\). Conversely, given  \(V \to \mathbb{A}^1\), a \(\mathbb{G}_m\)-linearized vector bundle.
+
+So the point of ``linearizing a vector bundle", kind of by definition, is that you have an induced action, i.e. we have \(\mathbb{G}_m \mathbb{y} H^{0}(\mathbb{A}^1,V)=\bigoplus_{\lambda \in \mathbb{Z}}H^{0}(\mathbb{A}^1,V)_\lambda\) given by \(t \cdot \sigma(x)=\sigma(t^{-1}\cdot x)^{\lambda \in \mathbb{Z}}\).
+
+
+\begin{thing7}{My own understanding}\leavevmode
+You start with a projective scheme and a line bundle on it \(X,L\). You produce a thing called \textit{\textbf{test configuration}} \((\mathfrak{X},\mathcal{L})\) which admits a \(\mathbb{G}_m\)-action, and that's awesome. Then you construct a  \(\mathbb{Z}\)-filtration on each \(R_m=H^{0}(X,L^{\otimes rm})\). This filtration behaves well under the projection:
+\[H^{0}(\mathfrak{X},\mathcal{L}^{\otimes mr})=H^{0}(\mathbb{A}^1, \mathcal{V})\]
+and lets you go back to you original object via the valuation map
+\[\operatorname{ev}_1:H^{0}(\mathfrak{X},\mathcal{ L}^{\otimes rm}) \to H^{0}(X, L^{ \otimes r m }).\]
+A thing I don't understand good (perhaps because it is very algebraic is the Rees algebra that plays some important algebraic role in all this.
+\end{thing7}
+
+\begin{thm}\leavevmode
+There is a correspondene between test configurations \((\mathfrak{X},\mathcal{ L})\) of \((X,L)\) and graded \(\mathbb{Z}\)-filtrations of \(R(X,L^{\otimes r})\) for some \(r>0\).
+\end{thm}
+
+\begin{proof}\leavevmode
+This is what we have been discussing. For every test configuration we can cook up a filtration in the algebra \(R(X,L^{ \otimes r}\) i.e. a filtration \textit{on each piece of degree \(n\)}, that is we have
+\[(\mathfrak{X},\mathcal{L}) \rightsquigarrow F^*_{\mathfrak{X},\mathcal{L}}R(X,L^{\otimes r }\]
+And conversely, the whole point of all this is that you recover the variety by taking the \(\operatorname{Proj}\) of this thing (of the test configuration?). More precisely, we have that \(\operatorname{ R e e s}(F^*_{\mathfrak{X},\mathcal{L}}R(X,L^{\otimes r }))\) given
+\[\mathfrak{X}:=\operatorname{Proj}_{m \in \mathbb{N}}\left(\bigoplus_{m \in \mathbb{N}} \bigoplus_{\lambda \in \mathbb{Z}}F^\lambda_{\mathfrak{X},\mathcal{L}}H^{0}(X,L^{\otimes m r })E^\lambda\right) \to \mathbb{A}^1\]
+\end{proof}
+
+\begin{upshot}\leavevmode
+You don't need to understand the test configuration: it's enough with understanding the birational geometry of the variety (the valuations on \(X\)).
+\end{upshot}
+
+\begin{coro}\leavevmode
+let \((\mathfrak{X},\mathcal{L})\) be a test configuration. \(\mathfrak{g}(X,L)\). Then  if \(X\) is reduced and irreducible then so is \(\mathfrak{X}\).
+\end{coro}
+
+\begin{proof}\leavevmode
+	This is beacuse the Rees algebra preserves the commutative-algebraic properties of \(R[t,t^{-1}]\). That's fun.
+\end{proof}
+
+\begin{remark}\leavevmode
+Similarly, one can prove that \(X\) norml and \(\mathfrak{X}_0\) reduced implies \(\mathfrak{X}\) normal.
+\end{remark}
+
+\subsubsection{Parenthesis: K-stability and MMP}
+
+Let \((X,B)\) a pair, where \(X\) is a normal projective variety and \(B=\sum a_i D_i\) a \(\mathbb{Q}\)-Weil divisor on \(X\) such that \( a_i \in [0,1]\) for all \(i\) such that \((K_X+B)\) is \(\mathbb{Q}\)-Cartier (so it's an actual line bundle, if you like).
+
+Now if \( f:Y \to X\) is a log resolution of \((X,B)\) with exceptional divisors \(E_1,\ldots,E_k\), then what happens with the pullback of that line bundle? Well there will be an error term that basically measures how singular is \(B\):
+\[K_Y+f^{-1}_*B \sim_\mathbb{Q} f^* (K_X+B)+\sum_{i=1}^k d_i E_i\]
+for some rational \(b_i\). They are the things that measure how singular is \(B\) and are called \textit{\textbf{discrepancies} }.
+
+\begin{defn}\leavevmode
+\((X,B)\) is \textit{\textbf{klt lc}} if
+\[\begin{cases}
+	d_i>-1\qquad &\forall \text{such \(f\)}  \\
+	d_i \geq -1\qquad &\forall \text{ such \(f\)} 
+\end{cases}\]
+and we say that \(X\) is \textit{\textbf{klt}} (resp. \textit{\textbf{lc}}) if \((X,0)\) is \textit{\textbf{klt}} (resp \textit{\textbf{lc}}).
+\end{defn}
+
+\begin{remark}\leavevmode
+If \(\dim X=2\), then klt=quotient singularities.
+\end{remark}
+
+\begin{thm}[Odaka '12, '13]\leavevmode
+Let \(X\) be a normal projective variety, \(L \in \operatorname{Pic}(X)_\mathbb{Q}\) ample. Then
+\begin{enumerate}
+\item  If \(K_X \sim_\mathbb{Q} 0\) then \(X\) klt (resp. lc) \(\iff\) \((X,L)\) is \(K\)-stable (resp. K-semistable).
+\item \(L=K_X\), \(X\) lc \(\iff (X,L)\) K-stable \(\iff (X,L)\) K-semistable.
+\item \(L=-K_X\), \((X,L)\) K-semistable \(\implies  X\) klt.
+\end{enumerate}
+\end{thm}
+
+Key ideas behind \(1.\) (using the Donaldson-Futaki invariant that was constructed in some past lecture I didn't attend): we saw that if \((\overline{\mathfrak{X}},\overline{\mathcal{L}}) \xrightarrow{\overline{\pi}} \mathbb{P}^1\) is a ``compactified" test configuration of \((X,L)\) then
+\[\operatorname{D F}(\mathfrak{X},\mathcal{L}) = \frac{\overline{\mathcal{L}}^n\cdot K_{\overline{\mathfrak{X}}/\mathbb{P}^1}}{V}+\frac{\overline{S}\overline{\mathcal{L}}^{n+1}}{(n+1)V}\]
+where \(V=L^n\), \(\overline{S}=\frac{n}{V}(-K_X\cdot L^{n-1}\).
+
+\begin{remark}\leavevmode
+You can compute the DF invariant using this \(Y\): i.e. if we consider
+\[\begin{tikzcd}
+&Y\arrow[dl,"f",swap]\arrow[dr,"g"]\\
+\overline{\mathfrak{X}}\arrow[rr,dashed]&&X\times \mathbb{P}^1
+\end{tikzcd}\]
+then
+\[\operatorname{DF}(\mathfrak{X},\mathcal{L})=\frac{\overline{\mathcal{L}}^nf_*(K_{Y/X \times \mathbb{P}^1}+g^* \operatorname{pr}_1^*K_X}{V}+\frac{\overline{S}\overline{\mathcal{L}}^{n+1}}{(n+1)V}\]
+(this was proved)
+\end{remark}
+
+\begin{thing6}{Key observation}\leavevmode
+\begin{enumerate}
+\item If \(X\) is lc (resp. klt) then  \(K_{Y/X \times \mathbb{P}^1}\) is effective (resp. effective \(\neq 0\)).
+\item If \(K_X \sim_\mathbb{Q} 0\) then \[\operatorname{DF}(\mathfrak{X},\mathcal{L})=\frac{\overline{\mathcal{L}}^n\cdot f_*(K_{y/X \times \mathbb{P}^1}}{V} \geq 0 \qquad \text{(resp. \(>0\)} \]
+	if \(X\) is lc (resp. klt), i.e. \((X,L)\) is \(K\)-semistable (resp. K-stable).
+
+\item For the other implication, the idea is that if \(X\) is not lc, then \(\exists  (\mathfrak{X},\mathcal{L})\) test configuration with \(\operatorname{D F}(\mathfrak{X},\mathcal{L})<0\).
+
+	Here's a glimplse of what's going on here: Odaka-Xu '12 shows the existence of lc modules \((Y,\Delta X) \to X\). So take \(E:= K_{Y/X}+ \Delta X\). So we define \(\mathcal{I}=\mathcal{I}_E\subseteq \mathcal{O}_{X \times \mathbb{A}^1}\), the ``flag ideal". You obtain the following test configuration that breaks the K-stability.
+	\[\mathfrak{X}:= \operatorname{Bl}_\mathcal{I}(X \times \mathbb{A}^1) \to \mathbb{A}^1\]
+	and a suitable \(\mathcal{L}\) such that \(\operatorname{D F}(\mathfrak{X},\mathcal{L})<0\).
+\end{enumerate}
+\end{thing6}
+
+\subsection{Lecture 4}
+
+\subsubsection{Test configurations and valuations}
+
+{\color{7}\bfseries Last time}\hspace{.5em} we discussed the correspondence of test configurations and some filtrations on the set of sections, this is done via something called the ``Rees" construction.
+
+{\color{7}\bfseries Today}\hspace{.5em} we will be more geometric.
+
+Let \(K/k\) be a field extension with \(\operatorname{tr.deg}_k(K)<+\infty\), e.g. \(K=k(X)\).
+
+A  \textit{\textbf{(real) valuation}} on \(K\) is a function \(v:K^\times \longrightarrow \mathbb{R}\) such that
+\begin{enumerate}
+\item \(v(fg)=v(f)+v(g)\qquad \forall f,g \in K^\times\).
+\item \(v(f+g) \geq \operatorname{min}\{v(f),v(g)\}, \qquad \forall f,g \in K^\times\).
+\item \(v|_{k^\times}=0\).
+\end{enumerate}
+We define \(v(0):=+\infty\), and if \(K=k(X)\),  \(X\) valued var, then we write  \(v \in \operatorname{V a l}_X\) for short.
+
+\begin{thing7}{Recall}\leavevmode
+For \(v: K^\times \longrightarrow \mathbb{R}\) valuation, we define
+\begin{enumerate}
+\item \(\mathcal{O}_v=\{f \in K, v(f) \geq 0\}\), local ring with \(\mathfrak{m}_v:=\{f \in K: v(f)>0\}\).
+\item \(K(v):= \mathcal{O}_v/\mathfrak{m}_v\) and \(\operatorname{tr.de g}(v)=\operatorname{tr.de g}K(v)\).
+\item \(\Gamma_v:=v(K^\times) \subseteq \mathbb{R}\), ``value group" and \(\operatorname{ra t.r k}(v):=\dim_\mathbb{Q}(\Gamma_v \otimes_{\mathbb{Z}}\mathbb{Q})\).
+\item (Abhyankar '56) If \(v \in \operatorname{Val}_X\), \(\operatorname{tr.de g}(v)+\operatorname{r a t.r k}(v)\leq \dim(X)\).
+\end{enumerate}
+\end{thing7}
+
+
+\begin{example}\leavevmode
+\begin{enumerate}
+\item Let \(x \in X\) be a smooth (closed) point. We define for \(f \in \mathcal{O}_{X,x}\),
+	\[\operatorname{ord}_x(f):= \operatorname{max}\{ d \in \mathbb{N}, f \in \mathfrak{m}^d_x\}\]
+	and we can extend it to 
+	\[\operatorname{ord}_x:k(X)^\times \longrightarrow \mathbb{Z}\]
+	This is a \textit{\textbf{discrete valuation}}.
+	
+\item \(X=\mathbb{A}^2_{(x,y)}\), \(K=k(x,y)\) and let us fix  \(\alpha,\beta \in \mathbb{R}^2\setminus \{(0,0)\}\). Given \(f = \sum_{m,n \in \mathbb{N}}\lambda_{m,n}x^my^n \in \mathcal{O}(\mathbb{A}^2)\) we define
+	\[v(f):=\operatorname{min}\{ \alpha m + \beta n: \lambda_{m,n}\neq  0\}\]and we obtain \(v:K^\times \to \mathbb{R}\).
+	
+\item \textbf{(Divisorial valuation (most important example))} First recall that a \textit{\textbf{divisor}} \(E\) over a variety  \(X\) is a proper birational map
+	\[\mu:Y \longrightarrow X\]
+	with \(Y\) normal, and \(E \subseteq Y\) a prime divisor. (``\(\mu\) extracts the divisor \(E\)") {\color{6}(dani: what is a \textit{prime} divisor?)}. In particular, \(\mathcal{O}_{Y,E}\) is a DVR with associated discrete valuation
+	\begin{align*}
+		\operatorname{ord}_E: K^\times &\longrightarrow \mathbb{Z} \\
+		f &\longmapsto \operatorname{ord}_E(\mu^*f)
+	\end{align*}
+	where \(K=k(X) \overset{\mu^*}{\cong}k(Y)\). {\color{7}(dani: so probably a valuation is the degree of the polynomial right?)}
+
+	A valuation \(v \in \operatorname{Val}_X\) of the form \(v = c \cdot \operatorname{ord}_E\), \(c \in \mathbb{R}^{>0}\) is called a \textit{\textbf{divisorial valuation}}.
+	
+\end{enumerate}
+\end{example}
+
+\begin{defn}\leavevmode
+Let \(v \in \operatorname{Val}_X\). The \textit{\textbf{center of \(v\)}} is the (schematic) point \(\xi=c_x(v) \in X\) such that \(v \geq 0\) on \(\mathcal{O}_{X,\xi}\) and \(v>0\) on  \(\mathfrak{m}_\xi\). It exists (resp. is unique) if \(X\) is proper (resp. if \(X\) separated).
+\end{defn}
+
+\begin{example}\leavevmode
+\(x \in X\) a smooth point again, \(\operatorname{ord}_x\) is divisorial. 
+\end{example}
+
+These notes are not complete but here's an important theorem:
+
+\begin{thm}[Zerisky]\leavevmode
+Let \(v \in \operatorname{Val}_X\) be a (real) valuation. Them if  \(n=\dim X\), \(v\) is diviorial iff \(\operatorname{r a t . r k}(v)=1\) and \(\operatorname{tr.de g}v=n-1\).
+\end{thm}
+
+\subsubsection{Back to configurations}
+
+Recall that \(\mathfrak{X},\mathcal{L}\) is a deformation of \((X,L)\) and notice that since  \(\mathfrak{X}  \overset{\operatorname{bir}\cong}{ \dashrightarrow} X \times \mathbb{A}^1\) we have
+\[k(\mathfrak{X}) \cong k(X)(t)\]
+That is, rational functions on deformation space look like rational functions on base with an extra variable.
+
+\begin{thm}[see. eg. Jonsson-Mustata ;12]\leavevmode
+Let \(k \subseteq K' \subseteq K\) field extension and \(w: K^\times \longrightarrow \mathbb{R}\) valuation and let  \(v:=w |_{(K')^\times}\). Then
+\[\operatorname{tr.de g}(w)+\operatorname{r a t. r k}(w) \leq \operatorname{tr.de g}(v)+\operatorname{r a t.r k}(v)+\operatorname{tr.de g}_{K'}(K).\]
+\end{thm}
+
+\begin{thing8}{Consequence:}\leavevmode
+Let \(w\) be a valuation of \(k(X)(t)\). If \(w\) is divisorial, then its restriction \(v:=r(w)=w|_{k(X)^*}\) is divisorial or trivial.
+\end{thing8}
+
+Which is very nice because, as we will see, we divisorial valuations are nice. They will tell us things about stability.
+
+\begin{thing7}{Recall}\leavevmode
+Let \(\mathbb{G}_m \mathbb{y} (\mathfrak{X},\mathcal{L})\xrightarrow{\pi}\mathbb{A}^1\) be a \textbf{normal} test configuration of \((X,L)\). Since \(\mathfrak{X}\setminus \mathfrak{X}_0 \overset{\mathbb{G}_m\text{-equiv.} }{\cong}X \times (\mathbb{A}^1 \setminus\{0\}\), we can consider the normalization of the graph of \(\mathfrak{X} \dashrightarrow X \times \mathbb{A}^1\) to obtain
+\[\begin{tikzcd}
+&Y\arrow[dl,"f",swap]\arrow[dr,"g"]\\
+\mathfrak{X}\arrow[rr,dashed]&&X \times \mathbb{A}^1
+\end{tikzcd}\]
+where \(f^*\mathcal{L} \sim_\mathbb{Q}g^* (L_{\mathbb{A}^1}+D\) for some \(\mathbb{Q}\)-Cartier divisor \(D\) such that \(\operatorname{supp}(D) \subseteq Y_0\). {\color{6}(dani: looks like this ``test configuration" is something like a blow-up: it has an exceptional fiber \(\mathfrak{X}_0\), which is drawn as weird entity with singularities, while the rest of the fibers look smooth.)}
+\end{thing7}
+
+\begin{thing7}{dani recalls}\leavevmode
+that the strict transform of the blow up of the cuspidal curve \(Y:y^2=x^3\) inside \(\mathbb{A}^2\) is the closure of \(\varphi^{-1}(Y-O)\) where \(\varphi:X \to \mathbb{A}^2\) is the blow-up map.
+\end{thing7}
+
+\begin{thing8}{Key observation}\leavevmode
+Every \(F \subseteq \mathfrak{X}_0\) irreducible component of \(\mathfrak{X}_0\) (different from the strict transorfm of \(X \times \{0\}\)) induces a divisorial valuation \(\operatorname{ord}_F: k (X)(t)^\times \longrightarrow \mathbb{Z}\).
+
+We denote by \(v_F:= r (\operatorname{ord}_F)\overset{\operatorname{def}}{=} \operatorname{ord}_F |_{k(X)^\times}\) and \textbf{we observe} that \(v_F\) is a divisorial valuation on \(k(X)^*\), i.e., \(v_F=c\cdot \operatorname{ord}_E\) for some \(c \in \mathbb{N}^{\geq 1}\) and some \(E \subseteq Y \xrightarrow{\mu}X\) divisorial over \(X\). (For a proof check the paper we have cited several times BHJ'17).
+\end{thing8}
+
+The following proposition allows us to forget about filtrations and work with valuations instead (which are more geometric things).
+
+\begin{prop}\leavevmode
+Let \(m \in \mathbb{N}^{\geq 1}\) such that \(\mathcal{L}^{\otimes m} \in \operatorname{Pic}(\mathfrak{X})\). Then, for every \(\lambda \in \mathbb{Z}\) we have
+\[F^\lambda_{\mathfrak{X},\mathcal{L}}H^{0}(X,L^{\otimes m})=\bigcap_{\substack{F \subseteq \mathfrak{X}_0 \\ \text{irr. comp.} }}\{s \in H^{0}(X,L^{\otimes m}):v_F(s)+m \operatorname{ord}_F(D) \geq \lambda \operatorname{ord}_F(t)\}\]
+\end{prop}
+
+*Some computations regarding \(F^\lambda_{\mathfrak{X},\mathcal{L}}\)*
+
+\begin{defn}\leavevmode
+Given \(v: k(X)^* \longrightarrow\mathbb{R}\) divisorial valuation, we put
+\[F^\lambda_v:=\{s \in H^{0}(X,L),s(v) \geq \lambda\}\]
+\end{defn}
+
+\begin{defn}[K. Fujta '16]\leavevmode
+	We say that \(v=c\cdot \operatorname{ord}_E\cdot k(X)^* \longrightarrow \mathbb{Z}\) is a \textit{\textbf{dreamy valuation}} (and \(E\) is a \textit{\textbf{dreamy divisor}}) if… (e.g. if \(Y\) is log-Fano [BCHM'10]---they proved these are Mori dream.)
+\end{defn}
+
+\begin{thm}\leavevmode
+Let \((X,L)\) such that \(X\) is Fano with klt singularities (e.g. quotient singularities) and \(L=-K_X\). There is a bijection between
+\begin{enumerate}
+\item Normal test configuration \((\mathfrak{X},\mathcal{L})\) with \(\mathcal{L}=-K_{\mathfrak{X}/\mathbb{A}^1}\) and \(\mathfrak{X}_0\) reduced and irreducible.
+\item \(v:k(X)^* \longrightarrow \mathbb{Z}\) dreamy valuations.
+\end{enumerate}
+\end{thm}
+
+\begin{thing7}{!}\leavevmode
+Li and Xu (2014): In order to check K-stability it is enough to consider  ``special test configurations", i.e. with \(\mathcal{L}=-K_{\mathfrak{X}/\mathbb{A}^1}\) and \(\mathfrak{X}_0\) (reduced, irreducible) klt Fano variety.
+\end{thing7}
+
+\begin{proof}[Proof of the theorem (not Li and Xu's)]\leavevmode
+Sketched.
+\end{proof}
+
+\begin{remark}\leavevmode
+While the variety \(\mathfrak{X}_0\) seems to be very particular, it turns out that these conditions are enough to compute K-stability.
+\end{remark}
+\iffalse
+\subsubsection{Towards }
+
+\begin{thing8}{Useful remark}[Fujita '16, BHJ'17 §4]\leavevmode
+\[\begin{tikzcd}
+&Y\arrow[dl,"f",swap]\arrow[dr,"g"]\\
+\mathfrak{X}\arrow[rr,dashed]&&X \times \mathbb{A}^1
+\end{tikzcd}\]
+If \(\mathcal{L}=-K_{\mathfrak{X}/\mathbb{A}^1}\) and \(L=-K_X\) since \(K_{\mathbb{A}^1}=0\), we have
+\begin{align*}
+D&=
+\end{align*}
+\end{thing8}
+\fi
+\end{document}

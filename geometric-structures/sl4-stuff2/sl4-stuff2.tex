@@ -40,4 +40,119 @@ We continue our investigation into the structure of convex cocompact representat
 \[\operatorname{A d S}^{3,1}=\{(x_1,x_2,x_3,x_4):x_1^2+x_2^2-x_3^2-x_4^2=-1\}\]
 Projectivize everything and take an affine chart $(y_1,y_2,y_3)$. you compute that $y_1^2+y_2^2-y_3^2=1-1/x_4^2$. This is the inside of a hyperboloid in $\mathbb{R}^{3}$. Remember that it is missing one point because it's an affine chart. So in reality it's a solid torus.
 
+\clearpage
+
+{\Huge  $\operatorname{SL}(4)$-stuff (Part 2)}
+
+{\Large On complete maximal submanifolds in pseudo-hyperbolic space} 
+
+
+\hfill{\Large Graham Smith}
+
+{\Large \hfill PUC-Rio}
+
+\hfill{\large February 4, 2025}
+
+\subsection{Teichmüler theory}
+
+Nowadays we think of Teichmüler space as
+\[\{ \rho: \Gamma\to \mathsf{PSL}(2,\mathbb{R}): \phi \text{ discrete, injective} \} \Big/ \mathsf{PSL}(2,\mathbb{R})\]
+
+Consider
+\[\mathsf{PSL}(2,\mathbb{R})\to \text{a reductive Lie group} \]
+(just think of \(\mathsf{SL}(n)\) or \(\mathsf{U}(n)\))
+
+First consider
+\[\{\phi:\Gamma \to G:\rho \text{ injective, discrete, Anosov/convex cocompact} \}\Big/G\]
+for a surface group \(\Gamma=\pi_{1}(\Sigma)\)
+
+\subsection{Generalizing domain \(\Gamma\)}
+
+So instead of surface group consider \(\Gamma\) a Gromov hyperbolic group, so \(\Gamma=\pi_{1}(X^d)\) for some \(X\) compact hyperbolic.
+
+\begin{enumerate}
+\item Quasi-Fuschian manifolds, \(\Gamma : = \pi_{1}(X^d)\), \(\rho: \Gamma \to \mathsf{PSO}(d+1,1)\). For \(d=2\), Ahlfors-Bers.
+
+\item More recently, Barbot 2015. \(\Gamma= \pi_{1}(X^d)\), \(\rho: \Gamma \to \mathsf{PSO}(d,2)\) e.c. Connected component of Fuschian repns consist of convex co-compact repns.
+
+	Mostow: deformation space of \(\pi_{1}(X^d) = \Gamma \subseteq \underbrace{\mathsf{PSO}(d,1)}_{\text{isometries of \(\mathbb{H}^{d}\)} }\) 
+
+
+	\begin{thing4}{Summary so far}\leavevmode
+	All deformations of quasiFuschian representations are convex cocompact( that means that a cocompact action on a convex thing).
+	\end{thing4}
+\end{enumerate}
+
+\subsection{Beyrer-Kassel '23}
+
+\(\Gamma\) gromov hyp. \(\partial  \Gamma=\mathbb{S}^{p-1}\). Consider the representation space
+\[\{\rho:\Gamma\to \mathsf{PSO}(p,q+q)\}\Big/\mathsf{PSO}(p,q+1)\]
+Then I think that the representations that are convex cocompact are:
+\[\{\text{ convex cocompact} \}=\text{union of (I think \textit{some}) conneced components.} \]
+\subsection{Towards our result}
+
+\begin{quotation}
+	to understand a group you study the space it acts on
+\end{quotation}
+
+So take \(\mathsf{PSO}(p,q+1)\) and the space it acts on is
+\[\mathbb{H}^{p,q}:=\{(x,y) \in \mathbb{R}^p \times \mathbb{R}^{q+1}: \|x\|^2+\|y\|^2=1\}\]
+\[=\{x \in \mathbb{R}^{p,q+1}: \|x\|^2_{p,q+1}=-1\}\]
+Now have a look at different cases
+\begin{enumerate}
+\item \(q=0\) \(\mathbb{H}^{p,0}=\mathbb{H}^{p}\).
+\item \(q=1\) \(\mathbb{H}^{p,1}=\operatorname{AdS}^{p,1}\)
+\end{enumerate}
+
+\subsubsection{Anti-De sitter space}
+
+\begin{quotation}
+	In a coordinate chart, it looks like the inside space of a one sheeted hyperbola.
+\end{quotation}
+
+\begin{itemize}
+\item Maximal spacelike totalic geodesic slices are copies of \(\mathbb{H}^{p}\) 
+\item Maximal timelike totally geodesic slices are copies of \(\mathbb{S}^q\) with \(-1_X\) metric.
+\end{itemize}
+
+Now we look at \textbf{Fermi coordinates}: a foliation of \(X\) by (I think) geodesics orthogonal to \(Y\). So if  \(Y\) is a point then it's just geodesic coordinates.
+
+We have taken Fermi coordinates about totally geodesic timelike sphere. It's an exercise to compute that the metric is
+\[g=g^p_{\operatorname{hyp}}-\operatorname{co s h}^2(R)g_{\operatorname{ s p h}}^q \]
+
+Then we look at stereographic coordinates…
+
+
+Eventually we have discussed the space
+\[\mathcal{M}= \{ M^p =\mathbb{H}^{p,q}: \text{\(M\) spacelike, maximal (minimal?), complete} \}\]
+and the \textit{\textbf{ideal boundary map}} 
+\[\partial_\infty: \mathcal{M}\to B\]
+which is continuous and
+\begin{thm}\leavevmode
+\(\partial_\infty\) is a homeomorphism,
+
+\(\forall  B \in \mathcal{\Big\}\exists ! M \in \mathcal{M}\) \text{ such that \(\partial _\infty M= B\) (so a plateau i.e. given the boundary put the manifold inside with some curvature conditions.} 
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}

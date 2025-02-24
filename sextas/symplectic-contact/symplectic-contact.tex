@@ -95,4 +95,208 @@ with respect to the famous Cheeger Gromov topology in the limit, which is not so
 
 So you have compactness. Yaaaaay!
 
+{\Huge Magnetic monopoles according to Hitchin}
+
+\hfill{\Large Graham Smith}
+
+\hfill{\Large PUC-Rio}
+
+\hfill{\large 8 of February 2024}
+
+\begin{defn}\leavevmode
+A \textit{\textbf{magnetic monopole}} consists of 3 elements: \((E,\nabla,\Phi)\), a bundle, a connection, and the Higgs field.
+\end{defn}
+
+And the Bogomolny equations are:
+
+\begin{lemma}[Bogomolny equations]\leavevmode
+\(\nabla\) is anti self dual iff \(* F^{\nabla^1}=\nabla^1\Phi_0\).
+\end{lemma}
+
+\begin{thing7}{What's going on}[I arrived in late]\leavevmode
+ChatGPT says \(F^\nabla\) is the curvature of this connection on this principal bundle. So Bogomolny equations are equations on the curvature. Like what? \textbf{Like Maxwell's equations!} 
+\end{thing7}
+
+Here's some more ChatGPT on what's about to come in this talk:
+
+\textbf{Magnetic Monopoles and Twistors.} A magnetic monopole consists of a vector bundle \(E\), a connection \(\nabla\), and a Higgs field \(\Phi\). The Bogomolny equation, \(*F^\nabla = \nabla \Phi\), describes monopole solutions balancing curvature and the Higgs field. The Higgs field \(\Phi\) can be interpreted as a difference between two connections or as a section of \(\text{End}(E)\).
+
+Twistor theory provides a complex-geometric approach to gauge fields. The twistor space of \(\mathbb{R}^3\) can be described in terms of oriented lines, isotropic \(\mathbb{C}\)-lines, or null \(\mathbb{C}\)-planes in \(\mathbb{C}^3\). For a \(\mathsf{U}(2)\)-connection, one constructs a holomorphic vector bundle \(\tilde{E} \to X\) over the complex manifold \(X = TS^2\), encoding monopoles in terms of holomorphic structures.
+
+
+\begin{remark}[Misha]\leavevmode
+\(\Phi\) is sections of endomorphisms of the group which is \(G\).
+\end{remark}
+
+\begin{question}\leavevmode
+What is the Higgs field? It is a \textit{difference} between two connections.
+\end{question}
+
+\begin{question}\leavevmode
+What are twistors?
+\end{question}
+
+\subsection{Twistors in \( \mathbb{R}^3\)}
+
+Embed \(\mathbb{R}^3 \hookrightarrow  \mathbb{C}^3\). Extender the inner product of \(\mathbb{R}^3\) \(\left<\cdot ,\cdot \right>\) \textit{blinearly} to \(\mathbb{C}^3\). (It's not hermitian, it's a bilinear form.)
+
+Twistor space of \(\mathbb{R}^3\):
+
+\begin{enumerate}
+	\item Oriented lines in \(\mathbb{R}^3\).
+\item Null \(\mathbb{C}\)-lines in \(\mathbb{C}^3\) (isotropic).
+\item Null \(\mathbb{C}\)-planes in \(\mathbb{C}^3\).
+\end{enumerate}
+The three are equivalent (we have shown that in the seminar).
+
+It turns out that this space can be parametrized by \(TS^3\) as follows:
+\[L^+ \to \underbrace{x}_{\substack{\text{unit}  \\ \text{tangent} } }\qquad \underbrace{y}_{\substack{\text{closest}  \\ \text{point} }}\]
+\[x \in S^2\qquad y \perp x \iff y \in T_x S^2.\]
+Now we have a complex integrable structre becuase \(S^2=\hat{\mathbb{C}}\)
+
+Now
+
+suppose \((E^2, \nabla, \Phi)\). Fix the group to be  \(\mathsf{U}(2)\) (it's a \(\mathsf{U}(2)\)-connection. Define a bundle \(\tilde{E}\) over \(X\) by
+\begin{align*}
+\tilde{E}_x&= \{ \sigma: L_x \to R: \nabla_T\sigma - u\Phi \sigma=0\}\\
+&=\{\sigma:L_x \to E: \tilde{\nabla}_{(T+i e_0)}\sigma=0\}
+\end{align*}
+where \(\tilde{\nabla}\) is the Yang-Mills connection.
+
+Now take the complex manifold \(X= TS^2\), so \((E^2,\nabla,\Phi\) and produce the bundle \(\tilde{ E} \to X\). Then you may actually put a holomorphic structure on \(\tilde{E}\), making into a holomorphic vector bundle over \(X\).
+
+Now we write:
+\begin{align*}
+X&=\{\text{oriented lines in \(\mathbb{R}^3\)} \}\\
+T_{(x,y)}TS^2&=\{(u,v): \left< u,v\right>=0, \left<u,y\right>+\left<x,v\right>=0\}\\
+V_x&=\{(0,v) : \left<x,v\right>=0\}\\
+J(0,v)&=(0,x \times v)\\
+H_{(x,y)}TS^2&=\{(u,-\left<u,y\right>x:\left<u,x\right>=0\}\\
+\hat{u}:=(u,-\left<u,y\right>x)\\
+J\hat{u}&=\widehat{x \times u}
+\end{align*}
+
+And then: Jac fields orthogonal to \(L^+\) is 4 dimensional.
+\[J_{\xi}=T \times \xi\]
+Constant curvature \(\to \) integrable.
+
+\begin{align*}
+\gamma_{x,y}(t)&=y+t x\\
+(u,v-&\left<u,y\right>x\\
+\xi(t)&=v-\left<u,y\right>x+tu
+\end{align*}
+\(G\) lie group, \(H\subseteq G\)
+\begin{align*}
+\mathfrak{g}&=\mathfrak{h} \oplus  \mathfrak{p}\\
+[\mathfrak{g},\mathfrak{p}] \subseteq \mathfrak{p}\quad [\mathfrak{p},\mathfrak{p}] \subseteq \mathfrak{g}\qquad \text{Polarization}
+\end{align*}
+\(\mathfrak{p}\) id. with \(T(G/H)\) fwy \(\operatorname{Ad}_\mathfrak{g}\)-invariant form on \(\mathfrak{p}\) generates a parallel form on \(G/H\).
+
+ \begin{align*}
+G&=\mathsf{SO}(3)\ltimes \mathbb{R}^3\\
+H&=\mathsf{SO}(2) \times \mathbb{R}\\
+\mathfrak{p}=4, J, \nabla J=0
+\end{align*}
+
+Here's ChatGPT:
+
+\textbf{Twistor Space and Structure.} The twistor space of \(\mathbb{R}^3\) is given by \(X = TS^2\), which parametrizes oriented lines in \(\mathbb{R}^3\). The tangent space at \((x,y) \in TS^2\) decomposes as
+\[
+T_{(x,y)}TS^2 = \{(u,v) : \langle u,v \rangle = 0, \langle u,y \rangle + \langle x,v \rangle = 0 \}.
+\]
+The vertical and horizontal subspaces are defined as
+\[
+V_x = \{(0,v) : \langle x,v \rangle = 0\}, \quad H_{(x,y)}TS^2 = \{(u,-\langle u,y \rangle x) : \langle u,x \rangle = 0\}.
+\]
+An almost complex structure \(J\) is introduced by
+\[
+J(0,v) = (0, x \times v), \quad J\hat{u} = \widehat{x \times u}.
+\]
+
+\textbf{Jacobi Fields and Integrability.} The Jacobi fields orthogonal to an oriented line \(L^+\) form a 4-dimensional space, where
+\[
+J_{\xi} = T \times \xi.
+\]
+Constant curvature ensures integrability.
+
+The geodesic equation for a curve \(\gamma_{x,y}(t) = y + tx\) leads to
+\[
+\xi(t) = v - \langle u,y \rangle x + tu.
+\]
+
+\textbf{Lie Groups and Homogeneous Structure.} Consider a Lie group \(G\) with a subgroup \(H \subseteq G\), and the Lie algebra decomposition
+\[
+\mathfrak{g} = \mathfrak{h} \oplus \mathfrak{p}, \quad [\mathfrak{g},\mathfrak{p}] \subseteq \mathfrak{p}, \quad [\mathfrak{p},\mathfrak{p}] \subseteq \mathfrak{g}.
+\]
+Since \(\mathfrak{p}\) is identified with \(T(G/H)\), an \(\operatorname{Ad}_{\mathfrak{g}}\)-invariant form on \(\mathfrak{p}\) induces a parallel form on \(G/H\).
+
+For the twistor space,
+\[
+G = \mathsf{SO}(3) \ltimes \mathbb{R}^3, \quad H = \mathsf{SO}(2) \times \mathbb{R}.
+\]
+The space \(\mathfrak{p}\) has dimension 4, and the almost complex structure \(J\) satisfies \(\nabla J = 0\), ensuring integrability.
+
+
+\subsection{Scattering transform}
+
+Suppose you have a Lie group \(G\), and two Lie subgroups \(H_1, H_2 \subseteq G\). Now take
+ \[X:=G/H_1,\qquad X_2=G/H_2\]
+\[\begin{tikzcd}
+&G\arrow[dl,"\pi_1",swap]\arrow[dr,"\pi_2"]\\
+X_1&&X_2
+\end{tikzcd}\]
+
+\textbf{Radon transform}:
+\[R: C^\infty(X_1) \longrightarrow C^\infty(X_2)\]
+So
+\begin{align*}
+R&=\pi_{2 *}\pi_1^*\\
+G&=\mathsf{SO}(3)\ltimes \mathbb{R}^3\qquad  \text{isometries of \(\mathbb{R}^3\)} \\
+H_1&=\operatorname{S t a b} \text{ point} = \mathsf{SO}(3)\\
+H_2&=\text{Stable line} =S^1 \times \mathbb{R}
+\end{align*}
+Now we can put a little zero on the continuous functions (that means they tend to zero?):
+\[R: C_0^\infty(X_1) \longrightarrow C^\infty(X_2)\]
+\begin{align*}
+R&=\pi_{2*}\pi_1^* \\
+\pi_1^* (f)&=f \circ \pi_1\\
+\pi_{2*}f&=\int_HfdV\frac{1}{2\pi}\\
+\hat{f}(L)&=\int_Lfde\\
+F&=\pi_{2*}\mu_{\phi}\pi_1^*
+\end{align*}
+
+
+\[\begin{tikzcd}
+&G=\mathsf{SO}(3)\ltimes \mathbb{R}^3\arrow[dl,"\pi_1",swap]\arrow[dr,"\pi_2"]\\
+\mathbb{R}^3&&X\\
+&(\pi_1 ^*E,\pi_1^*\nabla,\pi^*_1\phi)\arrow[uu]
+\end{tikzcd}\]
+
+So a global section
+\[(\pi_1^*E_1|_{F},\pi_1^*\nabla|_{F},\pi_1^*\phi|_{F}\]
+
+\textbf{Summary of the Scattering Transform.} Given a Lie group \( G \) and two subgroups \( H_1, H_2 \subseteq G \), we define the homogeneous spaces
+\[
+X_1 = G/H_1, \quad X_2 = G/H_2.
+\]
+The \textit{Radon transform} is a mapping
+\[
+R: C^\infty_0(X_1) \to C^\infty(X_2),
+\]
+which factors through the pullback \(\pi_1^*\) and pushforward \(\pi_{2*}\):
+\[
+R = \pi_{2*} \pi_1^*.
+\]
+
+For \( G = \mathsf{SO}(3) \ltimes \mathbb{R}^3 \) (the isometry group of \( \mathbb{R}^3 \)), the subgroups correspond to:
+\[
+H_1 = \mathsf{SO}(3) \quad \text{(stabilizing a point)}, \quad H_2 = S^1 \times \mathbb{R} \quad \text{(stabilizing a line)}.
+\]
+The transform integrates functions along fibers:
+\[
+\pi_1^* f = f \circ \pi_1, \quad \pi_{2*} f = \int_H f dV.
+\]
+A section of a lifted bundle \((\pi_1^*E, \pi_1^*\nabla, \pi_1^*\phi)\) over \( G \) descends through \( \pi_2 \), encoding the scattering transform in terms of differential geometric data.
+
+
 \end{document}

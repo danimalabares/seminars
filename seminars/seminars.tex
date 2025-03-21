@@ -3756,193 +3756,19 @@ A sequence is called \textit{\textbf{regular}} if there exists a geodesic \(\gam
 This is supposed to be studied when the fibers of the bundle are symmetric spaces. The symmetric spaces are the spaces of metrics. I think this is the twistor space.
 \end{remark}
 
-\clearpage\phantomsection\stepcounter{section}\addcontentsline{toc}{section}{\thesection\quad Geometria Riemanniana}\addtocontents{toc}{\hspace{1em}\textit{Luis Florit, \hspace{.2 em}university,\hspace{.5em}month day, year, event}\par}
-{\Huge Geometria Riemanniana}
 
-\hfill{\Large Luis Florit}
-
-{\Large \hfill university}
-
-\hfill{\large month day, year
-
-\hfill \textit{event}}
-\vspace{2em}
-
-\begin{thing6}{Abstract}
-
-\end{thing6}
-\vspace{2em}
-\subsection{Lembrando}
-
-\begin{defn}\leavevmode
-\textit{\textbf{Variedade diferenciável}}
-\begin{enumerate}
-\item \(M\) espaço topológico Hausdorff (\(T^2\)), base enumerável. Essas duas condições são equivalentes à existência de partições da unidade.
-
-\item \(M\) localmente euclídeo, i.e. \(\mathcal{A}=\{(\chi_\lambda,U_\lambda)\}\), \(\chi_\lambda:U_\lambda \subset M \to\chi_\lambda(U_\lambda)\subset \mathbb{R}^n\), com \(M=\bigcup_{\lambda}U_\lambda\). Dizemos que \(n\) é a \textit{\textbf{dimensão}} de \(M\).
-
-\item Restringindo dois abertos \(U_\lambda\), \(U_\mu\) com \(U_\lambda \cap U_\mu \neq  \varnothing\), a \textit{\textbf{mudança de coordenadas}} \(\chi_\mu \circ \chi_\lambda^{-1}:\chi_\lambda(U_\lambda \cap U_\mu) \to \chi_\mu(U_\lambda \cap U_\mu)\) deve ser diferenciável. (Nesse curso diferenciável é \(C^\infty\) a menos que especifiquemos).
-
-\item Maximalidade, i.e. \(\mathcal{A}\) é maximal.
-\end{enumerate}
-\end{defn}
-
-\begin{defn}[Mapa diferenciável]\leavevmode
-\(f:M^n \to N^m\) se para todo ponto com cartas \((x,U)\) de  \(M\) e \((y,V)\) de \(N\) o mapa \(y \circ f \circ x^{-1}\) é diferenciável. Denotaremos o conjunto de funções diferenciaveis por \(\mathcal{F}(M,N)\). Em particular \(\mathcal{F}(M):=\mathcal{F}(M,\mathbb{R})\).
-
-\end{defn}
-
-\begin{defn}[Espaço tangente]\leavevmode
-\(\mathcal{F}_p(M)\) é o espaço de funções definidas num aberto de \(p\) identificando duas delas se coincidem em qualquer aberto contendo \(p\).
-
-\[T_pM:=\{v \in \mathcal{F}_p(M)^*:v(fg)=f(p)v(g)+g(p)v(f)\}\]
-\end{defn}
-
-\begin{question}\leavevmode
-\(\mathcal{F}_p(M)\) es el stalk de la gavilla de funciones suaves? Qué pasa si definimos algo como las derivaciones en \(\mathcal{F}(U)\).
-
-A la hora de definir base de \(T_pM\) con los operadores \(\partial_i\) necesitamos fijar una carta, así que en realidad no hay una base canónica de \(T_pM\).
-\end{question}
-
-\begin{defn}[Diferencial de uma função]\leavevmode
-\[df_p:T_pM \to T_{f(p)}N\]
-definida para \(g \in T_{f(p)}N\) como
-\[df_p(v)(g)=v(g \circ f)\]
-\end{defn}
-
-\begin{remark}\leavevmode
-A regra da cadeia é uma tautologia dessa definição!
-\end{remark}
-
-\begin{defn}[Base canônica do espaço tangente]\leavevmode
-Definimos
-\[\partial_i |_{p}=\frac{\partial }{\partial x_i}\Big|_{p}\in T_pM\]
-como, para \(g \in T_pM\),
-\[\frac{\partial }{\partial x_i}\Big|_{p}(g)=\frac{\partial (g \circ x^{-1})}{\partial u_i}\]
-\end{defn}
-
-\begin{exercise}\leavevmode
-Mostre que \(\{\partial_1|_{p},\ldots, \partial_n|_{p}\}\) é uma base de \(T_pM\).
-\end{exercise}
-
-\begin{proof}[Solution]\leavevmode
-Primeiro note que \(\{\partial_i|_{p}\}\) é linearmente independente. Suponha que 
-\[\sum a_i \partial_i|_{p} =0\]
-Then for every function this gives zero, so in particular for coordinate functions \(x_i:U \to \mathbb{R}\), so
-\[0=\Big(\sum a_i \partial_i\Big)x_j=\sum a_i \delta_{ij}=a_j\qquad \text{for all \(j\).} \]
-Now let's check \(\operatorname{span}\partial_i|_{p}=T_pM\). Choose a vector \(v \in T_pM\) and let
-\[w:=v-\sum_{i}v(x_i)\partial_i|_{p}.\]
-We wish to show that \(w=0\).
-
-Then there's the following trick: a function \(g:\mathbb{R} \to \mathbb{R}\) with \(g(0)=0\) can be written \(g(t)=th(t)\) for some continuous function \(h\) (exercise: construct \(h\), it's an integral). So if we define \(\tilde{g}(t)=g(t)-g(0)\) we can write for any \(g: \mathbb{R} \to \mathbb{R}\) (without asking that \(g(0)=0\)) just \(g(t)=g(0)+th(t)\)
-
-Try to use this trick to conclude that \(w(g)=0\) for all \(g \in \mathcal{F}_p\). At some point we used that \(w(x_i)=0\)…
-
-\end{proof}
-
-\begin{defn}[Fibrado tangente]\leavevmode
-Como os \(\mathcal{F}_p(M)\) são disjuntos, porque \(M\) é Hausdorff, os espaços tangentes são disjuntos para pontos distintos.
-\[TM:=\bigsqcup_{p \in M}T_pM\]
-com a estrutura diferenciável que você já conhece.
-
-A projeção natural \(\pi:TM \to M\) é uma sumersão no sentido da seguinte definição. (Exercício?)
-\end{defn}
-
-\begin{defn}[Imersão e sumersão]\leavevmode
-\begin{enumerate}
-\item Imersão se para todo \(p \in M\), \(df_p\) é injetiva (e isso implica que \(n \leq  m\)).
-\item \textit{\textbf{Sumersão}} de \(df_p\) é sobrejetiva para todo \(p\), implicaq ue \( n \geq  m\).
-\item \textit{\textbf{Difeomorfismo local}} se para todo ponto \(df_p\) é um isomorfismo. Isso é equivalente a que para todo ponto existe um aberto tal que \(f|_{U}:U \to V\) é um difemorfismo (teo. função inversa). (Checar.)
-\end{enumerate}
-\end{defn}
-
-Note que \(f: M \to N\) contínua é como dizer que a topologia induzida por \(f\), \(\tau_f \subset \tau_M\). Mas a igualdade nem sempre tem (e.g. figura 8). \(f\) é um \textit{\textbf{mergulho }} se \(\tau_f = \tau_M\). Isso é equivalente a que \(f(M) \subset N\) seja uma subvariedade e \(f:M \overset{\operatorname{difeo}}{\simeq}f(M)\subset N\).
-
-\begin{defn}[Campo coordenado]\leavevmode
-Numa vizinhança \(U\) de \(p\),
-\begin{align*}
-	\partial : U &\longrightarrow TU\subset TM \\
-	p &\longmapsto \frac{\partial }{\partial x_i}\Big|_{p}\in T_pM
-\end{align*}
-\end{defn}
-
-\begin{remark}\leavevmode
-Podemos quase extender esse campo. Num aberto \(V \subset U\) cujo fecho \(\bar{V} \subset U\). Pega a coberta \(\{ M \setminus \bar{V}, U\}\). Então existe part. unidade  \((\xi,\varphi)\). Por definição, \(\varphi|_{V} =1\). Defina \(x= \varphi \partial_i\).
-\end{remark}
-
-\begin{defn}[Fibrado vetorial]\leavevmode
-Um \textit{\textbf{fibrado vetorial }} \(E^k\) sobre \(M^n\) de posto \(k \in \mathbb{N} \cup  \{0\}\) é
-\begin{enumerate}
-\item \(\pi:E \to M^n\) submersão sobrejetiva.
-\item \(\forall  p \in M\), \(E_p = \pi^{-1}(p)\) é um \(\mathbb{R}\)-e.v. de dimensão \(k\).
-\item \(\forall p \in M\), existe \(p \in U \subset M\) tal que \(\forall  q \in U\) \(\varphi|_{E_q} \to \{p\} \times \mathbb{R}^k\) e \(\varphi_U: \pi^{-1}(U) \overset{\operatorname{dif}}{\simeq}U \times \mathbb{R}^k\).
-
-	Isso é equivalente a pedir que exista um \textit{\textbf{atlas trivializante}} de \(E\). É \(\{(\varphi,\underbrace{\pi(U)}_{\subseteq E}:U \in \Lambda \subset \tau_M\}\) es decir una familia de abiertos en \(E\) indexada por una familia de abiertos de \(M\). Considere dos de estos abiertos con \(W:=U \cap V \neq  \varnothing\).
-	\[\begin{tikzcd}
-		\varphi_U|_{\pi(W)}\pi^{-1}(W)\arrow[r]& W \times \mathbb{R}^k\arrow[d]\\
-		\varphi_V|_{\pi^{-1}(W)}\pi^{-1}(W)\arrow[r]&W \subset \mathbb{R}^k
-	\end{tikzcd}\]
-onde estamos parametrizando numa variedade! Ou seja, implícitamente estamos pegando cartas nela, mas podemos deixá-lo assim.
-
-Temos as funções de transição
-\[\varphi_{VU}=\varphi_V \circ \varphi_U^{-1}|_{W\times\mathbb{R}^k}:W\times\mathbb{R}^k \to W \times \mathbb{R}^k\]
-que realmente estão determinadas por a parte linear:
-\[\varphi_{VU}(Q,v)=(Q,\xi_{VU}(Q)(v)\]
-onde
-\[\xi_{VU}:W \to \mathsf{GL}(k,\mathbb{R})\]
-e são chamadas de \textit{\textbf{funções de transição}} de \(E\). Elas satisfacem
-\[\xi_{VU}\circ\xi_{SV}=\xi_{SU}\qquad \text{cocycle condition} \]
-\[\text{no seria…} \qquad \xi_{VU}\circ\xi_{US}=\xi_{VS}\]
-Então podemos formar um fibrado vetorial a partir das funções de transição só.
-\end{enumerate}
-\end{defn}
-
-\subsection{Exercícios}
-
-\subsubsection{Capítulo 0}
-\begin{thing4}{Exercise 2}\label{exer:2}\leavevmode
-Prove que o fibrado tangente de uma variedade diferenciável \(M\) é orientável (mesmo que \(M\) não seja).
-\end{thing4}
-
-\begin{proof}[Solution]\leavevmode
-Es porque la diferencial de los cambios de coordenadas está dada por dos matrices,
-\[\left(\begin{array}{@{}c|c@{}}
-\operatorname{Id}&A \in \mathsf{GL}(n)\\
-\hline
-\leavevmode&\leavevmode\end{array}\right)\]
-
-\end{proof}
-
-\subsubsection{Capítulo 1}
-
-\begin{thing4}{Exercise 1}\label{exer:1}\leavevmode
-Prove que a aplicação antípoda \(A:S^n \to S^n\) dada por \(A(p)=-p\) é uma isometria de \(S^n\). Use este fato para introduzir uma métrica Riemanniana no espaço projetivo real \(\mathbb{R}P^{n}\) tal que a projeção natural \(\pi: S^n \to \mathbb{R}P^{n}\) seja uma isometria local.
-\end{thing4}
-\begin{proof}[Solution]\leavevmode
-	Lembre que a métrica de \(S^n\) é a induzida pela métrica euclidiana, onde pensamos que \(T_pS^n \hookrightarrow T_p\mathbb{R}^{n+1}\). É claro que \(A\) é uma isometría de \(\mathbb{R}^n\), pois ela é a sua derivada (pois ela é linear), de forma que \(\left<v,w\right>_p=\left<-v,-w\right>_{A(p)}=\left<v,w\right>_{-p}\).
-
-	É um fato geral que se as transformações de coberta preservam a métrica, obtemos uma métrica no quociente de maneira natural, i.e. para dois vetores \(v,w\in T_p\mathbb{R}P^n\) definimos \(\left<v,w\right>_p^{\mathbb{R}P^n}:=\left<\tilde{v},\tilde{w}\right>_{\tilde{p} \in \pi^{-1}(p)}\).
-
-Para ver que a projeção natural é uma isometria local basta ver que a diferencial de \(A\) é um isomorfismo em cada ponto. Mas como ela é \(-A\), isso é claro.
-\end{proof}
-
-
-
-\clearpage\phantomsection\stepcounter{section}\addcontentsline{toc}{section}{\thesection\quad Algebras de Lie}\addtocontents{toc}{\hspace{1em}\textit{Raimundo Heluani, \hspace{.2 em}university,\hspace{.5em}month day, year, event}\par}
-{\Huge Algebras de Lie}
+\clearpage\phantomsection\stepcounter{section}\addcontentsline{toc}{section}{\thesection\quad Algebras de Lie, primeira aula}\addtocontents{toc}{\hspace{1em}\textit{Raimundo Heluani, \hspace{.2 em}IMPA,\hspace{.5em}March 17, 2025, IMPA course}\par}
+{\Huge Algebras de Lie, primeira aula}
 
 \hfill{\Large Raimundo Heluani}
 
-{\Large \hfill university}
+{\Large \hfill IMPA}
 
-\hfill{\large month day, year
+\hfill{\large March 17, 2025
 
-\hfill \textit{event}}
+\hfill \textit{IMPA course}}
 \vspace{2em}
 
-\begin{thing6}{Abstract}
-
-\end{thing6}
 \vspace{2em}
 \begin{defn}\leavevmode
 Uma \(k\) \textit{\textbf{algebra de Lie}} \( \mathfrak{g}\) é um \(k\)-espaço vetorial com uma operação bilinear
@@ -4023,21 +3849,18 @@ O único funcional  linear simétrico no espaço de matrizes é o traço (ou mú
 Muito algébricos: Koc (mais combinatoria, algebra, sistemas de raízes), Humphreys (como Serre fez, mais analítica). Geometrico: Knapp.
 \end{thing7}
 
-\clearpage\phantomsection\stepcounter{section}\addcontentsline{toc}{section}{\thesection\quad Geometria de Poisson}\addtocontents{toc}{\hspace{1em}\textit{HB, \hspace{.2 em}university,\hspace{.5em}month day, year, event}\par}
-{\Huge Geometria de Poisson}
+\clearpage\phantomsection\stepcounter{section}\addcontentsline{toc}{section}{\thesection\quad Geometria de Poisson: primeiras duas aulas}\addtocontents{toc}{\hspace{1em}\textit{Henrique Bursztyn, \hspace{.2 em}IMPA,\hspace{.5em}March 11,13, 2025, IMPA course}\par}
+{\Huge Geometria de Poisson: primeiras duas aulas}
 
-\hfill{\Large HB}
+\hfill{\Large Henrique Bursztyn}
 
-{\Large \hfill university}
+{\Large \hfill IMPA}
 
-\hfill{\large month day, year
+\hfill{\large March 11,13, 2025
 
-\hfill \textit{event}}
+\hfill \textit{IMPA course}}
 \vspace{2em}
 
-\begin{thing6}{Abstract}
-
-\end{thing6}
 \vspace{2em}
 Livros:
 \begin{itemize}
@@ -4346,10 +4169,7 @@ Here was discussed a notion of \textit{proper groupoid}, which have analogous pr
 \subsection{Metric on a Lie groupoid}
 
 \begin{defn}\leavevmode
-A \textit{\textbf{metric}} on \(G \substack{\to\\\to}M\) is a metric \(\eta^{(2)}\) on \(NG_2=G \times_M G\) such that the face maps are Riemannian submersions
-\[\begin{tikzcd}
-	G \times_M G \arrow[r,"\pi_1",shift up]
-\end{tikzcd}\]
+A \textit{\textbf{metric}} on \(G \substack{\to\\\to}M\) is a metric \(\eta^{(2)}\) on \(NG_2=G \times_M G\) such that the face maps are Riemannian submersions…
 \end{defn}
 It's actually a \textit{system of metric}, making source, target, multiplication Riemannian submersions.
 

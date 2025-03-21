@@ -12,7 +12,7 @@
 		%{\small\hfill\href{https://github.com/Friday-seminar/}{github.com/Friday-seminar}}
 	\end{minipage}
 \end{minipage}\vspace{.2cm}\hrule
-\vspace{10pt}
+
 {\Huge Notes on seminars}
 
 {\large (and what-not)}
@@ -2447,7 +2447,7 @@ If \((G, \omega)\) is a symplectic groupoid, then
 \end{thm}
 
 \begin{remark}\leavevmode
-Look for Alejandro Cabrera, Kontsevich. There are two things one is de Rham and the other…
+Look for Alejandro Cabrera, Kontsevich. There are two things one is de Rham and the other… {\color{8}from the future: simplicial?}
 \end{remark}
 
 \begin{upshot}\leavevmode
@@ -4171,4 +4171,226 @@ onde (creo que), em coordenadas locais, \(\pi_{ij}(x)=\{x_i,x_j\}\).
 \begin{remark}\leavevmode
 	A condição de ser Jacobi nas funções \(\pi_{ij}\) é uma EDP muito difícil, tem outras formas de mostrar que algo é Jacobi além de resolvê-la.
 \end{remark}
+
+
+\clearpage\phantomsection\stepcounter{section}\addcontentsline{toc}{section}{\thesection\quad Area rigidity of minimal surfaces}\addtocontents{toc}{\hspace{1em}\textit{André Neves, \hspace{.2 em}UChicago,\hspace{.5em}March 19, 2025, Systolic and Diastolic Geometry (IMPA conference)}\par}
+{\Huge Area rigidity of minimal surfaces}
+
+\hfill{\Large André Neves}
+
+{\Large \hfill UChicago}
+
+\hfill{\large March 19, 2025
+
+\hfill \textit{Systolic and Diastolic Geometry (IMPA conference)}}
+\vspace{2em}
+
+\begin{thing6}{Abstract}
+We will talk about the volume spectrum of a manifold and recent results regarding its rigidity. This is joint work with Lucas Ambrozio and Fernando Marques.
+\end{thing6}
+\vspace{2em}
+
+There are two different definitions for geodesics: as minimizing length functional, and as orbits of hamiltonian flow. This is a problem when studying minimal surfaces: we cannot use the latter definition.
+
+\begin{thing7}{Question}[Poincaré]\leavevmode
+In 1904: every 2-sphere has a closed geodesic? Answer led to developments
+\end{thing7}
+
+\begin{thing4}{Conjecture}[Yau]\leavevmode
+80's: every closed 3-manifold has infinitely many closed embedded minimal surfaces.
+\end{thing4}
+
+\begin{thm}\leavevmode
+On every closed riemannian manifold \((M^{n+1},g)\) with \(n \geq 2\) there are infinite number of distinct minimal embedded hypersurfaces \(\{\Sigma_k\}\). For a generic metric the morse index of \(\Sigma_j\) is \(k\) and \(\frac{ \operatorname{area} \Sigma_k}{k^{1/(n+1)}}\) obeys a Weyl-type law.
+\end{thm}
+
+\begin{remark}\leavevmode
+Here Morse index counts the directions in which the area of the minimal surface decreases (e.g. meridian of torus has index 0, great circle of \(S^2\) has index 1).
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{systolic2}
+\end{figure}
+\end{remark}
+
+How to find \(\Sigma_k\)? You make an \textit{educated guess} of what \(\operatorname{area}_g\Sigma_k\) should be.
+
+Almgren in the 60's showed that the space of all trivial closed hypersurfaces,
+\(\mathcal{Z}_n(M)\) is weakly homotopic to \(\mathbb{R}P^{\infty}\). So a lot of cohomology.
+
+For a fixed metric \(g\), minimal hypersurfaces are critical points of
+\[\operatorname{area}_g: \mathcal{Z}_n(M) \to [0,+\infty)\]
+
+The educated guess is that the area corresponds to
+smallest \(L\) so that \(\lambda^k \neq 0 \) on \(\{ \Sigma\in \mathcal{Z}:\operatorname{area}(\Sigma)\leq L\}\)
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{systolic}
+	\caption*{looks like some sort of Morse theory approach}
+\end{figure}
+
+\subsection{Zoll metrics}
+A classical question in the theory of geodesics is to know to which extent the length of closed geodesics determines the ambient metric. For surfaces the answer depends on the curvature. Negative, flat, yes. Positive, no!
+
+\begin{question}[dani]\leavevmode
+What is Zoll metric? What is volume spectrum? (I stopped following at this point.)
+\end{question}
+
+\clearpage\phantomsection\stepcounter{section}\addcontentsline{toc}{section}{\thesection\quad Lie Groupoids: Foundations, Advances, and Future Directions}\addtocontents{toc}{\hspace{1em}\textit{Matias del Hoyo, \hspace{.2 em}UFRJ,\hspace{.5em}March 21, 2025, Seminário das Sextas}\par}
+{\Huge Lie Groupoids: Foundations, Advances, and Future Directions}
+
+\hfill{\Large Matias del Hoyo}
+
+{\Large \hfill UFRJ}
+
+\hfill{\large March 21, 2025
+
+\hfill \textit{Seminário das Sextas}}
+\vspace{2em}
+
+\begin{thing6}{Abstract}
+Lie groupoids are central to modern geometry and mathematical physics, connecting differential geometry, topology, and dynamical systems. Based on a recent chapter co-authored with H. Bursztyn for the \href{https://www.sciencedirect.com/science/article/abs/pii/B9780323957038000240}{Encyclopedia of Mathematical Physics} this talk will explore the foundations of Lie groupoids, their interactions with related structures like Lie algebroids and Poisson manifolds, and highlight recent advances and emerging research directions in the field.
+\end{thing6}
+\vspace{2em}
+
+\vspace{2em}
+\subsection{Lie groupoids}
+
+\begin{defn}\leavevmode
+A \textit{\textbf{Lie groupoid}} \(G \substack{\to\\\to} M\) consists of manifolds \(G\), \(M\), submersions \(s,t:G \to M\) and a multiplication \(m\) with unit \(u\) and inverse \(i\) 
+\begin{align*}
+m: G \times_M G&\to G\qquad (z \overset{g}{\leftarrow }y, y\overset{g}{\leftarrow } x )\mapsto  (z\overset{hg}{\leftarrow }x)\\
+u:M & \to G\qquad \qquad x \mapsto (x \overset{1_x}{\leftarrow }x)\\
+i:G&\to G\qquad \qquad (y \overset{g}{\leftarrow }x)\mapsto (x\overset{g^{-1}}{\leftarrow }y)
+\end{align*}
+A \textit{\textbf{morphism}} \(\phi:(\tilde{G}\substack{\to\\\to}M) \to (G \substack{\to\\\to}M)\) consists of maps \(\phi_1:\tilde{G} \to G\), \(\phi_2:\tilde{M} \to M\) preserving source, target, multiplication and units.
+\end{defn}
+
+\subsection{Examples}
+
+\begin{example}\leavevmode
+\begin{itemize}
+\item For \(M\) manifold:
+\begin{itemize}
+\item \(M\substack{\to\\\to}M\) unit groupoid.
+\item \(M \times M \substack{\to\\\to} M\) pair groupoid.
+\item \(\pi_{1}(M)\substack{\to\\\to}M\) fundamental groupoid.
+\end{itemize}
+\item \(G\) Lie group: \(G \substack{\to\\\to} *\) Lie group
+
+\item \(q:M \to N\) submersion: \(M \times_M \substack{\to\\\to}M\) submersion groupoid. Ex: \(\mathcal{U}=\{U_i\}\) open cover \(\rightsquigarrow \) \(\coprod U_{ji}\substack{\to\\\to}\coprod U_i\) \v Chech groupoid.
+\item \(G \mathbb{y} M\) action:  \(G \times M \substack{\to\\\to}M\) action groupoid.
+\item \(X \in \Gamma(TM)\): \(U_X \subset \mathbb{R}\times M \substack{\to\\\to}M\) flow gruopoid.
+\item \(P \to M\) principal bundle: \((P\times P)/G \substack{\to\\\to}M\) gauge groupoid.
+\item  \(F \subset M\) foliation:
+	\begin{itemize}
+	\item \(\operatorname{Mon}F \substack{\to\\\to} M\) monodromy groupoid
+	\item \(\operatorname{Hol}M \substack{\to\\\to} M\) holonomy groupoid.
+\item \(V \to M\) vector bundle: \(\mathsf{GL}(V)\substack{\to\\\to}M\) bigeneral linear groupoid.
+	\end{itemize}
+\end{itemize}
+\end{example}
+
+\subsection{Actions and representations}
+
+Here's one of the key ideas: relation between group and groupoid. Groups in geometry serve to model symmetries of a space:
+\[\text{group } G \substack{\to\\\to} * \leftrightsquigarrow \text{symmetries of a space }E \to * \]
+And groupoids model symmetries of a \textit{family} parametrized by \(M\):
+\[\text{groupoid }G \substack{\to\\\to}M \leftrightsquigarrow \text{symmetries of a family }E \to M\]
+\begin{defn}\leavevmode
+Given \(G\substack{\to\\\to}M\) a Lie grouoid and \(E \to M\) a surjective submersion, a \textit{\textbf{groupoid action}} \(\rho:G \mathbb{y} E\) is a map such that \(\rho_{1_x}=\operatorname{id}_{E_x}\) and \(\rho_h\rho_g=\rho_{gh}\):
+\[\rho:G \times_M E \to E\qquad (y\leftarrow x,e/x)\mapsto \rho_g(e)/y\]
+It is a \textit{\textbf{representation}} if \(E \to M\) vector bundle and \(\rho_g E_x \to E_y\) linear.
+\end{defn}
+
+\begin{example}\leavevmode
+\begin{itemize}
+\item The \textit{\textbf{parallel action}}. Take a vector bundle with a flat connection. Then the fundamental groupoid \textit{acts by parallel transport}, i.e. \((E \to M, \nabla)\) is a groupoid action \((\pi_{1}(M)\substack{\to\\\to}M \mathbb{y} (E \to M)\). Notice this is \textit{not} a group action, it's naturally a groupoid action.
+\item A \textit{\textbf{Hamiltonian action}} \(G \mathbb{y}(M,\omega)\) on a symplectic manifold is an action of the action groupoid \((G \times \mathfrak{g}^*\substack{\to\\\to}\mathfrak{g}^*\mathbb{y}(M\to \mathfrak{g}^*)\).
+\item The \textit{\textbf{(linear) holonomy}} of a foliation \(F \subset TM\) is a representation of the monodromy groupoid \((\operatorname{Mon}(F) \substack{\to\\\to}M \mathbb{y}(TM/F \to M)\).
+\end{itemize}\end{example}
+
+\subsection{Groupoid fibrations}
+A representation \((G\substack{\to\\\to}M)\mathbb{y}(E \to M)\) gives rise to a groupoid morphism with a (unique) lift of arrows:
+\[\begin{tikzcd}
+	G \times_M E \substack{\to\\\to}E\arrow[d]&\leavevmode& e\arrow[l,"\rho(g\text{,} e)",red,swap]\\
+	G\substack{\to\\\to}M& y& x\arrow[l,"g",swap]
+\end{tikzcd}\]
+A \textit{\textbf{fibration}} \(\Gamma \substack{\to\\\to}E) \to (G \substack{\to\\\to}M)\) is a morphism with (non-necessarily unique) lift of arrows. A \textit{\textbf{VB-groupoid}} is a linear fibration (called like this for historical reasons).
+
+\begin{example}\leavevmode
+\begin{itemize}
+\item A usual representation \((G \ltimes_E \substack{\to\\\to}E) \to (G \substack{\to\\\to} M)\)
+\item The tangent and the cotangent groupoid \((TG \substack{\to\\\to} TM) \to (G \substack{\to\\\to}M)\) and \((T^*G \substack{\to\\\to}A^*) \to (G\substack{\to\\\to}M)\)
+\end{itemize}
+\end{example}
+\begin{thm}[Grothendieck;Gacria-Saz,Mehta;dH,Ortiz]\leavevmode
+There is a 1-1 correspondence between VB-groupoids \(\Gamma\to E\) over \(G \substack{\to\\\to}M\) and {\color{2}representations up to homotopy} \(G\mathbb{y}(C \oplus  E \to M)\).
+\end{thm}
+
+\subsection{Nerve and cohomology}
+
+Given \(G \substack{\to\\\to} M\) Lie groupoid, its \textit{\textbf{nerve}} \((NG_n,d_i,s_j)\) is the simplicial manifold
+\begin{itemize}
+\item \(n\)-simplices: \(NG_n=\{x_n \overset{g_n}{\leftarrow}x_{n-1}\overset{g_{n-1}}{\leftarrow}\cdots \overset{g_2}{\leftarrow}x_1\overset{g_1}{\leftarrow}x_0\}\) 
+\item Faces \(d_i:NG_n \to NG_{n-1}\) compose two arrows (or forget one)
+\item Degeneracies \(s_j:NG_n \to NG_{n+1}\) insert and identity.
+\end{itemize}
+The \textit{\textbf{groupoid DGA}} is \(C(G)=(sin(NG_\bullet),\cup ,\partial=\sum_{i}(-1)^i d_i^*)\). The \textit{\textbf{groupoid cohomology}} is \(H^{n}(G)=H^{n}(C(G))\).
+
+
+\subsection{Linearization problem}
+\begin{remark}\leavevmode
+Here was discussed a notion of \textit{proper groupoid}, which have analogous properties of proper Lie groups: quotient is Hausdorff and admits a Haar measure.
+\end{remark}
+\subsection{Metric on a Lie groupoid}
+
+\begin{defn}\leavevmode
+A \textit{\textbf{metric}} on \(G \substack{\to\\\to}M\) is a metric \(\eta^{(2)}\) on \(NG_2=G \times_M G\) such that the face maps are Riemannian submersions
+\[\begin{tikzcd}
+	G \times_M G \arrow[r,"\pi_1",shift up]
+\end{tikzcd}\]
+\end{defn}
+It's actually a \textit{system of metric}, making source, target, multiplication Riemannian submersions.
+
+\begin{thm}[dH-Fernandes, 2018]\leavevmode
+Every proper Lie groupoid admits a metric, and a metric yields linearizations through the exponential maps.
+\end{thm}
+
+\begin{remark}\leavevmode
+How to construct a invariant metric from any metric.
+\end{remark}
+
+\begin{remark}[About the future]\leavevmode
+It's not yet clear how to define a proper higher Lie groupoid. Speaker is trying to develop geometry for higher Lie groupoids.
+\end{remark}
+
+\subsection{Part 2}
+
+\subsection{Abstract Lie algebroids}
+
+\begin{defn}\leavevmode
+	A \textit{\textbf{Lie algebroid}} \(A \implies  M\) is a vector bundle \(A \to M\) with a Lie bracket \([\cdot,\cdot]\) on \(\Gamma(A)\) and a linear map \(\rho:A \to TM\) satisfying Leibniz rule
+	\[[\alpha,f \beta]=f[\alpha,\beta]+\rho(\alpha)(f)\beta\qquad \qquad \alpha, \beta \in \Gamma(A),f \in C^\infty(M)\]
+If 	
+\end{defn}
+
+\begin{remark}\leavevmode
+Also \textit{\textbf{higher Lie algebras}} have been defined.
+\end{remark}
+
+\section{Last slide}
+There were several slides in between…
+
+\begin{thm}[Crainic-Fernandes]\leavevmode
+There is a 1-1 correspodnence between (\(s\)-simply connected) symplectic Lie groupoids and (integrable) Poisson manifolds.
+\end{thm}
+
+Why symplectic groupoid and Poisson manifolds? They seem to be different objects. Theese (which?) induce Lie algebra. Because cotangent structure 
+
+\begin{quotation}
+``Poisson manifold induce a symplectic lie algebra." ``Integration of symplectic algebra is symplectic group"
+\end{quotation}
+
+
 \end{document}
